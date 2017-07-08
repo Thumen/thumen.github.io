@@ -12,12 +12,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--  footer -->
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- slider -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+
   <style>
   body {
       font: 400 15px Lato, sans-serif;
       line-height: 1.8;
       color: #818181;
-      background-color: white;
+      background-color: #2F4F4F;
     }
    .container-fluid {
       padding: 5px 20px;
@@ -80,6 +86,15 @@ hr {
 </head>
 <body>
 <!--Navbar header-top-->
+<header class="banner">
+  <div class="container banner-container">
+    <div class="site-branding">
+      <div class="banner-logo">
+        <img src="images/tattoos/logo2.png">
+        <p> TATTOODO . INDELIBLE . TEMPORARY</p>
+    </div>
+  </div>
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">  
@@ -118,16 +133,18 @@ hr {
 	         </div>
        </form> -->
        <li class="hidden-xs"><a href="#toggle-search" class=""><span class="glyphicon glyphicon-search"></span></a></li>
+       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
      </ul>
   </div>
 </nav>
-</br>
 </div>
+</header>
  <!-- Header -->
-<div class="jumbotron text-center">
+<!-- <div class="jumbotron text-center">
      <img src="images/tattoos/logo2.png"> 
      <p> TATTOODO . INDELIBLE . TEMPORARY</p> 
-</div> 
+</div>  -->
 <!-- slider -->
 <div class="container-fluid">
      <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -138,15 +155,34 @@ hr {
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
     <!-- Wrapper for slides -->
-<div class="carousel-inner">
+<div class="carousel-inner" role="listbox">
       <div class="item active">
-         <img src="images/tattoos/slider1.jpg"  style="width:100%;">
+       <!--  slider background -->
+         <img src="images/tattoos/slider1.jpg" class="bs-slider-overlay" style="width:100%;">
+         <div class="container">
+          <div class="row">
+            <div class="carousel-caption slide_style_left">
+                                <h1 data-animation="animated zoomInRight">Tattoo is my life</h1>
+                                <p data-animation="animated fadeInLeft"> I am made myself entirely of flaws, stitched together with good intentions</p>
+                                <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
+                                <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInRight">select two</a>
+                            </div>
+          </div>
+         </div>
       </div>
       <div class="item">
-        <img src="images/tattoos/slider2.jpg"  style="width:100%;">
+        <img src="images/tattoos/slider2.jpg" alt=""  style="width:100%;">
+        <div class="carousel-caption">
+          <h3>Always do what you are afraid to do</h3>
+          <p> I am made myself entirely of flaws, stitched together with good intentions</p>
+        </div>
       </div>
       <div class="item">
-        <img src="images/tattoos/slider5.png"  style="width:100%;">
+        <img src="images/tattoos/slider5.png" alt="" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>Always do what you are afraid to do</h3>
+          <p> I myself am made entirely of flaws, stitched together with good intentions</p>
+        </div>
       </div>
 </div>
   <!-- Left and right controls -->
@@ -158,42 +194,216 @@ hr {
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
     </a>
+  </div>
 <!-- post -->
 <div class="container">
-  <div class="row">.
-    <div class="col-sm-3">
+  <div class="row">
+   <!--  post1 -->
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <div>
       <b><h3>Tattoos </br> The Ancient and Mysterious History</h3></b>
-          <img src="images/tattoos/tattoo613.jpg">
-            <p>Humans have marked their bodies with tattoos for thousands of years. These permanent designs—sometimes plain, sometimes elaborate, always personal—have served as amulets, status symbols, declarations of love, signs of religious beliefs, adornments and even forms of punishment. Joann Fletcher, research fellow in the department of archaeology at the University of York in Britain, describes the history of tattoos and their cultural significance to people around the world, from the famous " Iceman," a 5,200-year-old frozen mummy, to today’s Maori.
-           </p>
-           
+      <a href="http://www.yan.vn/goi-y-hinh-xam-cuc-chat-cho-cac-tin-do-xe-dich-63979.html" title="Những hình xăm cung hoàng đạo nhìn là mê">
+                 <img src="images/tattoos/hoangdao1.jpg" class="img" alt=" Những hình xăm cung hoàng đạo nhìn là mê"></br>
+                 </a>
+      </div>
+      <div class="title text-left mt5 minh-50">
+                <a href="/goi-y-hinh-xam-cuc-chat-cho-cac-tin-do-xe-dich-63979.html" title="Gợi ý hình xăm cực chất cho các tín đồ xê dịch"> Những hình xăm cung hoàng đạo nhìn là mê</a>
+            </div>
+            <div class="mt5 fs13">
+              12:22 - 08/07/2017
+            </div>
+            <div class="title mt5 teaser minh-80">
+                Với những hình xăm này, bạn sẽ tự tin thể hiện cá tính cùng cung hoàng đạo của mình. Ngắm qua một chút để có thêm những gợi ý cho mình nhé!
+            </div> 
+      </div>
+  <!-- post2 -->
+   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <div>
+         <b><h3>Tattoos </br> The Ancient and Mysterious History</h3></b>
+         <a href="http://www.yan.vn/goi-y-hinh-xam-cuc-chat-cho-cac-tin-do-xe-dich-63979.html" title="Liêu xiêu với loạt hình xăm chứng minh ta là của nhau">
+          <img src="images/tattoos/couples1.jpg" class="img" alt="Liêu xiêu với loạt hình xăm chứng minh ta là của nhau"></br>
+          </a>
+      </div>
+           <div class="title text-left mt5 minh-50">
+                <a href="/goi-y-hinh-xam-cuc-chat-cho-cac-tin-do-xe-dich-63979.html" title="Gợi ý hình xăm cực chất cho các tín đồ xê dịch">Liêu xiêu với loạt hình xăm chứng minh ta là của nhau</a>
+            </div>
+            <div class="mt5 fs13">
+              12:22 - 08/07/2017
+            </div>
+            <div class="title mt5 teaser minh-80">
+               Hình xăm luôn mang một ý nghĩa khi nó được chọn để "in dấu" vĩnh viễn trên người bạn.
+            </div>
+          </div>
+<!--  post3 -->
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div>
+             <b><h3>Tattoos </br> The Ancient and Mysterious History</h3></b>
+             <a href="http://www.yan.vn/goi-y-hinh-xam-cuc-chat-cho-cac-tin-do-xe-dich-63979.html" title=" Gợi ý hình xăm cực chất cho các tín đồ xê dịch">
+                 <img src="images/tattoos/travel1.jpg" class="img" alt=" Gợi ý hình xăm cực chất cho các tín đồ xê dịch"></br>
+              </a>
+          </div>
+          <div class="title text-left mt5 minh-50">
+                <a href="/goi-y-hinh-xam-cuc-chat-cho-cac-tin-do-xe-dich-63979.html" title="Gợi ý hình xăm cực chất cho các tín đồ xê dịch">Gợi ý hình xăm cực chất cho các tín đồ xê dịch</a>
+          </div>
+          <div class="mt5 fs13">
+              12:22 - 08/07/2017
+          </div>
+          <div class="title mt5 teaser minh-80">
+                Những hình xăm này có thể sẽ là nguồn cảm hứng cho chuyến đi sắp tới với những người theo chủ nghĩa xê dịch đấy.
+          </div> 
+      </div>
+    </div>
   </div>
-   <div class="col-sm-4">
-      <b><h3>MENTAL HEALTH HEARTS BY CALLUM GLOVER</h3></b>
-          <img src="images/tattoos/callumglover.jpg">
-            <p>23-year-old tattooist Callum Glover works out of Black Craft in Wakefield and Secret Society in Hartlepool and Brighton, where he creates blackwork tattoos. We chat to Callum about the hearts filled with positive messages, that he tattoos to raise money for mental health charity MIND and his own struggles with mental health…
-              I got into tattooing after I had  been to college doing non art related courses and after working poorly paid jobs with little job satisfaction. I had been tattooed a few times with pretty poor tattoos before I started tattooing. But I just loved getting tattooed, so I remember going to get tattooed by a guy in his house (cringe)! This guy happened to become my best friend, he showed me a tattoo machine, asked if I’d like a try, so I did, I tattooed a small tribal design on a piece of fake skin made out of rubber. The tattoo was awful, the machine was cheap but I was hooked from then on. I’ve never been good at keeping quiet or staying still, or being told what to do, and with tattooing I saw an opportunity to do something that I’d be happy doing for the rest of my life.
 
-So I looked and looked for around two years for an apprenticeship, all the while improving my art work, trying to find my style, which I’m still doing! I found my apprenticeship and the rest is history as they say.
-           </p>     
-  </div>
-    <div class="col-sm-3">
+
+      <div class="container">
+  <div class="row">
+      <!--  post4 -->
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <div>
       <b><h3>Tattoos </br> The Ancient and Mysterious History</h3></b>
-          <img src="images/tattoos/tattoo613.jpg">
-            <p>Humans have marked their bodies with tattoos for thousands of years. These permanent designs—sometimes plain, sometimes elaborate, always personal—have served as amulets, status symbols, declarations of love, signs of religious beliefs, adornments and even forms of punishment. Joann Fletcher, research fellow in the department of archaeology at the University of York in Britain, describes the history of tattoos and their cultural significance to people around the world, from the famous " Iceman," a 5,200-year-old frozen mummy, to today’s Maori.
-           </p>
-           
+      <a href="http://www.yan.vn/goi-y-hinh-xam-cuc-chat-cho-cac-tin-do-xe-dich-63979.html" title="Những hình xăm cung hoàng đạo nhìn là mê">
+                 <img src="images/tattoos/hoangdao1.jpg" class="img" alt=" Những hình xăm cung hoàng đạo nhìn là mê"></br>
+                 </a>
+      </div>
+      <div class="title text-left mt5 minh-50">
+                <a href="/goi-y-hinh-xam-cuc-chat-cho-cac-tin-do-xe-dich-63979.html" title="Gợi ý hình xăm cực chất cho các tín đồ xê dịch"> Những hình xăm cung hoàng đạo nhìn là mê</a>
+            </div>
+            <div class="mt5 fs13">
+              12:22 - 08/07/2017
+            </div>
+            <div class="title mt5 teaser minh-80">
+                Với những hình xăm này, bạn sẽ tự tin thể hiện cá tính cùng cung hoàng đạo của mình. Ngắm qua một chút để có thêm những gợi ý cho mình nhé!
+            </div> 
+      </div>
+  <!-- post5 -->
+   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <div>
+         <b><h3>Tattoos </br> The Ancient and Mysterious History</h3></b>
+         <a href="http://www.yan.vn/goi-y-hinh-xam-cuc-chat-cho-cac-tin-do-xe-dich-63979.html" title="Liêu xiêu với loạt hình xăm chứng minh ta là của nhau">
+          <img src="images/tattoos/couples1.jpg" class="img" alt="Liêu xiêu với loạt hình xăm chứng minh ta là của nhau"></br>
+          </a>
+      </div>
+           <div class="title text-left mt5 minh-50">
+                <a href="/goi-y-hinh-xam-cuc-chat-cho-cac-tin-do-xe-dich-63979.html" title="Gợi ý hình xăm cực chất cho các tín đồ xê dịch">Liêu xiêu với loạt hình xăm chứng minh ta là của nhau</a>
+            </div>
+            <div class="mt5 fs13">
+              12:22 - 08/07/2017
+            </div>
+            <div class="title mt5 teaser minh-80">
+               Hình xăm luôn mang một ý nghĩa khi nó được chọn để "in dấu" vĩnh viễn trên người bạn.
+            </div>
+          </div>
+<!--  post6 -->
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div>
+             <b><h3>Tattoos </br> The Ancient and Mysterious History</h3></b>
+             <a href="http://www.yan.vn/goi-y-hinh-xam-cuc-chat-cho-cac-tin-do-xe-dich-63979.html" title=" Gợi ý hình xăm cực chất cho các tín đồ xê dịch">
+                 <img src="images/tattoos/travel1.jpg" class="img" alt=" Gợi ý hình xăm cực chất cho các tín đồ xê dịch"></br>
+              </a>
+          </div>
+          <div class="title text-left mt5 minh-50">
+                <a href="/goi-y-hinh-xam-cuc-chat-cho-cac-tin-do-xe-dich-63979.html" title="Gợi ý hình xăm cực chất cho các tín đồ xê dịch">Gợi ý hình xăm cực chất cho các tín đồ xê dịch</a>
+          </div>
+          <div class="mt5 fs13">
+              12:22 - 08/07/2017
+          </div>
+          <div class="title mt5 teaser minh-80">
+                Những hình xăm này có thể sẽ là nguồn cảm hứng cho chuyến đi sắp tới với những người theo chủ nghĩa xê dịch đấy.
+          </div> 
+      </div>
+
+
   </div>
 </div>
-
+   <!-- end post -->
 
    <!-- Footer -->
+   <footer>
+<section class="tattoo-footer">
+    <div class="footer-menu-1">
+      <div class="container">
+         <ul class="list-unstyled"> 
+                 <li><a href="">Tin Tuc Va Thong Tin</a></li>
+                 <li><a href="">Tuyen Dung</a></li>
+                 <li><a href="">Lien He</a></li>
+         </ul>
+        </div>
+      </div>
+        <div class="footer-menu-2">
+          <div class="container">
+            <ul class="list-unstyled menu">
+              <li>
+                <i class="fa fa-bars"></i>
+                <a href="">Kham pha</a>
+                <ul class="list-unstyle submenu">
+                  <li>
+                    <a href="">Tattoo Designs</a>
+                  </li>
+                  <li>
+                    <a href="">Tim Hieu Ve Tattoo</a>
+                  </li>
+                  <li>
+                    <a href="">Dia Diem Tatoo</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <i class="fa fa-bars"></i>
+                <a href="">The loai</a>
+                <ul class="list-unstyle submenu">
+                  <li>
+                    <a href="">Dep</a>
+                  </li>
+                  <li>
+                    <a href="">Dinh</a>
+                  </li>
+                  <li>
+                    <a href="">Choi</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <i class="fa fa-bars"></i>
+                <a href="">Blog</a>
+              </li>
+          </ul>
+          </div>
+        </div>
 
-<footer class="container-fluid text-center">
-    
-  <a href="#myPage" title="To Top">
+        <div class="container">
+            <div class="row">
+        <div class="footer-info">
+              <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                <p>Ban muon duoc tu van truoc khi tattoos. Vui long dien vao mau sau, chung toi se lien he voi ban.
+                  <form action="/action_page.php" target="_blank">
+                               <div class="w3-section">
+                                   <label>Name</label>
+                                       <input class="w3-input w3-border" type="text" name="Name" required="">
+                               </div>
+                               <div class="w3-section">
+                                   <label>Email</label>
+                                        <input class="w3-input w3-border" type="text" name="Email" required="">
+                               </div>
+                               <div class="w3-section">
+                                    <label>Telephone Number</label>
+                                        <input class="w3-input w3-border" type="text" name="Message" required="">
+                               </div>
+                               <button type="submit" class="w3-button w3-block w3-padding-large w3-blue w3-margin-bottom">Send Message</button>
+                  </form>
+              </div>
+              <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+              </div>
+              <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+              </div>
+            </div>
+          </div>  
+        </div>
+        <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
-</footer> 
+  </section>
+  </footer>
+<!-- end footer -->
 </body>
 </html>
