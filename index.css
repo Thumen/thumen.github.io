@@ -1,38 +1,25 @@
-
-  .banner{
-    padding: 0px;
+  a {
+    text-transform: uppercase;
   }
   body {
-      font: 400 15px Lato, sans-serif;
+      font-family:  "Lucida Console", Monaco, monospace;
       line-height: 1.8;
-      color: #818181;
-      background-color: #2F4F4F;
-    }
-    .background-sidebar {
-      background-color: lightblue;
-      padding-right: 0px;
-      padding-left: 0px;
-    }
-    .container-fluid {
-      padding: 0px;
+      color: white;
+     /* background-color: #2F4F4F;*/
+
     }
   img {
     border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
+    padding: 20px;
+    position: relative;
 }
-  .jumbotron{
-      background-color: #cccccc;
-      color: #fff;
-      padding: 25px 25px;
-      font-family: Montserrat, sans-serif;
-  }
-  .navbar-default .navbar-toggle {
+ 
+ .navbar-toggle {
       border-color: transparent;
       color: #fff !important;
   }
   .navbar {
-      margin-bottom: 0;
+      margin-bottom: 10px;
       background-color: #999999;
       z-index: 9999;
       border: 0;
@@ -40,207 +27,107 @@
       line-height: 1.42857143 !important;
       letter-spacing: 4px;
       border-radius: 0;
-      font-family: sans-serif, arial;
   }
-  .navbar-right{
-    margin-right:10px;
+  .search-header{
+
   }
-  
-.fa {
-  padding: 10px;
-  font-size: 20px;
-  width: 25px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%;
-}
-.fa:hover {
+  .page-title{
+    background:url(images/tattoos/background3.jpg) no-repeat;
+    background-size: cover;
+    padding: 240px 0 0;
+    min-height: 450px;
+  }
+  .opacity-medium{
+    position: absolute;
+    height: 100%;
+    width: 100%;
     opacity: 0.7;
-    }
-.fa-google {
-  background: #999999;
-  color: white;
-}
-.fa-instagram {
-  background: #999999;
-  color: white;
-}
-.fa-pinterest {
-  background: #999999;
-  color: white;
-}
-.fa-vine {
-  background: #999999;
-  color: white;
-}
-hr {
-  color:black;
+    z-index: 1;
+  }
+  .separator-line{
+    height: 2px;
+    width: 30px;
 
-}
-.padding-style{
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
+  }
+  .bg-yellow{
+    background: #e6af2a;
+  }
+  .text-center {
+    text-align: center!important;
+  }
+  .page-title-large h1 {
+    font-size: 25px !important;
+    margin-bottom: 15px !important;
+  }
+  .page-title h1 {
+    letter-spacing: 6px;
+    font-weight: 600;
+  }
+  h1 {
+    font-weight: 700;
+    line-height: 45px;
+  }
+ /* side bar*/
+ .col-md-3 {
+    width: 25%;
+  }
+  hr {
+    color: gray
+  }
 /*FOOTER*/
-footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', sans-serif; }
-.footerleft { margin-top:50px; padding:0 36px; }
-.logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
+footer { 
+          background-color:#f4f4f4; 
+          min-height:300px; 
+          font-family:"Lucida Console", Monaco, monospace; 
+        }
+footer /*.footer-top*/ {
+    border-top: 1px solid #e5e5e5;
+  }
 
-.footerleft p { color:#fff; font-size:12px !important; font-family: 'Open Sans', sans-serif; margin-bottom:15px;}
-.footerleft p i { width:20px; color:#999;}
+.logofooter { 
+              margin-bottom:10px; 
+              font-size:15px; 
+              color:black;
+              text-transform: uppercase;
+              padding-top: 10px; 
+            }
+.footerleft {  
+              padding:0 120px; 
+            }
+.footerleft p { 
+                  font-size:12px;
+                   margin-bottom:15px;
+                   color: #a0a3a4;
+                 }
+.footerleft p i { width:20px; 
+                  color:#999;
+                }
 
+.footer-ul { 
+             list-style-type:none;  
+             padding-left:0px; 
+             margin-left:2px;
+           }
+.footer-ul li { line-height:25px; 
+                font-size:12px;
+              }
+.footer-ul li a { 
+                color:#a0a3a4; 
+                 }
+.footer-ul i { 
+                margin-right:10px;
+              }
+ .icon-ul { 
+           list-style-type:none !important;
+         }
 
-.paddingtop-bottom {  margin-top:50px;}
-.footer-ul { list-style-type:none;  padding-left:0px; margin-left:2px;}
-.footer-ul li { line-height:29px; font-size:12px;}
-.footer-ul li a { color:#a0a3a4; transition: color 0.2s linear 0s, background 0.2s linear 0s; }
-.footer-ul i { margin-right:10px;}
-.footer-ul li a:hover {transition: color 0.2s linear 0s, background 0.2s linear 0s; color:#ff670f; }
+ .copyright { min-height:40px; 
+              background-color:#252525;
+            }
+ .copyright p { text-align:left; 
+                color:#888888; 
+                padding:10px 0; 
+                margin-bottom:0px;
+              }
 
-.social:hover {
-     -webkit-transform: scale(1.1);
-     -moz-transform: scale(1.1);
-     -o-transform: scale(1.1);
- }
  
- 
-
- 
- .icon-ul { list-style-type:none !important; margin:0px; padding:0px;}
- .icon-ul li { line-height:75px; width:100%; float:left;}
- .icon { float:left; margin-right:5px;}
- 
- 
- .copyright { min-height:40px; background-color:#000000;}
- .copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0px;}
- .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
- .post p { font-size:12px; color:#FFF; line-height:20px;}
- .post p span { display:block; color:#8f8f8f;}
- .bottom_ul { list-style-type:none; float:right; margin-bottom:0px;}
- .bottom_ul li { float:left; line-height:40px;}
- .bottom_ul li:after { content:"/"; color:#FFF; margin-right:8px; margin-left:8px;}
- .bottom_ul li a { color:#FFF;  font-size:12px;}
- /*post*/
- .index-content a:hover{
-    color:black;
-    text-decoration:none;
-}
-.index-content{
-    margin-bottom:20px;
-    padding:50px 0px;
-    
-}
-.index-content .row{
-    margin-top:20px;
-}
-.index-content a{
-    color: black;
-}
-.index-content .card{
-    background-color: #FFFFFF;
-    padding:0;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius:4px;
-    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
-
-}
-.index-content .card:hover{
-    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
-    color:black;
-}
-.index-content .card img{
-    width:100%;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-.index-content .card h4{
-    margin:20px;
-}
-.index-content .card p{
-    margin:20px;
-    opacity: 0.65;
-}
-.index-content .blue-button{
-    width: 100px;
-    -webkit-transition: background-color 1s , color 1s; /* For Safari 3.1 to 6.0 */
-    transition: background-color 1s , color 1s;
-    min-height: 20px;
-    background-color: #002E5B;
-    color: #ffffff;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: lighter;
-    margin: 0px 20px 15px 20px;
-    padding: 5px 0px;
-    display: inline-block;
-}
-.index-content .blue-button:hover{
-    background-color: #dadada;
-    color: #002E5B;
-}
-@media (max-width: 768px) {
-
-    .index-content .col-lg-4 {
-        margin-top: 20px;
-    }
-}
-/*login*/
-body{
-    background: url("images/tattoos/background.jpg");
-}
-
-#login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,.8);
-}
-#login-dp .help-block{
-    font-size:12px    
-}
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
-}
-#login-dp .social-buttons{
-    margin:0px;
-    width: 100%;   
-}
-#login-dp .social-buttons a{
-    width: 49%;
-}
-#login-dp .form-group {
-    margin-bottom: 10px;
-}
-.btn-fb{
-    color: #fff;
-    background-color:#3b5998;
-}
-.btn-fb:hover{
-    color: #fff;
-    background-color:#496ebc;
-}
-.btn-tw{
-    color: #fff;
-    background-color:#55acee;
-}
-.btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
-}
-@media(max-width:768px){
-    #login-dp{
-        background-color: inherit;
-        color: #fff;
-    }
-    #login-dp .bottom{
-        background-color: inherit;
-        border-top:0 none;
-    }
-}
-
