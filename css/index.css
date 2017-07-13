@@ -47,7 +47,7 @@ ul li {
 }
 
 .page-title {
-    background: url(images/tattoos/background3.jpg) no-repeat;
+    background: url(/images/tattoos/background3.jpg) no-repeat;
     background-size: cover;
     padding: 240px 0 0;
     min-height: 450px;
