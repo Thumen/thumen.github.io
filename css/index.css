@@ -1,0 +1,238 @@
+a {
+    text-transform: uppercase;
+}
+
+body {
+    font-family: "Lucida Console", Monaco, monospace;
+    line-height: 1.8;
+    color: white;
+    background-color: darkcyan;
+}
+
+img {
+    position: relative;
+    width: 100%;
+}
+
+h1 {
+    font-weight: 700;
+    line-height: 45px;
+}
+
+ul li {
+    margin-top: 10px;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+.navbar-toggle {
+    border-color: transparent;
+    color: #fff;
+}
+
+.navbar {
+    margin-bottom: 10px;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.navbar-fixed-top {
+    background-color: black;
+}
+
+.page-title {
+    background: url(images/tattoos/background3.jpg) no-repeat;
+    background-size: cover;
+    padding: 240px 0 0;
+    min-height: 450px;
+}
+
+.line {
+    height: 2px;
+    width: 30px;
+    background-color: yellow;
+}
+
+.line:hover {
+    width: 100px;
+    height: 3px;
+}
+
+.page-title-large h1 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.page-title h1 {
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+
+/* side bar*/
+
+.sidebar {
+    background-color: orange;
+    font-family: 10px;
+}
+
+h5.widget-title {
+    line-height: 20px;
+    padding: 15px;
+    margin: 0px -15px;
+    text-transform: uppercase;
+}
+
+.widget-input {
+    border-radius: 4px;
+    width: 100%;
+    border-width: 2px;
+    margin-bottom: 0;
+    padding: 15px 0px;
+}
+
+.widget-underline {
+    height: 1px;
+    width: 30px;
+    background-color: green;
+}
+
+.list-sidebar {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-left: 2px;
+}
+
+.input {
+    color: #a0a3a4;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color: none;
+    width: ;
+    padding: ;
+}
+
+.btn-link {
+    color: #a0a3a4;
+}
+
+.category-list li a span:before {
+    content: "/";
+}
+
+.clear-fix {
+    padding: 10px 0px;
+}
+
+.widget-posts div img {
+    width: 75px;
+    margin-right: 20px;
+    float: left;
+}
+
+.archive-list li a span:before {
+    content: "/";
+}
+
+
+/*pagination*/
+
+.pagination {
+    color: darkgray;
+    letter-spacing: 8px;
+    text-align: center;
+}
+
+.pagination a:hover:not(.active) {
+    text-decoration: underline;
+}
+
+
+/*FOOTER*/
+
+footer {
+    background-color: #f4f4f4;
+    min-height: 300px;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+footer
+/*.footer-top*/
+
+{
+    border-top: 1px solid #e5e5e5;
+}
+
+.logofooter {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: black;
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+
+.footerleft {
+    padding: 0 120px;
+}
+
+.footerleft p {
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: #a0a3a4;
+}
+
+.footerleft p i {
+    width: 20px;
+    color: #999;
+}
+
+.footer-ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-left: 2px;
+}
+
+.footer-ul li {
+    line-height: 25px;
+    font-size: 12px;
+}
+
+.footer-ul li a {
+    color: #a0a3a4;
+}
+
+.footer-ul i {
+    margin-right: 10px;
+}
+
+.icon-ul {
+    list-style-type: none !important;
+}
+
+.copyright {
+    min-height: 40px;
+    background-color: #252525;
+}
+
+.copyright p {
+    text-align: left;
+    color: #888888;
+    padding: 10px 0;
+    margin-bottom: 0px;
+}
+
+.col-xs-12 .col-sm-3 .col-sm-4 .col-sm-8 .col-sm-9 .col-sm-12 .col-md-9 .col-md-3 .col-md-6 .col-md-12 .col-lg-4 .col-lg-8 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+}
