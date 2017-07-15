@@ -1,0 +1,21 @@
+.about-poster {
+    width: 100%;
+    height: auto;
+    background-color: #a0a3a4;
+}
+
+.about-poster .avarta img {
+    width: 75px;
+    margin-right: 20px;
+    float: left;
+}
+
+.poster-details {
+    line-height: 16px;
+    font-size: 14px;
+    color: #000;
+}
+
+.poster-details a {
+    text-transform: none;
+}

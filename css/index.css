@@ -40,7 +40,7 @@ ul li {
 }
 
 .text-center {
-    text-align: center!important;
+    text-align: center;
 }
 
 .navbar-toggle {
@@ -318,11 +318,13 @@ ul li {
 /*pagination*/
 
 .pagination {
-    color: darkgray;
-    letter-spacing: 8px;
+    color: #333;
+    letter-spacing: 18px;
     text-align: center;
     width: 100%;
     min-width: 200px;
+    font-size: 17px;
+    font-weight: 400;
 }
 
 .pagination a:hover:not(.active) {
@@ -334,7 +336,7 @@ ul li {
 }
 
 .social .social-list i {
-    padding-right: 58px;
+    padding-right: 65px;
     padding-top: 25px;
 }
 
@@ -359,10 +361,12 @@ footer
 
 .logofooter {
     margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 14px;
     color: black;
     text-transform: uppercase;
     padding-top: 10px;
+    letter-spacing: 4px;
+    font-weight: 600;
 }
 
 .footerleft {
