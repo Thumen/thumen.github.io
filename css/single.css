@@ -1,21 +1,55 @@
-.about-poster {
-    width: 100%;
-    height: auto;
-    background-color: #a0a3a4;
-}
-
-.about-poster .avarta img {
-    width: 75px;
-    margin-right: 20px;
-    float: left;
-}
-
-.poster-details {
-    line-height: 16px;
-    font-size: 14px;
-    color: #000;
-}
-
-.poster-details a {
-    text-transform: none;
-}
+        .post-date {
+            padding-bottom: 15px;
+        }
+        
+        .widget {
+            margin-top: 45px;
+        }
+        
+        .title {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        
+        .blog-comment-form-main {
+            padding-top: 6%;
+        }
+        
+        .input {
+            letter-spacing: 2px;
+            font-size: 14px;
+            width: 100%;
+            margin-top: 30px;
+            text-transform: uppercase;
+            max-width: 100%;
+            font-weight: 600;
+            ;
+        }
+        
+        .form-control {
+            letter-spacing: 2px;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 0;
+        }
+        
+        .btn-send {
+            letter-spacing: 2px;
+            font-size: 11px;
+            border: 3px solid white;
+            border-radius: 0px;
+            background-color: #000;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .input-block {
+            text-align: left;
+        }
+        
+        .btn-default:hover {
+            color: #000;
+            background-color: white;
+            border-color: #000;
+        }

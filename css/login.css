@@ -1,0 +1,47 @@
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.3em;
+}
+
+*[role="form"] h2 {
+    margin-left: 5em;
+    margin-bottom: 1em;
+}
+
+.form-control {
+    font-size: 11px;
+    border-radius: 0;
+}
+
+.control-label {
+    color: #626262;
+    letter-spacing: 1px;
+}
+
+.form-group p {
+    letter-spacing: 1px;
+    font-size: small;
+}
+
+.btn-defaul {
+    letter-spacing: 8px;
+    font-size: 15px;
+    border: 3px solid #626262;
+    border-radius: 0px;
+    background-color: #white;
+    font-weight: 600;
+    color: #000;
+}
+
+.input-block {
+    text-align: left;
+}
+
+.btn-default:hover {
+    color: white;
+    background-color: #626262;
+    border-color: #white;
+}
