@@ -97,7 +97,7 @@ ul li {
 }
 
 .main-container {
-    padding-top: 15px;
+    padding-top: 30px;
 }
 
 
@@ -109,6 +109,11 @@ ul li {
 
 
 /* search */
+
+.form-control {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
 .custom-search-input {
     padding: 3px;
@@ -140,6 +145,11 @@ ul li {
     font-size: 23px;
 }
 
+.btn-info:hover {
+    color: #fff;
+    background-color: #626262;
+}
+
 
 /* end search */
 
@@ -167,6 +177,10 @@ ul li {
     background-color: #252525;
 }
 
+.end-post {
+    width: 100%
+}
+
 .list-sidebar {
     list-style-type: none;
     padding-left: 0px;
@@ -176,6 +190,7 @@ ul li {
 
 .blog-detail {
     padding-top: 15px;
+    padding-bottom: 30px;
 }
 
 .blog-post {
@@ -185,7 +200,7 @@ ul li {
 .widget {
     padding: 15px;
     margin-bottom: 15px;
-    border: 1px solid;
+    border: 1px solid #a0a3a4;
 }
 
 .widget p {
@@ -281,6 +296,13 @@ ul li {
     text-align: right;
 }
 
+.btn-default:hover {
+    color: white;
+    background-color: #000;
+    border-color: inherit;
+    font-weight: bold;
+}
+
 .post-social a {
     font-size: 11px;
     letter-spacing: 3px;
@@ -314,6 +336,10 @@ ul li {
 .social .social-list i {
     padding-right: 58px;
     padding-top: 25px;
+}
+
+.social-list a i:hover {
+    color: #252525;
 }
 
 
