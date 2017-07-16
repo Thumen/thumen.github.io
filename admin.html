@@ -12,16 +12,177 @@
     <!-- fortawesome -->
     <link rel="stylesheet" href="library/font-awesome-4.7.0/css/font-awesome.min.css">
 
-
+    <!-- css -->
+    <link rel="stylesheet" href="./css/admin.css">
 
 </head>
 
 <body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        </a>
+        <ul class="main-menu">
+            <li class="top">
+                Setting
+            </li>
+            <li class="widget">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="widget">
+                <a href="#">
+                    <i class="fa  fa-thumb-tack"></i>
+                    <span>Post</span>
+                </a>
+            </li>
+            <li class="widget dashboard">
+                <a href="#">
+                    <i class="fa fa-star-o"></i>
+                    <span>Reviews</span>
+                </a>
+            </li>
+            <li class="widget">
+                <a href="#">
+                    <i class="fa fa-libary"></i>
+                    <span>library</span>
+                </a>
+            </li>
+
+
+            <li class="widget layout">
+                <a href="#">
+                    <i class="fa fa-files-o"></i>
+                    <span>layout options</span>
+                </a>
+            </li>
+
+
+            <li class="widget">
+                <a href="#">
+                    <i class="fa fa-comment-o"></i>
+                    <span>Comment</span>
+                </a>
+            </li>
+
+            <li class="widget">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Themes</span>
+                </a>
+            </li>
+            <li class="widget">
+                <a href="#">
+                    <i class="fa fa-address-book-o"></i>
+                    <span>Utimate member</span>
+                </a>
+            </li>
+            <li class="widget">
+                <a href="#">
+                    <i class="fa fa-cog"></i>
+                    <span>Setting</span>
+                </a>
+            </li>
+
+            <li class="widget">
+                <a href="#">
+                    <i class="fa fa-share-alt"></i>
+                    <span>Social pug</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <nav class="navbar-static-top navbar-top">
+
+        <div id="main">
+
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            <div class="nav-custom-menu pull-right">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a></li>
+                    <li>
+                        <a href="newandinfo">Page</a></li>
+                    <li>
+                        <a href="newandinfo"></a>
+                    </li>
+                    <li class="dropdown messages-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="label label-success">4</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">You have 4 messages</li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown notifications-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="label label-warning">10</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">You have 10 notifications</li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown tasks-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-flag-o"></i>
+                            <span class="label label-danger">9</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">You have 9 tasks</li>
+                        </ul>
+                    </li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="../images/tattoos/avt.png" class="user-image" alt="User Image" data-pin-nopin="true">
+                        <span class="hidden-xs">Hello Mén !?</span>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
 
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="copyright ">
+            <div class="container ">
+                <div class="col-md-6 ">
+                    <p>© 2017 - Powered by N.T.T.M</p>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="navbar-header navbar-right ">
+                        <img src="images/tattoos/logo.png ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jquery -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+
 
 </html>
