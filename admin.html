@@ -22,19 +22,66 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         </a>
         <ul class="main-menu">
-            <li class="top">
-                Setting
+
+            <li class="user-panel">
+                <div class="pull-left image">
+                    <img src="images/tattoos/avt.png" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>mèo meo méo</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </li>
+
+            <li class="search">
+                <div class="widget">
+                    <div class="custom-search-input">
+                        <div class="input-group col-md-12">
+                            <input type="text" class="form-control input-md" placeholder="Search..." />
+                            <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                        </div>
+                    </div>
+                </div>
             </li>
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-dashboard"></i>
                     <span>Dashboard</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
                 </a>
             </li>
+
+
+            <li class="dropdown">
+                <button class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="#">
+                        <i class="fa fa-files-o"></i>
+                        <span>exam</span> </a></button>
+                <ul class="dropdown-menu">
+                    <li><a href=""><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+                    <li><a href=""><i class="fa fa-circle-o"></i> Boxed</a></li>
+                    <li><a href=""><i class="fa fa-circle-o"></i> Fixed</a></li>
+                    <li><a href=""><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                </ul>
+
+            </li>
+
+
+
+
             <li class="widget">
                 <a href="#">
                     <i class="fa  fa-thumb-tack"></i>
                     <span>Post</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
                 </a>
             </li>
             <li class="widget dashboard">
@@ -45,8 +92,11 @@
             </li>
             <li class="widget">
                 <a href="#">
-                    <i class="fa fa-libary"></i>
+                    <i class="fa fa-image"></i>
                     <span>library</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
                 </a>
             </li>
 
@@ -55,6 +105,9 @@
                 <a href="#">
                     <i class="fa fa-files-o"></i>
                     <span>layout options</span>
+                    <span class="pull-right-container">
+              <span class="label label-primary pull-right">6</span>
+                    </span>
                 </a>
             </li>
 
@@ -68,20 +121,41 @@
 
             <li class="widget">
                 <a href="#">
-                    <i class="fa fa-dashboard"></i>
+                    <i class="fa  fa-paint-brush"></i>
                     <span>Themes</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+            </li>
+            <li class="widget">
+                <a href="#">
+                    <i class="fa fa-share-alt"></i>
+                    <span>Widgets</span>
                 </a>
             </li>
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-address-book-o"></i>
                     <span>Utimate member</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+            </li>
+            <li class="widget">
+                <a href="#">
+                    <i class="fa fa-calendar"></i>
+                    <span>calendar</span>
                 </a>
             </li>
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-cog"></i>
                     <span>Setting</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
                 </a>
             </li>
 
@@ -89,6 +163,9 @@
                 <a href="#">
                     <i class="fa fa-share-alt"></i>
                     <span>Social pug</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
                 </a>
             </li>
         </ul>
@@ -98,7 +175,7 @@
 
         <div id="main">
 
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Setting</span>
             <div class="nav-custom-menu pull-right">
                 <ul class="nav navbar-nav">
                     <li>
@@ -138,10 +215,47 @@
                             <li class="header">You have 9 tasks</li>
                         </ul>
                     </li>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="../images/tattoos/avt.png" class="user-image" alt="User Image" data-pin-nopin="true">
-                        <span class="hidden-xs">Hello Mén !?</span>
-                    </a>
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle admin" data-toggle="dropdown" aria-expanded="false">
+                            <img src="images/tattoos/avt.png" class="user-image" alt="User Image" data-pin-nopin="true">
+                            <span class="hidden-xs">Hello Mén !?</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="images/tattoos/avt.png" class="img-circle" alt="User Image" data-pin-nopin="true">
+
+                                <p>
+                                    Mén - Web Developer</br>
+                                    <small>Member since Nov. 2017</small>
+                                </p>
+                            </li>
+                            <!-- Menu Body -->
+                            <li class="user-body">
+                                <div class="row">
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Followers</a>
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Sales</a>
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Friends</a>
+                                    </div>
+                                </div>
+
+                            </li>
+
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
