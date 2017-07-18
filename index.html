@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="scotchApp">
 
 <head>
     <meta charset="UTF-8">
     <title>Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- font -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -17,10 +21,15 @@
     <link rel="stylesheet" href="library/font-awesome-4.7.0/css/font-awesome.min.css">
     <!-- css -->
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/listpost.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/single.css">
 
 </head>
 
-<body>
+<body ng-controller="mainController">
     <nav class="navbar-fixed-top">
         <div class="container">
             <div class="row">
@@ -37,25 +46,25 @@
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li>
-                                    <a href="index.html">home</a></li>
+                                    <a href="#">home</a></li>
                                 <li>
-                                    <a href="newandinfo">new & info</a></li>
+                                    <a href="#">new & info</a></li>
                                 <li>
-                                    <a href="newandinfo">page</a></li>
+                                    <a href="#">page</a></li>
                                 <li>
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#category">
                                 category
                                 <span class="caret"></span>
                               </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#about">about us</a></li>
-                                        <li><a href="#photos">photos</a></li>
-                                        <li><a href="#post">post</a></li>
-                                        <li><a href="#contact">contact</a></li>
+                                        <li><a href="#">about us</a></li>
+                                        <li><a href="#">photos</a></li>
+                                        <li><a href="#">post</a></li>
+                                        <li><a href="#">contact</a></li>
                                     </ul>
                                 </li>
                                 <!--login -->
-                                <li><a href="login.html">Login</a></li>
+                                <li><a href="#">Login</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -185,150 +194,27 @@
 
 
             <div class="col-xs-12 col-md-9 col-sm-9 col-lg-8 post ">
-                <div class="post post-text ">
+                <div ng-view></div>
 
-                    <a href="single.html"></a>
-                    <img src="images/tattoos/images.jpg ">
-                    <div class="blog-detail">
-
-                        <div class="title ">
-                            <a href="single.html">This is a Standard post with a Preview Image</a>
-                        </div>
-                        <div class="widget-underline "></div>
-                        <div class="post-date ">
-                            Posted by
-                            <a href="# ">Paul Scrivens</a> | 02 January 2017|
-                            <a href="# ">New & Info</a>
-                        </div>
-                        <div class="blog-post ">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the standard dummy text.</p>
-                        </div>
-
-                        <div class="post-social ">
-                            <a href="# " class=" "><i class="fa fa-heart-o "> Likes</i></a>
-                            <a href="# " class=" "><i class="fa fa-share-alt "> Share</i></a>
-                            <a href="# " class=" "><i class="fa fa-comment-o "> 3 Comment(s)</i></a>
-                        </div>
-                        <div class="readmore-block">
-                            <a href=" " class="btn btn-small btn-default btn-readmore  ">Continue Reading</a>
-                        </div>
-                    </div>
-                    <div class="widget-underline end-post"></div>
-                </div>
-
-                <div class="post post-slider ">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators ">
-                            <li data-target="#myCarousel " data-slide-to="0 " class="active "></li>
-                            <li data-target="#myCarousel " data-slide-to="1 "></li>
-                            <li data-target="#myCarousel " data-slide-to="2 "></li>
-                        </ol>
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner ">
-                            <div class="item active ">
-                                <img src="images/tattoos/slider1.jpg">
-                            </div>
-
-                            <div class="item ">
-                                <img src="images/tattoos/slider2.jpg">
-                            </div>
-
-                            <div class="item ">
-                                <img src="images/tattoos/slider5.png">
-                            </div>
-                        </div>
-
-                        <!-- Left and right controls -->
-                        <a class="left carousel-control " href="#myCarousel " data-slide="prev ">
-                            <span class="glyphicon glyphicon-chevron-left "></span>
-                            <span class="sr-only ">Previous</span>
-                        </a>
-                        <a class="right carousel-control " href="#myCarousel " data-slide="next"> <span class=" glyphicon glyphicon-chevron-right "></span>
-                            <span class="sr-only ">Next</span>
-                        </a>
-                    </div>
-                    <div class="blog-detail">
-
-                        <div class="title ">
-                            <a href="# ">This is a Standard post with a Preview Image</a>
-                        </div>
-                        <div class="widget-underline "></div>
-                        <div class="post-date ">
-                            Posted by
-                            <a href="# ">Paul Scrivens</a> | 02 January 2017|
-                            <a href="# ">New & Info</a>
-                        </div>
-                        <div class="blog-post ">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the standard dummy text.</p>
-                        </div>
-
-                        <div class="post-social ">
-                            <a href="# " class=" "><i class="fa fa-heart-o "> Likes</i></a>
-                            <a href="# " class=" "><i class="fa fa-share-alt "> Share</i></a>
-                            <a href="# " class=" "><i class="fa fa-comment-o "> 3 Comment(s)</i></a>
-                        </div>
-                        <div class="readmore-block">
-                            <a href=" " class="btn btn-small btn-default btn-readmore  ">Continue Reading</a>
-                        </div>
-                    </div>
-                    <div class="widget-underline end-post"></div>
-                </div>
-
-
-                <div class="post post-video ">
-                    <iframe src="https://player.vimeo.com/video/75976293 " style="height: 100%; border: none" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-                    <div class="blog-detail">
-
-                        <div class="title ">
-                            <a href="# ">This is a Standard post with a Preview Image</a>
-                        </div>
-                        <div class="widget-underline "></div>
-                        <div class="post-date ">
-                            Posted by
-                            <a href="# ">Paul Scrivens</a> | 02 January 2017|
-                            <a href="# ">New & Info</a>
-                        </div>
-                        <div class="blog-post ">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the standard dummy text.</p>
-                        </div>
-
-                        <div class="post-social ">
-                            <a href="# " class=" "><i class="fa fa-heart-o "> Likes</i></a>
-                            <a href="# " class=" "><i class="fa fa-share-alt "> Share</i></a>
-                            <a href="# " class=" "><i class="fa fa-comment-o "> 3 Comment(s)</i></a>
-                        </div>
-                        <div class="readmore-block">
-                            <a href=" " class="btn btn-small btn-default btn-readmore  ">Continue Reading</a>
-                        </div>
-                    </div>
-                    <div class="widget-underline end-post"></div>
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- pagination -->
-        <div class="container ">
-            <div class="row ">
-                <div class="pagination animated fadeInUp ">
-                    <a href="# "><i class="fa fa-chevron-left "></i>
-                <a href="# ">1</a>
-                    <a href="# ">2</a>
-                    <a class="active " href="# ">3</a>
-                    <a href="# ">4</a>
-                    <a href="# ">5</a>
-                    <a href="# "><i class="fa fa-chevron-right "></i></a>
-                </div>
             </div>
         </div>
     </div>
 
+    <!-- pagination -->
+    <div class="container ">
+        <div class="row ">
+            <div class="pagination animated fadeInUp ">
+                <a href="# "><i class="fa fa-chevron-left "></i>
+                <a href="# ">1</a>
+                <a href="# ">2</a>
+                <a class="active " href="# ">3</a>
+                <a href="# ">4</a>
+                <a href="# ">5</a>
+                <a href="# "><i class="fa fa-chevron-right "></i></a>
+            </div>
+        </div>
+    </div>
+    </div>
 
     <footer>
         <div class="container-fluid ">
@@ -338,7 +224,7 @@
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
                     <p><i class="fa fa-mobile fa-3x "></i> : 01234-456-789</p>
                     <p><i class="fa fa-envelope-open-o fa-2x "></i> : Thumen269@gmail.com</p>
-                    <p><i class="fa fa-street-view fa-2x "></i> : 78 Phan Dinh Phung, P2, PN</p>
+                    <p><i class="fa fa-street-view fa-2x "></i> : 78 Phan Dinh Phung, Phuong 2, Quan Phu Nhuan, TP.HCM</p>
 
                 </div>
                 <div class="col-md-3 col-sm-4 footercenter ">
@@ -393,6 +279,12 @@
     <!-- end footer -->
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="script.js"></script>
+<script src="scripts/app.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+
 
 </html>
