@@ -6,9 +6,21 @@
 
 	    // route for the home page
 	        .when('/', {
-	        templateUrl: 'listpost.html',
-	        controller: 'mainController'
-	    })
+	            templateUrl: 'listpost.html',
+	            controller: 'mainController'
+	        })
+	        .when('/single', {
+	            templateUrl: 'single.html',
+	            controller: 'singleController'
+	        })
+	        .when('/login', {
+	            templateUrl: 'login.html',
+	            controller: 'loginController'
+	        })
+	        .when('/register', {
+	            templateUrl: 'register.html',
+	            controller: 'registerController'
+	        })
 
 
 	});

@@ -42,17 +42,17 @@
     font-size: small;
 }
 
-
-}
 .btn-input {
     letter-spacing: 1px;
     font-size: 11px;
     border: 3px solid #000;
     border-radius: 0px;
 }
+
 .input-block {
     text-align: right;
 }
+
 .input-block .btn-defaul:hover {
     background-color: #000;
     color: white;

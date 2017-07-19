@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Admin</title>
+    <title>write new</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- font -->
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="library/font-awesome-4.7.0/css/font-awesome.min.css">
     <!-- css -->
     <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/writenew.css">
 </head>
 
 <body>
@@ -69,7 +70,6 @@
                 </ul>
 
             </li>
-
 
 
 
@@ -179,10 +179,7 @@
                     <li>
                         <a href="index.html">Home</a></li>
                     <li>
-                        <a href="newandinfo">Page</a></li>
-                    <li>
-                        <a href="newandinfo"></a>
-                    </li>
+                        <a href="#page">Page</a></li>
                     <li class="dropdown messages-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-envelope-o"></i>
@@ -260,153 +257,115 @@
     </nav>
 
     <div class="container">
-        <h3 class="title-lg">Bài viết <button type="button" class="btn btn-primary">Viết bài mới</button></h3>
-        <ul class="list-inline total">
-            <li class="all">
-                <a href="#">Tất cả<span class="count">(4)</span></a> |
-            </li>
-            <li class="publish">
-                <a href="#">Đã đăng<span class="count">(3)</span></a> |
-            </li>
-            <li class="draft">
-                <a href="#">Bản nháp<span class="count">(1)</span></a>
-            </li>
-        </ul>
+        <div class="row">
+            <div class="col-xs-12 col-md-8 col-lg-9">
+                <h3> Viết bài mới </h3>
+                <input class="input-title" type="text" placeholder="Nhập tiêu đề tại đây...">
+            </div>
+            <div class="col-xs-12 col-md-4 col-lg-3 sidebar">
+                <div class="widget">
+                    <h5 class="title ">Đăng bài viết</h5>
+                    <div class="widget-underline "></div>
+                    <ul class="category-list list-sidebar ">
+                        <li><i class="fa fa-thumb-tack"></i> Trạng thái: <b> Bản nháp </b><a href="# ">Chỉnh sửa</a></li>
+                        <li><i class=""></i>Chế độ xem:<b> Công khai </b><a href="# ">Chỉnh sửa</a></li>
+                        <li><i class=""></i>Đăng<b> ngay lập tức </b><a href="# ">Chỉnh sửa</a></li>
+                        <button class="btn btn-primary" type="button">Đăng bài viết</button>
 
-        <div class="search">
-            <label class="screen-reader-text" for="post-search-input"></label>
-            <input class="" type="search" value="">
-            <input class="" type="submit" class="button" value="Tìm các bài viết">
-        </div>
-        <ul class="list-inline total">
-            <li class="tablenav top">
-                <div class="actions">
-                    <label for="bulk-action-selector-top" class="screen-reader-text"></label>
-                    <select name="action" id="bulk-action-selector-top">
-                                <option value="-1">Tác vụ</option>
-                                <option value="edit" class="hide-if-no-js">Chỉnh sửa</option>
-                                <option value="trash">Bỏ vào thùng rác</option>
-                            </select>
-                    <input type="submit" class="button action" value="Áp dụng">
-            </li>
-            <li class="actions">
-                <label for="filter-by-date" class="screen-reader-text"></label>
-                <select name="m" id="filter-by-date">
-                            <option selected="selected" value="0">Thời gian</option>
-                            <option value="201705">Tháng Năm 2017 </option>
-                        </select>
-                <label class="screen-reader-text" for="cat"></label>
-                <select name="cat" id="cat" class="postform">
-                            <option value="0">Tất cả chuyên mục</option>
-                            <option class="level-0" value="">New & info</option>
-                            <option class="level-0" value="">Events</option>
-                            </select>
-                <input type="submit" name="filter_action" class="button" value="Lọc">
-            </li>
-        </ul>
-        </div>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>
+                    </ul>
+                </div>
+
+                <div class="widget ">
+                    <h5 class="title ">Định dạng</h5>
+                    <div class="widget-underline "></div>
+                    <div clas="widget-body ">
+                        <form>
+                            <div class="radio">
+                                <label><input type="radio" name="optradio"><i class="fa"> </i>ẩn</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="optradio"><i class="fa"> </i>Hình ảnh</label>
+                            </div>
+                            <div class="radio disabled">
+                                <label><input type="radio" name="optradio"><i class="fa"> </i>Video</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="optradio"><i class="fa"> </i>Trích dẫn</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="optradio"><i class="fa"> </i>Đường dẫn</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="widget ">
+                    <h5 class="title ">Chuyên mục</h5>
+                    <div class="widget-underline "></div>
+                    <form>
                         <div class="checkbox">
-                            <label><input type="checkbox" value="">Tiêu đề</label>
+                            <label><input type="checkbox" value="">New & info</label>
                         </div>
-                    </th>
-                    <th>Tác giả</th>
-                    <th>Chuyên đề</th>
-                    <th>Tag</th>
-                    <th><i class="fa fa-comment-o"></i></th>
-                    <th>Ngày</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
                         <div class="checkbox">
-                            <label><input type="checkbox" value="">Lorem Ipsum is simply dummy text of the printing</label>
+                            <label><input type="checkbox" value="">Events</label>
                         </div>
-                    </td>
-                    <td>Paul scrivens</td>
-                    <td>john@example.com</td>
-                    <td>Events</td>
-                    <td>14</td>
-                    <td>Đã đăng 29/05/2017
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">Lorem Ipsum is simply dummy text of the printing</label>
-                        </div>
-                    </td>
-                    <td>Paul scrivens</td>
-                    <td>john@example.com</td>
-                    <td>New & info</td>
-                    <td>3</td>
-                    <td>Đã đăng 29/05/2017
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">Lorem Ipsum is simply dummy text of the printing</label>
-                        </div>
-                    </td>
-                    <td>Paul scrivens</td>
-                    <td>john@example.com</td>
-                    <td>Chưa được phân loại</td>
-                    <td>-</td>
-                    <td>Đã đăng 29/05/2017
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="nav bottom">
-            <div class="actions">
-                <label for="bulk-action-selector-bottom" class="screen-reader-text"></label>
-                <select name="action2" id="bulk-action-selector-bottom">
-                    <option value="-1">Tác vụ</option>
-	                <option value="edit" class="hide-if-no-js">Chỉnh sửa</option>
-	                 <option value="trash">Bỏ vào thùng rác</option>
-                </select>
-                <input type="submit" id="doaction2" class="button action" value="Áp dụng">
+                    </form>
+                    <a href="">+ Thêm chuyên mục </a>
+                </div>
+
+
+                <div class="widget ">
+                    <h5 class="title ">Text Widget</h5>
+                    <div class="widget-underline "></div>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                </div>
+
+                <div class="widget ">
+                    <h5 class="title ">Tag</h5>
+                    <a href="#">Most rate</a>
+
+                </div>
+                <div class="widget ">
+                    <h5 class="title " Ảnh đại diện</h5>
+                        <a href="#">Đặt ảnh đại diện </a>
+
+                </div>
+
             </div>
         </div>
-    </div>
 
 
 
-    <!-- footer -->
-    <footer class="footer">
-        <div class="copyright ">
-            <div class="container ">
-                <div class="col-md-6 ">
-                    <p>© 2017 - Powered by N.T.T.M</p>
-                </div>
-                <div class="col-md-6 ">
-                    <div class="navbar-header navbar-right ">
-                        <img src="images/tattoos/logo.png ">
+        <!-- footer -->
+        <footer class="footer">
+            <div class="copyright ">
+                <div class="container ">
+                    <div class="col-md-6 ">
+                        <p>© 2017 - Powered by N.T.T.M</p>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="navbar-header navbar-right ">
+                            <img src="images/tattoos/logo.png ">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <!-- jquery -->
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-        }
+        <!-- jquery -->
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            }
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            document.body.style.backgroundColor = "white";
-        }
-    </script>
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                document.body.style.backgroundColor = "white";
+            }
+        </script>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>

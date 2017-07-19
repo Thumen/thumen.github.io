@@ -1,6 +1,12 @@
             body {
                 font-family: 'Open Sans', sans-serif;
                 font-size: 15px;
+                background-color: #F0F8FF;
+                min-width: 320px;
+            }
+            
+            .container {
+                width: 98%;
             }
             /* navbar header */
             
@@ -87,6 +93,11 @@
                 padding: 15px 0px;
             }
             
+            .img-left {
+                width: 40px;
+                padding: 0px;
+            }
+            
             .user-panel {
                 position: relative;
                 width: 100%;
@@ -153,6 +164,26 @@
             #main {
                 transition: margin-left .5s;
                 padding: 16px;
+            }
+            /* title */
+            
+            .total {
+                list-style: none;
+            }
+            
+            .search {
+                float: right;
+            }
+            /* table */
+            
+            .table-bordered {
+                border: 1px solid #000;
+                width: 96%;
+                margin-left: 30px;
+            }
+            
+            .actions {
+                margin: 25px;
             }
             /* footer   */
             

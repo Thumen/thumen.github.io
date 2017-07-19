@@ -9,6 +9,7 @@ body {
     background-color: white;
     font-size: 14px;
     text-align: justify;
+    min-width: 320px;
 }
 
 img {
