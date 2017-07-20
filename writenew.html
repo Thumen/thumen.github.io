@@ -258,7 +258,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-8 col-lg-9">
+            <div class="col-xs-12 col-md-8 col-lg-9 ">
                 <h3> Viết bài mới </h3>
                 <input class="input-title" type="text" placeholder="Nhập tiêu đề tại đây...">
             </div>
@@ -266,34 +266,38 @@
                 <div class="widget">
                     <h5 class="title ">Đăng bài viết</h5>
                     <div class="widget-underline "></div>
-                    <ul class="category-list list-sidebar ">
-                        <li><i class="fa fa-thumb-tack"></i> Trạng thái: <b> Bản nháp </b><a href="# ">Chỉnh sửa</a></li>
-                        <li><i class=""></i>Chế độ xem:<b> Công khai </b><a href="# ">Chỉnh sửa</a></li>
-                        <li><i class=""></i>Đăng<b> ngay lập tức </b><a href="# ">Chỉnh sửa</a></li>
-                        <button class="btn btn-primary" type="button">Đăng bài viết</button>
-
+                    <button class="btn btn-defaul btn-left" type="button"> Lưu nháp</button>
+                    <button class="btn btn-defaul btn-right" type="button"> Xem thử</button>
+                    <ul class="list-sidebar ">
+                        <li><i class="fa fa-spoon"></i> Trạng thái:
+                            <strong> Bản nháp </strong><a href="# ">Chỉnh sửa</a></li>
+                        <li><i class="fa fa-eye"></i> Chế độ xem:<strong> Công khai </strong><a href="# ">Chỉnh sửa</a></li>
+                        <li><i class="fa fa-calendar-check-o"></i> Đăng<strong> ngay lập tức </strong><a href="# ">Chỉnh sửa</a></li>
                     </ul>
+                    <button class="btn btn-primary" type="button"> Đăng bài viết</button>
+
+
                 </div>
 
                 <div class="widget ">
-                    <h5 class="title ">Định dạng</h5>
+                    <h5 class="title"> Định dạng</h5>
                     <div class="widget-underline "></div>
                     <div clas="widget-body ">
                         <form>
                             <div class="radio">
-                                <label><input type="radio" name="optradio"><i class="fa"> </i>ẩn</label>
+                                <label><input type="radio" name="optradio"><i class="fa fa-thumb-tack"> </i> Chuẩn</label>
                             </div>
                             <div class="radio">
-                                <label><input type="radio" name="optradio"><i class="fa"> </i>Hình ảnh</label>
+                                <label><input type="radio" name="optradio"><i class="fa fa-file-image-o"> </i> Hình ảnh</label>
                             </div>
                             <div class="radio disabled">
-                                <label><input type="radio" name="optradio"><i class="fa"> </i>Video</label>
+                                <label><input type="radio" name="optradio"><i class="fa fa-youtube-play"> </i> Video</label>
                             </div>
                             <div class="radio">
-                                <label><input type="radio" name="optradio"><i class="fa"> </i>Trích dẫn</label>
+                                <label><input type="radio" name="optradio"><i class="fa fa-quote-left"> </i> Trích dẫn</label>
                             </div>
                             <div class="radio">
-                                <label><input type="radio" name="optradio"><i class="fa"> </i>Đường dẫn</label>
+                                <label><input type="radio" name="optradio"><i class="fa fa-link"> </i> Đường dẫn</label>
                             </div>
                         </form>
                     </div>
@@ -312,22 +316,15 @@
                     </form>
                     <a href="">+ Thêm chuyên mục </a>
                 </div>
-
-
                 <div class="widget ">
-                    <h5 class="title ">Text Widget</h5>
-                    <div class="widget-underline "></div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                </div>
-
-                <div class="widget ">
-                    <h5 class="title ">Tag</h5>
+                    <h5 class="title"><i class="fa fa-tags"> Tag</i></h5>
+                    <input type="text" class="addtag"> <button class="btn btn-primary">+ Tag</button>
                     <a href="#">Most rate</a>
 
                 </div>
                 <div class="widget ">
-                    <h5 class="title " Ảnh đại diện</h5>
-                        <a href="#">Đặt ảnh đại diện </a>
+                    <h5 class="title"> Ảnh đại diện</h5>
+                    <a href="#">Đặt ảnh đại diện </a>
 
                 </div>
 

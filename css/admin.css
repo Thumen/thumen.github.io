@@ -27,6 +27,12 @@
                 padding-bottom: 15px;
             }
             
+            .dropdown-menu {
+                width: 100%;
+                background-color: #092223;
+                padding-top: 0px;
+            }
+            
             .navbar-nav>li .admin img {
                 position: relative;
                 width: 35px;
@@ -36,6 +42,18 @@
             
             .user-header {
                 background-color: lightskyblue;
+            }
+            
+            .user-body {
+                padding: 10px;
+            }
+            
+            .user-footer .pull-left {
+                padding-left: 10px;
+            }
+            
+            .user-footer .pull-right {
+                padding-right: 10px;
             }
             
             .nav-custom-menu>.navbar-nav>li {
