@@ -106,6 +106,21 @@
                 padding: 20px;
             }
             
+            .panel-group .panel-collapse {
+                list-style-type: none;
+                padding-left: 20px;
+                background-color: darkcyan;
+            }
+            
+            .panel-group .panel-heading {
+                padding: 0px;
+            }
+            
+            .panel-group .panel-collapse a {
+                text-transform: none;
+                font-size: 14px;
+            }
+            
             .img-circle {
                 width: 80px;
                 padding: 15px 0px;
@@ -164,6 +179,19 @@
                 letter-spacing: 2px;
                 font-weight: 500;
                 padding: 5px 0px;
+            }
+            
+            .panel {
+                background-color: inherit;
+            }
+            
+            .panel-default {
+                border: 0;
+            }
+            
+            .panel-default>.panel-heading {
+                background-color: #5F9EA0;
+                border-color: #5F9EA0;
             }
             
             .sidenav a:hover,

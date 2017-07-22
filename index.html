@@ -6,33 +6,30 @@
     <title>Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- load bootstrap and fontawesome via CDN -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" media="all">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/listpost.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/single.css">
+
+
     <!-- font -->
+    <link rel="stylesheet" href="library/font-awesome-4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
-    <!--  footer -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <!-- slider -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
-    <!-- fortawesome -->
-    <link rel="stylesheet" href="library/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!-- css -->
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/listpost.css">
-    <link rel="stylesheet" href="./css/login.css">
-    <!-- <link rel="stylesheet" href="./css/register.css"> -->
-    <link rel="stylesheet" href="./css/single.css">
-    <script>
-        $(document).ready(function() {
-            $(".btn").click(function() {
-                alert("Sent successfully!");
 
-            });
-        });
-    </script>
 </head>
 
 <body ng-controller="mainController">
@@ -70,7 +67,8 @@
                                     </ul>
                                 </li>
                                 <!--login -->
-                                <li><a href="#login">Login</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#registerModal">Register</a></li>
                                 <li><a href="admin.html">Admin</a></li>
 
                             </ul>
@@ -81,6 +79,7 @@
             </div>
         </div>
     </nav>
+
     <!--End Header -->
     <!--page-title -->
 
@@ -285,14 +284,129 @@
     </div>
 
     <!-- end footer -->
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
 
+
+
+
+    <!-- Modal-->
+    <div class="modal fade" id="registerModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Registration Form</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="firstName" class="control-label">Full Name</label>
+                        <div class="">
+                            <input type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="control-label">Email</label>
+                        <div class="">
+                            <input type="email" id="email" placeholder="Email" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class=" control-label">Password</label>
+                        <div class="">
+                            <input type="password" id="password" placeholder="Password" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="repassword" class="control-label">Repassword</label>
+                        <div class="">
+                            <input type="password" id="repassword" placeholder="Password(Confirm)" class=" form-control ">
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <div class="">
+                            <p>*Please comolete all fields correctly.</p>
+                        </div>
+                    </div>
+                    <div class="form-group input-block">
+                        <div class="">
+                            <button type="submit" class="btn btn-defaul btn-block ">Đăng kí</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="loginModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Login Form</h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="form-group">
+                        <label for="email" class="control-label">Email</label>
+                        <div class="">
+                            <input type="email" id="email" placeholder="Email" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class=" control-label">Password</label>
+                        <div class="">
+                            <input type="password" id="password" placeholder="Password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group input-block">
+                        <div class="">
+                            <button type="submit" class="btn btn-defaul btn-block ">Đăng nhập</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    </div>
+</body>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+<script>
+    $.noConflict();
+    jQuery('#myModal').on('hidden.bs.modal', function() {
+        jQuery("html").css("margin-right", "0px");
+    });
+    jQuery('#myModal').on('show.bs.modal', function() {
+        jQuery("html").css("margin-right", "-17px");
+    });
+</script>
+
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-<script src="script.js"></script>
-<script src="scripts/app.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+<script src="/scripts/app.js"></script>
+
 
 
 </html>

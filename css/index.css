@@ -1,3 +1,11 @@
+.modal-open {
+    padding-right: 0px!important;
+}
+
+.modal-content {
+    border-radius: 0;
+}
+
 a {
     text-transform: uppercase;
 }

@@ -6,13 +6,13 @@
     <title>Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="library/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/admin.css">
+
     <!-- font -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
-    <!-- fortawesome -->
-    <link rel="stylesheet" href="library/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!-- css -->
-    <link rel="stylesheet" href="./css/admin.css">
+
 </head>
 
 <body>
@@ -56,32 +56,48 @@
             </li>
 
 
-            <li class="dropdown">
-                <button class="dropdown-toggle" data-toggle="dropdown">
-                    <a href="#">
-                        <i class="fa fa-files-o"></i>
-                        <span>exam</span> </a></button>
-                <ul class="dropdown-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Boxed</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Fixed</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-                </ul>
-
+            <li class="panel-group widget" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a href="#category" data-toggle="collapse" data-parent="#accordion">
+                                <i class="fa fa-tags"></i> Category
+                                <span class="pull-right-container">
+                       <i class="fa fa-angle-left pull-right"></i>
+                             </span>
+                            </a>
+                        </h4>
+                    </div>
+                    <ul id="category" class="panel-collapse collapse">
+                        <li><a href=""> Top Navigation</a></li>
+                        <li><a href=""> Boxed</a></li>
+                        <li><a href=""> Fixed</a></li>
+                        <li><a href=""> Collapsed Sidebar</a></li>
+                    </ul>
+                </div>
             </li>
 
 
 
-
-            <li class="widget">
-                <a href="#">
-                    <i class="fa  fa-thumb-tack"></i>
-                    <span>Post</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
+            <li class="panel-group widget" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a href="#post" data-toggle="collapse" data-parent="#accordion">
+                                <i class="fa fa-thumb-tack"></i> Post
+                                <span class="pull-right-container">
+                       <i class="fa fa-angle-left pull-right"></i>
+                             </span>
+                            </a>
+                        </h4>
+                    </div>
+                    <ul id="post" class="panel-collapse collapse">
+                        <li><a href=""> Tất cả các bài viết</a></li>
+                        <li><a href=""> Viết bài mới</a></li>
+                    </ul>
+                </div>
             </li>
+
             <li class="widget dashboard">
                 <a href="#">
                     <i class="fa fa-star-o"></i>

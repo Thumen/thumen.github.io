@@ -1,5 +1,6 @@
 .input-title {
     width: 100%;
+    line-height: 40px;
 }
 
 .sidebar {
@@ -30,6 +31,10 @@
     background-color: #252525;
 }
 
+.tacvu {
+    padding: 15px 0px;
+}
+
 .fa {
     color: #626262;
 }
@@ -45,4 +50,27 @@
     padding: 15px;
     margin-bottom: 15px;
     border: 1px solid #a0a3a4;
+}
+
+.wysiwyg {
+    padding-top: 50px;
+}
+
+.ta-scroll-window {
+    height: 300px;
+    margin: 20px 0px;
+}
+
+.ta-scroll-window .ta-bind {
+    height: auto;
+    min-height: 300px;
+}
+
+.ta-scroll-window .form-control {
+    position: relative;
+}
+
+.btn-lg {
+    float: right;
+    margin: 15px 0;
 }

@@ -262,84 +262,18 @@
     </nav>
 
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-8 col-lg-9 ">
-                <h3> Viết bài mới </h3>
-                <input class="input-title" type="text" placeholder="Nhập tiêu đề tại đây...">
-                <div text-angular ng-model="htmlVariable"></div>
+        <div>
 
-            </div>
-
-
-
-            <div class="col-xs-12 col-md-4 col-lg-3 sidebar">
-                <div class="widget-right">
-                    <h5 class="title ">Đăng bài viết</h5>
-                    <div class="widget-underline "></div>
-                    <button class="btn btn-defaul btn-left" type="button"> Lưu nháp</button>
-                    <button class="btn btn-defaul btn-right" type="button"> Xem thử</button>
-                    <ul class="list-sidebar ">
-                        <li><i class="fa fa-spoon"></i> Trạng thái:
-                            <strong> Bản nháp </strong><a href="# ">Chỉnh sửa</a></li>
-                        <li><i class="fa fa-eye"></i> Chế độ xem:<strong> Công khai </strong><a href="# ">Chỉnh sửa</a></li>
-                        <li><i class="fa fa-calendar-check-o"></i> Đăng<strong> ngay lập tức </strong><a href="# ">Chỉnh sửa</a></li>
-                    </ul>
-                    <button class="btn btn-primary" type="button"> Đăng bài viết</button>
-
-
-                </div>
-
-                <div class="widget-right ">
-                    <h5 class="title"> Định dạng</h5>
-                    <div class="widget-underline "></div>
-                    <div clas="widget-body ">
-                        <form>
-                            <div class="radio">
-                                <label><input type="radio" name="optradio"><i class="fa fa-thumb-tack"> </i> Chuẩn</label>
-                            </div>
-                            <div class="radio">
-                                <label><input type="radio" name="optradio"><i class="fa fa-file-image-o"> </i> Hình ảnh</label>
-                            </div>
-                            <div class="radio disabled">
-                                <label><input type="radio" name="optradio"><i class="fa fa-youtube-play"> </i> Video</label>
-                            </div>
-                            <div class="radio">
-                                <label><input type="radio" name="optradio"><i class="fa fa-quote-left"> </i> Trích dẫn</label>
-                            </div>
-                            <div class="radio">
-                                <label><input type="radio" name="optradio"><i class="fa fa-link"> </i> Đường dẫn</label>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="widget-right ">
-                    <h5 class="title ">Chuyên mục</h5>
-                    <div class="widget-underline "></div>
-                    <form>
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">New & info</label>
-                        </div>
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">Events</label>
-                        </div>
-                    </form>
-                    <a href="">+ Thêm chuyên mục </a>
-                </div>
-                <div class="widget-right ">
-                    <h5 class="title"><i class="fa fa-tags"> Tag</i></h5>
-                    <input type="text" class="addtag"> <button class="btn btn-primary">+ Tag</button>
-                    <a href="#">Most rate</a>
-
-                </div>
-                <div class="widget-right ">
-                    <h5 class="title"> Ảnh đại diện</h5>
-                    <a href="#">Đặt ảnh đại diện </a>
-
-                </div>
-
-            </div>
+            <h3> Viết bài mới </h3>
+            <input class="input-title" type="text" placeholder="Nhập tiêu đề tại đây...">
+            <div text-angular ng-model="htmlVariable" class="wysiwyg"></div>
+            <button class="btn btn-primary btn-lg" type="button">Đăng bài viết</button>
         </div>
+
+
+
+
+    </div>
     </div>
 
 
