@@ -178,7 +178,7 @@
                 text-transform: capitalize;
                 letter-spacing: 2px;
                 font-weight: 500;
-                padding: 5px 0px;
+                padding: 10px 0px;
             }
             
             .panel {
@@ -210,6 +210,10 @@
             #main {
                 transition: margin-left .5s;
                 padding: 16px;
+            }
+            
+            .widget .fa-dashboard {
+                padding-top: 20px;
             }
             /* title */
             

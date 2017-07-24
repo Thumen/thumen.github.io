@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myModule">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>write new</title>
+    <title>category</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--css-->
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/admin-category.css">
+
     <!-- font -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
-    <!-- fortawesome -->
     <link rel="stylesheet" href="library/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!-- css -->
-    <link rel="stylesheet" href="./css/admin.css">
-    <link rel="stylesheet" href="./css/writenew.css">
+
 </head>
 
 <body>
@@ -56,32 +57,33 @@
                 </a>
             </li>
 
-
-            <li class="dropdown">
-                <button class="dropdown-toggle" data-toggle="dropdown">
-                    <a href="#">
-                        <i class="fa fa-files-o"></i>
-                        <span>exam</span> </a></button>
-                <ul class="dropdown-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Boxed</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Fixed</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-                </ul>
-
-            </li>
-
-
-
-            <li class="widget">
-                <a href="#">
-                    <i class="fa  fa-thumb-tack"></i>
-                    <span>Post</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+            <li class="widget dashboard">
+                <a href="admin-category.html">
+                    <i class="fa fa-tags"></i>
+                    <span>Category</span>
                 </a>
             </li>
+
+
+            <li class="panel-group widget" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a href="#post" data-toggle="collapse" data-parent="#accordion">
+                                <i class="fa fa-thumb-tack"></i> Post
+                                <span class="pull-right-container">
+                       <i class="fa fa-angle-left pull-right"></i>
+                             </span>
+                            </a>
+                        </h4>
+                    </div>
+                    <ul id="post" class="panel-collapse collapse">
+                        <li><a href="admin.html"> All posts</a></li>
+                        <li><a href="admin-writenew.html"> Add new</a></li>
+                    </ul>
+                </div>
+            </li>
+
             <li class="widget dashboard">
                 <a href="#">
                     <i class="fa fa-star-o"></i>
@@ -176,6 +178,7 @@
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Setting</span>
             <div class="nav-custom-menu pull-right">
                 <ul class="nav navbar-nav">
+
                     <li class="dropdown messages-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-envelope-o"></i>
@@ -195,8 +198,6 @@
                             <li class="header">You have 10 notifications</li>
                         </ul>
                     </li>
-
-
                     <li class="dropdown tasks-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-flag-o"></i>
@@ -208,12 +209,13 @@
                     </li>
 
                     <li>
-                        <a href="admin.html">Home</a></li>
+                        <a href="index.html">Home</a></li>
                     <li>
                         <a href="newandinfo">Page</a></li>
                     <li>
                         <a href="#">LogOut</a>
                     </li>
+
 
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle admin" data-toggle="dropdown" aria-expanded="false">
@@ -256,26 +258,87 @@
                             </li>
                         </ul>
                     </li>
+
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        <div>
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="title-lg">Tất cả các chuyên mục: </h3>
+                <ul class="list-inline total">
+                    <li class="all">
+                        <a href="#">Tất cả<span class="count">(4)</span></a> |
+                    </li>
+                    <li class="publish">
+                        <a href="#">Đã đăng<span class="count">(3)</span></a> |
+                    </li>
+                    <li>
+                        <div class="search">
+                            <label class="screen-reader-text" for="post-search-input"></label>
+                            <input class="" type="search" value="">
+                            <input class="" type="submit" class="button" value="Tìm các chuyên mục">
+                        </div>
+                    </li>
+                </ul>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Tiêu đề</th>
+                            <th>Tác giả</th>
+                            <th>Ngày tạo</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lorem Ipsum is simply dummy text of the printing</td>
+                            <td>Admin</td>
+                            <td>24/07/2017</td>
+                            <td><a href="#">Chỉnh sửa</a>/<a href="#">Xóa</a></td>
+                        </tr>
+                        <tr>
+                            <td>Lorem Ipsum is simply dummy text of the printing</td>
+                            <td>Admin</td>
+                            <td>24/07/2017</td>
+                            <td><a href="#">Chỉnh sửa</a>/<a href="#">Xóa</a></td>
+                        </tr>
+                        <tr>
+                            <td>Lorem Ipsum is simply dummy text of the printing</td>
+                            <td>Admin</td>
+                            <td>24/07/2017</td>
+                            <td><a href="#">Chỉnh sửa</a>/<a href="#">Xóa</a></td>
+                        </tr>
+                        <tr>
+                            <td>Lorem Ipsum is simply dummy text of the printing</td>
+                            <td>Admin</td>
+                            <td>24/07/2017</td>
+                            <td><a href="#">Chỉnh sửa</a>/<a href="#">Xóa</a></td>
+                        </tr>
+                    </tbody>
+                </table>
 
-            <h3> Viết bài mới </h3>
-            <input class="input-title" type="text" placeholder="Nhập tiêu đề tại đây...">
-            <div text-angular ng-model="htmlVariable" class="wysiwyg"></div>
-            <button class="btn btn-primary btn-lg" type="button">Đăng bài viết</button>
+            </div>
+            <div class="col-md-4">
+                <h3>Thêm chuyên đề:</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="comment">Tiêu đề:</label>
+                        <textarea class="form-control" rows="3" id="comment" placeholder="nhập tiêu đề cho chuyên mục..."></textarea>
+                    </div>
+                </form>
+                <form>
+                    <div class="form-group">
+                        <label for="comment">Mô tả:</label>
+                        <textarea class="form-control" rows="5" id="comment" placeholder="Thêm mô tả..."></textarea>
+                    </div>
+                </form>
+                <button type="submit" class="btn btn-primary">Thêm mới</button>
+            </div>
         </div>
-
-
-
-
     </div>
-    </div>
-
 
 
     <!-- footer -->
@@ -311,13 +374,6 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>
-<script src="/scripts/app-writenew.js"></script>
 
 
 </html>

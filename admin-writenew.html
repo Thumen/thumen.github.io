@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myModule">
 
 <head>
     <meta charset="UTF-8">
-    <title>Admin</title>
+    <title>write new</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!--css-->
-    <link rel="stylesheet" href="/css/admin.css">
 
     <!-- font -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="library/font-awesome-4.7.0/css/font-awesome.min.css">
 
+    <!-- css -->
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/admin-writenew.css">
 </head>
 
 <body>
@@ -56,14 +57,12 @@
                 </a>
             </li>
 
-
             <li class="widget dashboard">
                 <a href="admin-category.html">
                     <i class="fa fa-tags"></i>
                     <span>Category</span>
                 </a>
             </li>
-
 
             <li class="panel-group widget" id="accordion">
                 <div class="panel panel-default">
@@ -79,11 +78,10 @@
                     </div>
                     <ul id="post" class="panel-collapse collapse">
                         <li><a href="admin.html"> All posts</a></li>
-                        <li><a href="admin-writenew.html"> Add new</a></li>
+                        <li><a href="writenew.html"> Add new</a></li>
                     </ul>
                 </div>
             </li>
-
             <li class="widget dashboard">
                 <a href="#">
                     <i class="fa fa-star-o"></i>
@@ -178,7 +176,6 @@
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Setting</span>
             <div class="nav-custom-menu pull-right">
                 <ul class="nav navbar-nav">
-
                     <li class="dropdown messages-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-envelope-o"></i>
@@ -198,6 +195,8 @@
                             <li class="header">You have 10 notifications</li>
                         </ul>
                     </li>
+
+
                     <li class="dropdown tasks-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-flag-o"></i>
@@ -215,7 +214,6 @@
                     <li>
                         <a href="#">LogOut</a>
                     </li>
-
 
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle admin" data-toggle="dropdown" aria-expanded="false">
@@ -258,116 +256,19 @@
                             </li>
                         </ul>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        <h3 class="title-lg">Bài viết <a href="writenew.html"><button type="button" class="btn btn-primary">Viết bài mới</button></a></h3>
-        <ul class="list-inline total">
-            <li class="all">
-                <a href="#">Tất cả<span class="count">(4)</span></a> |
-            </li>
-            <li class="publish">
-                <a href="#">Đã đăng<span class="count">(3)</span></a> |
-            </li>
-            <li class="draft">
-                <a href="#">Bản nháp<span class="count">(1)</span></a>
-            </li>
-        </ul>
+        <div>
 
-        <div class="search">
-            <label class="screen-reader-text" for="post-search-input"></label>
-            <input class="" type="search" value="">
-            <input class="" type="submit" class="button" value="Tìm các bài viết">
+            <h3> Viết bài mới </h3>
+            <input class="input-title" type="text" placeholder="Nhập tiêu đề tại đây...">
+            <div text-angular ng-model="htmlVariable" class="wysiwyg"></div>
+            <button class="btn btn-primary btn-lg" type="button">Đăng bài viết</button>
         </div>
-        <ul class="list-inline total">
-            <li class="tablenav top">
-                <div class="actions">
-                    <label for="bulk-action-selector-top" class="screen-reader-text"></label>
-                    <select name="action" id="bulk-action-selector-top">
-                                <option value="-1">Tác vụ</option>
-                                <option value="edit" class="hide-if-no-js">Chỉnh sửa</option>
-                                <option value="trash">Bỏ vào thùng rác</option>
-                            </select>
-                    <input type="submit" class="button action" value="Áp dụng">
-            </li>
-            <li class="actions">
-                <label for="filter-by-date" class="screen-reader-text"></label>
-                <select name="m" id="filter-by-date">
-                            <option selected="selected" value="0">Thời gian</option>
-                            <option value="201705">Tháng Năm 2017 </option>
-                        </select>
-                <label class="screen-reader-text" for="cat"></label>
-                <select name="cat" id="cat" class="postform">
-                            <option value="0">Tất cả chuyên mục</option>
-                            <option class="level-0" value="">New & info</option>
-                            <option class="level-0" value="">Events</option>
-                            </select>
-                <input type="submit" name="filter_action" class="button" value="Lọc">
-            </li>
-        </ul>
-        </div>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">Tiêu đề</label>
-                        </div>
-                    </th>
-                    <th>Tác giả</th>
-                    <th>Chuyên đề</th>
-                    <th>Tag</th>
-                    <th><i class="fa fa-comment-o"></i></th>
-                    <th>Ngày</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">Lorem Ipsum is simply dummy text of the printing</label>
-                        </div>
-                    </td>
-                    <td>Paul scrivens</td>
-                    <td>john@example.com</td>
-                    <td>Events</td>
-                    <td>14</td>
-                    <td>Đã đăng 29/05/2017
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">Lorem Ipsum is simply dummy text of the printing</label>
-                        </div>
-                    </td>
-                    <td>Paul scrivens</td>
-                    <td>john@example.com</td>
-                    <td>New & info</td>
-                    <td>3</td>
-                    <td>Đã đăng 29/05/2017
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">Lorem Ipsum is simply dummy text of the printing</label>
-                        </div>
-                    </td>
-                    <td>Paul scrivens</td>
-                    <td>john@example.com</td>
-                    <td>Chưa được phân loại</td>
-                    <td>-</td>
-                    <td>Đã đăng 29/05/2017
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
     </div>
 
 
@@ -405,5 +306,13 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>
+<script src="/scripts/app-writenew.js"></script>
+
 
 </html>
