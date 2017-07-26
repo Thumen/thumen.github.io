@@ -30,7 +30,7 @@
             border-radius: 0;
         }
         
-        .btn-send {
+        .btn-block {
             letter-spacing: 2px;
             font-size: 11px;
             border: 3px solid white;
@@ -42,10 +42,4 @@
         
         .input-block {
             text-align: left;
-        }
-        
-        .btn-default:hover {
-            color: #000;
-            background-color: white;
-            border-color: #000;
         }

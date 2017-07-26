@@ -32,7 +32,7 @@
 
 </head>
 
-<body ng-controller="mainController">
+<body ng-controller="mainController" ng-init="init()">
     <nav class="navbar-fixed-top">
         <div class="container">
             <div class="row">
@@ -55,7 +55,7 @@
                                 <li>
                                     <a href="#">page</a></li>
                                 <li>
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#category">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                 category
                                 <span class="caret"></span>
                               </a>
@@ -178,7 +178,6 @@
                     </ul>
                 </div>
 
-
                 <div class="widget ">
                     <h5 class="title ">Text Widget</h5>
                     <div class="widget-underline "></div>
@@ -207,21 +206,7 @@
         </div>
     </div>
 
-    <!-- pagination -->
-    <div class="container ">
-        <div class="row ">
-            <div class="pagination animated fadeInUp ">
-                <a href="# "><i class="fa fa-chevron-left "></i>
-                <a href="# ">1</a>
-                <a href="# ">2</a>
-                <a class="active " href="# ">3</a>
-                <a href="# ">4</a>
-                <a href="# ">5</a>
-                <a href="# "><i class="fa fa-chevron-right "></i></a>
-            </div>
-        </div>
-    </div>
-    </div>
+
 
     <footer>
         <div class="container-fluid ">
@@ -333,7 +318,7 @@
                         </div>
                     </div>
                     <div class="form-group input-block">
-                        <div class="">
+                        <div class="signup">
                             <button type="submit" class="btn btn-defaul btn-block ">Đăng kí</button>
                         </div>
                     </div>
@@ -355,25 +340,27 @@
                 </div>
                 <div class="modal-body">
 
+                    <form ng-submit="login()">
+                        <div class="form-group">
+                            <label for="email" class="control-label">Email</label>
+                            <div class="">
+                                <input ng-model="user.email" type="email" id="email" placeholder="Email" class="form-control">
+                            </div>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="email" class="control-label">Email</label>
-                        <div class="">
-                            <input type="email" id="email" placeholder="Email" class="form-control">
+                        <div class="form-group">
+                            <label for="password" class=" control-label">Password</label>
+                            <div class="">
+                                <input ng-model="user.password" type="password" id="password" placeholder="Password" class="form-control">
+                            </div>
                         </div>
-                    </div>
+                        <div class="form-group input-block">
+                            <div class="login">
+                                <button type="submit" class="btn btn-defaul btn-block ">Đăng nhập</button>
+                            </div>
+                        </div>
+                    </form>
 
-                    <div class="form-group">
-                        <label for="password" class=" control-label">Password</label>
-                        <div class="">
-                            <input type="password" id="password" placeholder="Password" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group input-block">
-                        <div class="">
-                            <button type="submit" class="btn btn-defaul btn-block ">Đăng nhập</button>
-                        </div>
-                    </div>
 
                 </div>
             </div>
