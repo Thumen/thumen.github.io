@@ -1,8 +1,8 @@
-$.noConflict();
-jQuery(document).ready(function($) {
-    // Code that uses jQuery's $ can follow here.
-});
-var scotchApp = angular.module('scotchApp', ['ngRoute']);
+// $.noConflict();
+// jQuery(document).ready(function($) {
+// Code that uses jQuery's $ can follow here.
+//});
+var scotchApp = angular.module('scotchApp', ['ngRoute']); //textAngular
 scotchApp.config(['$locationProvider', function($locationProvider) {
     $locationProvider.hashPrefix('');
 }]);
@@ -17,7 +17,7 @@ scotchApp.config(function($routeProvider) {
         })
         .when('/single', {
             templateUrl: '/single.html',
-            controller: 'singleController'
+            controller: 'mainController'
         })
 
 
@@ -29,7 +29,71 @@ scotchApp.controller('mainController', function($scope, $http) {
     // create a message to display in our view
     var root = "https://green-web-blog.herokuapp.com";
 
-    $scope.message = 'Everyone come and see how good I look!';
+
+    $scope.apiGetCategories = function() {
+        $http.get(root + '/api/categories')
+            .success(function(response) {
+                console.log(response);
+                $scope.categories = response;
+            })
+            .error(function(data, status, headers, config) {
+                console.log(response);
+            });
+    };
+
+    $scope.apiGetArticles = function() {
+        $http.get(root + '/api/articles')
+            .success(function(response) {
+                console.log(response);
+                $scope.articles = response;
+            })
+            .error(function(data, status, headers, config) {
+                console.log(response);
+            });
+    };
+
+    $scope.getCategoryNameOfArticle = function(id) {
+
+        if (undefined != $scope.categories) {
+            for (i = 0; i < $scope.categories.length; i++) {
+                var cat = $scope.categories[i];
+                if (cat._id == id) {
+                    return cat.name;
+                }
+            }
+        };
+
+    }
+
+
+    $scope.submitCreateCategory = function() {
+
+        if ($scope.newCategory.name.length > 0 &&
+            $scope.newCategory.description.length > 0) {
+            $http.post(root + "/api/categories", $scope.newCategory)
+                .success(function(response) {
+                    $scope.categories.push(response);
+                    $scope.newCategory.name = "";
+                    $scope.newCategory.description = "";
+
+                }).error(function(data, status, headers, config) {
+                    console.log(data, status, headers, config);
+                });
+        } else {
+            alert("Input invalid");
+        }
+
+    }
+    $scope.submitCreateArticle = function() {
+        console.log($scope.newArticle);
+        $scope.newArticle._author = "5978a22fde96e7000418148b";
+        $http.post(root + '/api/articles/', $scope.newArticle)
+            .success(function(response) {
+                alert("Thành công")
+            }).error(function(data, status, headers, config) {
+                console.log(data, status, headers, config);
+            });;
+    };
 
     $scope.login = function() {
         //console.log($scope.user);
@@ -50,19 +114,28 @@ scotchApp.controller('mainController', function($scope, $http) {
             });
 
     };
+
     $scope.signup = function() {
 
-    }
-
-    $scope.init = function() {
-        $http.get(root + '/api/categories')
+        //POST Login API below:
+        $http.post(root + '/api/newusers/auth', $scope.newUser)
             .success(function(response) {
-                console.log(response);
-                $scope.categories = response;
+                var isSuccess = response.success;
+                if (isSuccess) {
+                    console.log(response);
+                } else {
+                    //Raise Error
+                    alert(response.message);
+                }
             })
             .error(function(data, status, headers, config) {
-
+                console.log(data, status, headers, config);
             });
-    }
 
+    };
+
+
+    $scope.init = function() {
+
+    }
 });

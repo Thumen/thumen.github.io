@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myModule">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/css/admin-writenew.css">
 </head>
 
-<body>
+<body ng-app="scotchApp">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         </a>
@@ -261,11 +261,16 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container" ng-controller="mainController">
         <div>
 
             <h3> Viết bài mới </h3>
             <input class="input-title" type="text" placeholder="Nhập tiêu đề tại đây...">
+            <select ng-init="apiGetCategories()">
+<option ng-repeat="cat in categories">
+    {{cat.name}}
+</option>
+            </select>
             <div text-angular ng-model="htmlVariable" class="wysiwyg"></div>
             <button class="btn btn-primary btn-lg" type="button">Đăng bài viết</button>
         </div>
@@ -290,7 +295,7 @@
     </footer>
 
     <!-- jquery -->
-    <script>
+    <!-- <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
             document.getElementById("main").style.marginLeft = "250px";
@@ -302,17 +307,21 @@
             document.getElementById("main").style.marginLeft = "0";
             document.body.style.backgroundColor = "white";
         }
-    </script>
+    </script> -->
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+<!-- <script>
+    $.noConflict;
+</script> -->
 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>
-<script src="/scripts/app-writenew.js"></script>
+<script src="scripts/app.js"></script>
 
 
 </html>
