@@ -20,8 +20,8 @@
 <body ng-app="scotchApp" ng-controller="mainController">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <ul class="main-menu">
 
+        <ul class="main-menu">
             <li class="user-panel">
                 <div class="pull-left image">
                     <img src="images/tattoos/avt.png" class="img-circle img-left" alt="User Image">
@@ -38,21 +38,19 @@
                         <div class="input-group col-md-12">
                             <input type="text" class="form-control input-md" placeholder="Search..." />
                             <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
+                            <button class="btn btn-info btn-lg" type="button">
+                               <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                            </span>
                         </div>
                     </div>
                 </div>
             </li>
+
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-dashboard"></i>
                     <span>Dashboard</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
                 </a>
             </li>
 
@@ -63,16 +61,14 @@
                 </a>
             </li>
 
-
-            <li class="panel-group widget" id="accordion">
+            <li class="panel-group widget">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a href="#post" data-toggle="collapse" data-parent="#accordion">
                                 <i class="fa fa-thumb-tack"></i> Post
-                                <span class="pull-right-container">
-                       <i class="fa fa-angle-left pull-right"></i>
-                             </span>
+                                <span class="pull-right-container"> </span>
+                                <i class="fa fa-angle-left pull-right"></i>
                             </a>
                         </h4>
                     </div>
@@ -83,19 +79,19 @@
                 </div>
             </li>
 
-            <li class="widget dashboard">
+            <li class="widget review">
                 <a href="#">
                     <i class="fa fa-star-o"></i>
                     <span>Reviews</span>
                 </a>
             </li>
+
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-image"></i>
                     <span>library</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                    <span class="pull-right-container">  </span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
 
@@ -104,12 +100,10 @@
                 <a href="#">
                     <i class="fa fa-files-o"></i>
                     <span>layout options</span>
-                    <span class="pull-right-container">
-              <span class="label label-primary pull-right">6</span>
-                    </span>
+                    <span class="pull-right-container"></span>
+                    <span class="label label-primary pull-right">6</span>
                 </a>
             </li>
-
 
             <li class="widget">
                 <a href="#">
@@ -122,39 +116,40 @@
                 <a href="#">
                     <i class="fa  fa-paint-brush"></i>
                     <span>Themes</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                    <span class="pull-right-container"> </span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
+
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-share-alt"></i>
                     <span>Widgets</span>
                 </a>
             </li>
+
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-address-book-o"></i>
                     <span>Utimate member</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                    <span class="pull-right-container"> </span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
+
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-calendar"></i>
                     <span>calendar</span>
                 </a>
             </li>
+
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-cog"></i>
                     <span>Setting</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                    <span class="pull-right-container"></span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
 
@@ -162,9 +157,8 @@
                 <a href="#">
                     <i class="fa fa-share-alt"></i>
                     <span>Social pug</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                    <span class="pull-right-container"></span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
         </ul>
@@ -188,43 +182,22 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown notifications-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell-o"></i>
-                            <span class="label label-warning">10</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 10 notifications</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown tasks-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-flag-o"></i>
-                            <span class="label label-danger">9</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 9 tasks</li>
-                        </ul>
-                    </li>
-
                     <li>
                         <a href="index.html">Home</a></li>
                     <li>
                         <a href="newandinfo">Page</a></li>
-                    <li>
-                        <a href="#">LogOut</a>
-                    </li>
+
 
 
                     <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle admin" data-toggle="dropdown" aria-expanded="false">
-                            <img src="images/tattoos/avt.png" class="user-image" alt="User Image" data-pin-nopin="true">
+                        <a href="#" class="dropdown-toggle admin" data-toggle="dropdown">
+                            <img src="images/tattoos/avt.png" class="user-image" alt="User Image">
                             <span class="hidden-xs">Hello Mén !?</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="images/tattoos/avt.png" class="img-circle" alt="User Image" data-pin-nopin="true">
+                                <img src="images/tattoos/avt.png" class="img-circle" alt="User Image">
 
                                 <p>
                                     Mén - Web Developer</br>
@@ -244,13 +217,9 @@
                                         <a href="#">Friends</a>
                                     </div>
                                 </div>
-
                             </li>
 
                             <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                </div>
                                 <div class="pull-right">
                                     <a href="#" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
@@ -293,7 +262,7 @@
                             <td>{{cat.name}}</td>
                             <td>{{cat.desciption}}</td>
                             <td>{{cat.create_date}}</td>
-                            <td><a href="#{{cat._id}}">Chỉnh sửa</a>/<a href="#{{cat._id}}">Xóa</a></td>
+                            <td><a href="#{{art._id}}"><span class="label label-warning">Chỉnh sửa</span></a> <a href="#{{art._id}}"><span class="label label-danger">Xóa</span></a></td>
                         </tr>
 
                     </tbody>

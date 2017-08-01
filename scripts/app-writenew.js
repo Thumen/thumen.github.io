@@ -1,1 +1,1 @@
-angular.module('myModule', ['textAngular']);
+ angular.module('scotchApp', ['textAngular']);

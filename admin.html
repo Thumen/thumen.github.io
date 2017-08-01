@@ -19,9 +19,8 @@
 <body ng-app="scotchApp" ng-controller="mainController" ng-init="apiGetCategories()">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        </a>
-        <ul class="main-menu">
 
+        <ul class="main-menu">
             <li class="user-panel">
                 <div class="pull-left image">
                     <img src="images/tattoos/avt.png" class="img-circle img-left" alt="User Image">
@@ -38,24 +37,21 @@
                         <div class="input-group col-md-12">
                             <input type="text" class="form-control input-md" placeholder="Search..." />
                             <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
+                            <button class="btn btn-info btn-lg" type="button">
+                               <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                            </span>
                         </div>
                     </div>
                 </div>
             </li>
+
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-dashboard"></i>
                     <span>Dashboard</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
                 </a>
             </li>
-
 
             <li class="widget dashboard">
                 <a href="admin-category.html">
@@ -64,16 +60,14 @@
                 </a>
             </li>
 
-
-            <li class="panel-group widget" id="accordion">
+            <li class="panel-group widget">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a href="#post" data-toggle="collapse" data-parent="#accordion">
                                 <i class="fa fa-thumb-tack"></i> Post
-                                <span class="pull-right-container">
-                       <i class="fa fa-angle-left pull-right"></i>
-                             </span>
+                                <span class="pull-right-container"> </span>
+                                <i class="fa fa-angle-left pull-right"></i>
                             </a>
                         </h4>
                     </div>
@@ -84,19 +78,19 @@
                 </div>
             </li>
 
-            <li class="widget dashboard">
+            <li class="widget review">
                 <a href="#">
                     <i class="fa fa-star-o"></i>
                     <span>Reviews</span>
                 </a>
             </li>
+
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-image"></i>
                     <span>library</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                    <span class="pull-right-container">  </span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
 
@@ -105,12 +99,10 @@
                 <a href="#">
                     <i class="fa fa-files-o"></i>
                     <span>layout options</span>
-                    <span class="pull-right-container">
-              <span class="label label-primary pull-right">6</span>
-                    </span>
+                    <span class="pull-right-container"></span>
+                    <span class="label label-primary pull-right">6</span>
                 </a>
             </li>
-
 
             <li class="widget">
                 <a href="#">
@@ -123,39 +115,40 @@
                 <a href="#">
                     <i class="fa  fa-paint-brush"></i>
                     <span>Themes</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                    <span class="pull-right-container"> </span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
+
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-share-alt"></i>
                     <span>Widgets</span>
                 </a>
             </li>
+
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-address-book-o"></i>
                     <span>Utimate member</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                    <span class="pull-right-container"> </span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
+
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-calendar"></i>
                     <span>calendar</span>
                 </a>
             </li>
+
             <li class="widget">
                 <a href="#">
                     <i class="fa fa-cog"></i>
                     <span>Setting</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                    <span class="pull-right-container"></span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
 
@@ -163,9 +156,8 @@
                 <a href="#">
                     <i class="fa fa-share-alt"></i>
                     <span>Social pug</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                    <span class="pull-right-container"></span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
         </ul>
@@ -186,16 +178,6 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li class="header">You have 4 messages</li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown notifications-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell-o"></i>
-                            <span class="label label-warning">10</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 10 notifications</li>
                         </ul>
                     </li>
 
@@ -282,17 +264,10 @@
             </li>
             <li class="actions">
                 <label for="filter-by-date" class="screen-reader-text"></label>
-                <select name="m" id="filter-by-date">
-                            <option selected="selected" value="0">Thời gian</option>
-                            <option value="201705">Tháng Năm 2017 </option>
+                <select>
+                            <option ng-repeat="cat in categories">{{cat.name}} </option>
+                            
                         </select>
-                <label class="screen-reader-text" for="cat"></label>
-                <select name="cat" id="cat" class="postform">
-                            <option value="0">Tất cả chuyên mục</option>
-                            <option class="level-0" value="">New & info</option>
-                            <option class="level-0" value="">Events</option>
-                            </select>
-                <input type="submit" name="filter_action" class="button" value="Lọc">
             </li>
         </ul>
         </div>
@@ -324,7 +299,7 @@
                     <td>{{art.comments.length}}</td>
                     <td>{{art.createdDate}}</td>
                     <td>{{art.updatedDate}}</td>
-                    <td><a href="#{{art._id}}">Chỉnh sửa</a>/<a href="#{{art._id}}">Xóa</a></td>
+                    <td><a href="#{{art._id}}"><span class="label label-warning">Chỉnh sửa</span></a> <a href="#{{art._id}}"><span class="label label-danger">Xóa</span></a></td>
                 </tr>
             </tbody>
         </table>

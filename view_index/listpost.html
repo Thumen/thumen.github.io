@@ -1,5 +1,5 @@
 <div ng-init="apiGetArticles()" class="col-xs-12 col-md-9 col-sm-9 col-lg-8 post ">
-    <div ng-repeat="x in articles" class="post post-text">
+    <div ng-repeat="art in articles" class="post post-text">
 
         <a href="#single ">
             <img src="images/tattoos/images.jpg ">
@@ -7,17 +7,16 @@
         </a>
 
         <div class="title">
-            <a href="#single">{{x.title}}</a>
+            <a href="#single">{{art.title}}</a>
         </div>
         <div class="widget-underline "></div>
         <div class="post-date ">
             Posted by
-            <a href="# ">{{x.author}}</a> | 02 January 2017|
-            <a href="# ">New & Info</a>
+            <a href="#"> {{art._author.name}}</a> | <a href="# "> Danh mục:{{art._category}}</a></br>
+            <a href="">Creasted: {{art.createdDate}}</a> | <a href="">Update: {{art.updatedDate}}<a>
         </div>
-        <div class="blog-post ">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                has been the standard dummy text.</p>
+        <div class="blog-post">
+            <p>{{art.description}}</p>
         </div>
 
         <div class="post-social ">

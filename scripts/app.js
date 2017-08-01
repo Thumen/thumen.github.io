@@ -1,8 +1,8 @@
-// $.noConflict();
+// $.noConflict();i
 // jQuery(document).ready(function($) {
 // Code that uses jQuery's $ can follow here.
 //});
-var scotchApp = angular.module('scotchApp', ['ngRoute']); //textAngular
+var scotchApp = angular.module('scotchApp', ['ngRoute']);
 scotchApp.config(['$locationProvider', function($locationProvider) {
     $locationProvider.hashPrefix('');
 }]);
@@ -12,11 +12,11 @@ scotchApp.config(function($routeProvider) {
 
     // route for the home page
         .when('/', {
-            templateUrl: '/listpost.html',
+            templateUrl: '/view_index/listpost.html',
             controller: 'mainController'
         })
         .when('/single', {
-            templateUrl: '/single.html',
+            templateUrl: '/view_index/single.html',
             controller: 'mainController'
         })
 
