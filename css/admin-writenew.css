@@ -1,62 +1,32 @@
-.ta-hidden-input {
-    display: none;
-}
-
-.input-title {
-    width: 100%;
-    line-height: 40px;
-}
-
-.sidebar {
-    padding-top: 56px;
-}
-
-.title {
-    line-height: 20px;
-    padding: 15px;
-    padding-top: 0px;
-    margin: 0px -15px;
-    text-transform: uppercase;
-    color: #000;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-
-.widget-title {
-    font-size: 12px;
-    letter-spacing: 2px;
-    font-weight: 600;
-}
-
-.widget-underline {
-    height: 1px;
-    width: 30px;
-    background-color: #252525;
-}
-
-.tacvu {
-    padding: 15px 0px;
-}
-
-.fa {
-    color: #626262;
-}
-
-.list-sidebar {
-    list-style-type: none;
-    padding: 10px 0px;
-    margin-left: 2px;
-    color: #636363;
-}
-
-.widget-right {
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #a0a3a4;
-}
-
-.wysiwyg {
+ .ta-hidden-input {
+     display: none;
+ }
+ 
+ .panel-default {
+     margin: 30px auto;
+     border: 1px solid #000;
+     border-radius: 5px;
+     max-width: 80%;
+ }
+ 
+ .panel-heading {
+     text-transform: uppercase;
+     color: #000;
+     font-size: 15px;
+     font-weight: 700;
+     letter-spacing: 3px;
+ }
+ 
+ .form-group {
+     padding: 10px 0;
+ }
+ 
+ .panel-body label {
+     font-size: 14px;
+     letter-spacing: 2px;
+     font-weight: 600;
+ }
+ /* .wysiwyg {
     padding-top: 50px;
 }
 
@@ -72,9 +42,4 @@
 
 .ta-scroll-window .form-control {
     position: relative;
-}
-
-.btn-lg {
-    float: right;
-    margin: 15px 0;
-}
+} */

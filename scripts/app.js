@@ -64,7 +64,6 @@ scotchApp.controller('mainController', function($scope, $http) {
     };
 
     $scope.getCategoryNameOfArticle = function(id) {
-
         if (undefined != $scope.categories) {
             for (i = 0; i < $scope.categories.length; i++) {
                 var cat = $scope.categories[i];
@@ -75,6 +74,17 @@ scotchApp.controller('mainController', function($scope, $http) {
         };
 
     }
+
+
+    // $scope.getArticleOfCategory = function(id, num) {
+    //     var result = [];
+    //     for (i = 0; i < $scope.articles.length; i++) {
+    //         if (i === num) {
+    //             return result;
+    //         };
+    //         result.push($scope.articles[i]);
+    //     };
+    // };
 
 
     $scope.submitCreateCategory = function() {
@@ -128,7 +138,7 @@ scotchApp.controller('mainController', function($scope, $http) {
 
     $scope.signup = function() {
 
-        //POST Login API below:
+        //POST signup API below:
         $http.post(root + '/api/users/auth', $scope.newUser)
             .success(function(response) {
                 var isSuccess = response.success;

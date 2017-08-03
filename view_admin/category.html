@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container panel panel-defaul">
     <div class="row">
         <div class="col-md-8">
             <h3 class="title-lg">Tất cả các chuyên mục: </h3>
@@ -26,7 +26,7 @@
                 <tbody>
                     <tr ng-repeat="cat in categories">
                         <td>{{cat.name}}</td>
-                        <td>{{cat.desciption}}</td>
+                        <td>{{cat.description}}</td>
                         <td>{{cat.create_date}}</td>
                         <td><a href="#{{art._id}}"><span class="label label-warning">Chỉnh sửa</span></a> <a href="#{{art._id}}"><span class="label label-danger">Xóa</span></a></td>
                     </tr>
