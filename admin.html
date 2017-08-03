@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="scotchApp">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!--css-->
     <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/admin-category.css">
+    <link rel="stylesheet" href="/css/admin-writenew.css">
 
     <!-- font -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -16,7 +18,7 @@
 
 </head>
 
-<body ng-app="scotchApp" ng-controller="mainController" ng-init="apiGetCategories()">
+<body ng-controller="mainController" ng-init="apiGetCategories()">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
@@ -54,28 +56,17 @@
             </li>
 
             <li class="widget dashboard">
-                <a href="admin-category.html">
+                <a href="#category">
                     <i class="fa fa-tags"></i>
                     <span>Category</span>
                 </a>
             </li>
 
-            <li class="panel-group widget">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a href="#post" data-toggle="collapse" data-parent="#accordion">
-                                <i class="fa fa-thumb-tack"></i> Post
-                                <span class="pull-right-container"> </span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                        </h4>
-                    </div>
-                    <ul id="post" class="panel-collapse collapse">
-                        <li><a href="admin.html"> All posts</a></li>
-                        <li><a href="admin-writenew.html"> Add new</a></li>
-                    </ul>
-                </div>
+            <li class="widget review">
+                <a href="#post">
+                    <i class="fa fa-thumb-tack"></i>
+                    <span>Post</span>
+                </a>
             </li>
 
             <li class="widget review">
@@ -238,73 +229,10 @@
         </div>
     </nav>
 
-    <div class="container">
-        <h3 class="title-lg">Bài viết <a href="admin-writenew.html"><button type="button" class="btn btn-primary">Viết bài mới</button></a></h3>
-        <ul class="list-inline total">
-            <li class="all">
-                <a href="#">Tất cả<span class="count"> ({{articles.length}})</span></a> |
-            </li>
-        </ul>
 
-        <div class="search">
-            <label class="screen-reader-text" for="post-search-input"></label>
-            <input class="" type="search" value="">
-            <input class="" type="submit" class="button" value="Tìm các bài viết">
-        </div>
-        <ul class="list-inline total">
-            <li class="tablenav top">
-                <div class="actions">
-                    <label for="bulk-action-selector-top" class="screen-reader-text"></label>
-                    <select name="action" id="bulk-action-selector-top">
-                                <option value="-1">Tác vụ</option>
-                                <option value="edit" class="hide-if-no-js">Chỉnh sửa</option>
-                                <option value="trash">Bỏ vào thùng rác</option>
-                            </select>
-                    <input type="submit" class="button action" value="Áp dụng">
-            </li>
-            <li class="actions">
-                <label for="filter-by-date" class="screen-reader-text"></label>
-                <select>
-                            <option ng-repeat="cat in categories">{{cat.name}} </option>
-                            
-                        </select>
-            </li>
-        </ul>
-        </div>
-        <table ng-init="apiGetArticles()" class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">Tiêu đề</label>
-                        </div>
-                    </th>
-                    <th>Tác giả</th>
-                    <th>Danh mục</th>
-                    <th><i class="fa fa-comment-o"></i>Bình luận</th>
-                    <th>Ngày tạo</th>
-                    <th>Ngày chỉnh sửa</th>
-                    <th>Thao tác</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="art in articles">
-                    <td>
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">{{art.title}}</label>
-                        </div>
-                    </td>
-                    <td>{{art._author.name}}</td>
-                    <td>{{getCategoryNameOfArticle(art._category)}}</td>
-                    <td>{{art.comments.length}}</td>
-                    <td>{{art.createdDate}}</td>
-                    <td>{{art.updatedDate}}</td>
-                    <td><a href="#{{art._id}}"><span class="label label-warning">Chỉnh sửa</span></a> <a href="#{{art._id}}"><span class="label label-danger">Xóa</span></a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
+    <!-- view -->
+    <div ng-view></div>
+    <!-- end view -->
 
     <!-- footer -->
     <footer class="footer">
@@ -343,6 +271,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>
 
 <script src="/scripts/app.js"></script>
 

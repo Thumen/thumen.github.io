@@ -1,0 +1,64 @@
+<div class="container">
+    <h3 class="title-lg">Bài viết <a href="#writenew"><button type="button" class="btn btn-primary">Viết bài mới</button></a></h3>
+    <ul class="list-inline total">
+        <li class="all">
+            <a href="#">Tất cả<span class="count"> ({{articles.length}})</span></a> |
+        </li>
+    </ul>
+
+    <div class="search">
+        <label class="screen-reader-text" for="post-search-input"></label>
+        <input class="" type="search" value="">
+        <input class="" type="submit" class="button" value="Tìm các bài viết">
+    </div>
+    <ul class="list-inline total">
+        <li class="tablenav top">
+            <div class="actions">
+                <label for="bulk-action-selector-top" class="screen-reader-text"></label>
+                <select name="action" id="bulk-action-selector-top">
+                                <option value="-1">Tác vụ</option>
+                                <option value="edit" class="hide-if-no-js">Chỉnh sửa</option>
+                                <option value="trash">Bỏ vào thùng rác</option>
+                </select>
+                <input type="submit" class="button action" value="Áp dụng">
+            </div>
+        </li>
+        <li class="actions">
+            <label for="filter-by-date" class="screen-reader-text"></label>
+            <select><option ng-repeat="cat in categories">{{cat.name}}</option></select>
+        </li>
+    </ul>
+
+    <table ng-init="apiGetArticles()" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">Tiêu đề</label>
+                    </div>
+                </th>
+                <th>Tác giả</th>
+                <th>Danh mục</th>
+                <th><i class="fa fa-comment-o"></i></th>
+                <th>Ngày tạo</th>
+                <th>Ngày chỉnh sửa</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="art in articles">
+                <td>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">{{art.title}}</label>
+                    </div>
+                </td>
+                <td>{{art._author.name}}</td>
+                <td>{{getCategoryNameOfArticle(art._category)}}</td>
+                <td>{{art.comments.length}}</td>
+                <td>{{art.createdDate}}</td>
+                <td>{{art.updatedDate}}</td>
+                <td><a href="#{{art._id}}"><span class="label label-warning">Chỉnh sửa</span></a> <a href="#{{art._id}}"><span class="label label-danger">Xóa</span></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

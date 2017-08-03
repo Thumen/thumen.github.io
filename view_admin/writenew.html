@@ -1,0 +1,28 @@
+<div class="container">
+    <h3> Viết bài mới </h3>
+    <form ng-submit="submitCreateArticle()" ng-init="apiGetCategories()">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" ng-model="newArticle.title" placeholder="Title">
+        </div>
+        <div class="form-group">
+            <label>Author</label>
+            <input type="text" class="form-control" value="{{user._id}}" placeholder="Author ID">
+        </div>
+        <select ng-model="newArticle._categories" ng-required="true" ng-options="category as category.name for category in categories track by category._id" />
+        </select>
+
+        <div class="form-group">
+            <label>Full Description</label>
+            <textarea class="form-control" ng-model="newArticle.description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Media</label>
+            <input type="text" class="form-control" ng-model="newArticle.media" placeholder="Image, Youtube Link...">
+        </div>
+
+        <div text-angular ng-model="htmlVariable" class="wysiwyg"></div>
+        <button class="btn btn-default" type="submit">Đăng bài viết</button>
+    </form>
+</div>

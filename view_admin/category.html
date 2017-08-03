@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="title-lg">Tất cả các chuyên mục: </h3>
+            <ul class="list-inline total">
+                <li class="all">
+                    <a href="#">Tất cả<span class="count"> ({{categories.length}})</span></a> |
+                </li>
+                <li>
+                    <div class="search">
+                        <label class="screen-reader-text" for="post-search-input"></label>
+                        <input class="" type="search" value="">
+                        <input class="" type="submit" class="button" value="Tìm các chuyên mục">
+                    </div>
+                </li>
+            </ul>
+            <table ng-init="apiGetCategories()" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Tên danh mục</th>
+                        <th>Mô tả</th>
+                        <th>Ngày tạo</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="cat in categories">
+                        <td>{{cat.name}}</td>
+                        <td>{{cat.desciption}}</td>
+                        <td>{{cat.create_date}}</td>
+                        <td><a href="#{{art._id}}"><span class="label label-warning">Chỉnh sửa</span></a> <a href="#{{art._id}}"><span class="label label-danger">Xóa</span></a></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-md-4">
+            <h3>Thêm chuyên đề:</h3>
+            <form ng-submit="submitCreateCategory()">
+                <div class="form-group">
+                    <label for="comment">Tiêu đề:</label>
+                    <textarea ng-model="newCategory.name" class="form-control" rows="3" id="comment" placeholder="nhập tiêu đề cho chuyên mục..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="comment">Mô tả:</label>
+                    <textarea ng-model="newCategory.description" class="form-control" rows="5" id="comment" placeholder="Thêm mô tả..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Thêm mới</button>
+            </form>
+
+        </div>
+    </div>
+</div>

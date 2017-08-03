@@ -1,7 +1,3 @@
-// $.noConflict();i
-// jQuery(document).ready(function($) {
-// Code that uses jQuery's $ can follow here.
-//});
 var scotchApp = angular.module('scotchApp', ['ngRoute']);
 scotchApp.config(['$locationProvider', function($locationProvider) {
     $locationProvider.hashPrefix('');
@@ -19,9 +15,24 @@ scotchApp.config(function($routeProvider) {
             templateUrl: '/view_index/single.html',
             controller: 'mainController'
         })
+});
 
+scotchApp.config(function($routeProvider) {
+    $routeProvider
 
-
+    // route for the home page
+        .when('/category', {
+            templateUrl: '/view_admin/category.html',
+            controller: 'mainController'
+        })
+        .when('/post', {
+            templateUrl: '/view_admin/allpost.html',
+            controller: 'mainController'
+        })
+        .when('/writenew', {
+            templateUrl: '/view_admin/writenew.html',
+            controller: 'mainController'
+        })
 });
 
 // create the controller and inject Angular's $scope
@@ -86,7 +97,7 @@ scotchApp.controller('mainController', function($scope, $http) {
     }
     $scope.submitCreateArticle = function() {
         console.log($scope.newArticle);
-        $scope.newArticle._author = "5978a22fde96e7000418148b";
+        $scope.newArticle._author = "5981d730b38ced0004f0c5da";
         $http.post(root + '/api/articles/', $scope.newArticle)
             .success(function(response) {
                 alert("Thành công")
@@ -118,7 +129,7 @@ scotchApp.controller('mainController', function($scope, $http) {
     $scope.signup = function() {
 
         //POST Login API below:
-        $http.post(root + '/api/newusers/auth', $scope.newUser)
+        $http.post(root + '/api/users/auth', $scope.newUser)
             .success(function(response) {
                 var isSuccess = response.success;
                 if (isSuccess) {
