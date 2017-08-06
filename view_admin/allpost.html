@@ -45,7 +45,7 @@
                 <th>Thao tác</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody ng-init="apiGetCategories()">
             <tr ng-repeat="art in articles">
                 <td>
                     <div class="checkbox">

@@ -1,20 +1,20 @@
 <div ng-init="apiGetArticles()" class="col-xs-12 col-md-9 col-sm-9 col-lg-8 post ">
     <div ng-repeat="art in articles" class="post post-text">
 
-        <a href="#single ">
+        <a href="#single/{{art._id}} ">
             <img ng-src="{{art.media}}">
 
             <div class="blog-detail ">
         </a>
 
         <div class="title">
-            <a href="#single">{{art.title}}</a>
+            <a href="#single/{{art._id}}">{{art.title}}</a>
         </div>
         <div class="widget-underline "></div>
         <div class="post-date ">
             Posted by
-            <a href="#"> {{art._author.name}}</a> | <a href="# "> Danh mục:{{art._category}}</a></br>
-            <a href="">Creasted: {{art.createdDate}}</a> | <a href="">Update: {{art.updatedDate}}<a>
+            <a href="#"> {{art._author.name}}</a> | <a href="# "> Danh mục: {{getCategoryNameOfArticle(art._category)}}</a></br>
+            <a href="">Creasted: {{art.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a> | <a href="">Update: {{art.updatedDate | date: 'dd-MM-yyyy HH:mm:ss'}}<a>
         </div>
         <div class="blog-post">
             <p>{{art.description}}</p>
@@ -26,7 +26,7 @@
             <a href="# " class=" "><i class="fa fa-comment-o "> 3 Comment(s)</i></a>
         </div>
         <div class="readmore-block ">
-            <a href="#single " class="btn btn-small btn-default btn-readmore ">Continue Reading</a>
+            <a href="#single/{{art._id}}" class="btn btn-small btn-default btn-readmore ">Continue Reading</a>
         </div>
         </div>
         <div class="widget-underline end-post "></div>
