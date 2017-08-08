@@ -54,7 +54,7 @@
                                     <a href="#">new & info</a></li>
                                 <li>
                                     <a href="#">page</a></li>
-                                <li ng-init="apiGetCategories()">
+                                <li>
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                       category  <span class="caret"></span> 
                                     </a>
@@ -118,10 +118,7 @@
                     <h5 class="title ">Categories</h5>
                     <div class="widget-underline "></div>
                     <ul class="category-list list-sidebar ">
-                        <li><a href="# ">Photo  <span>23</span></a></li>
-                        <li><a href="# ">Tattoos<span> 26</span></a></li>
-                        <li><a href="# ">News and Events <span> 22</span></a></li>
-
+                        <li ng-repeat="cat in categories"><a href="# ">{{cat.name}} / ({{category.length}})</a></li>
                     </ul>
                 </div>
 
@@ -130,29 +127,27 @@
                     <div class="widget-underline "></div>
                     <div clas="widget-body ">
                         <div class="posts-list list-sidebar ">
-                            <div class="clear-fix ">
-                                <a href="# "><img src="images/tattoos/travel1.jpg " alt=" "></a>
-                                <div class="widget-posts-details "><a href="# ">Elements of a Launch Page</a>
-                                    <p>Simon Schmid - 02 January</p>
+                            <div ng-repeat="post in popularArticles" class="clear-fix ">
+                                <a href="# "><img ng-src="{{post.media}}"></a>
+                                <div class="widget-posts-details "><a href="# ">{{post.title}}</a>
+                                    <p>Created: {{post.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</p>
 
                                 </div>
                             </div>
-                            <div class="clear-fix ">
-                                <a href="# "><img src="images/tattoos/travel1.jpg " alt=" "></a>
-                                <div class="widget-posts-details "><a href="# ">Elements of a Launch Page</a>
-                                    <p>Simon Schmid - 02 January</p>
-                                </div>
-                            </div>
-                            <div class="clear-fix ">
-                                <a href="# "><img src="images/tattoos/travel1.jpg " alt=" "></a>
-                                <div class="widget-posts-details "><a href="# ">Elements of a Launch Page</a>
-                                    <p> Simon Schmid - 02 January</p>
-                                </div>
-                            </div>
-                            <div class="clear-fix ">
-                                <a href="# "><img src="images/tattoos/travel1.jpg " alt=" "></a>
-                                <div class="widget-posts-details "><a href="# ">Elements of a Launch Page</a>
-                                    <p>Simon Schmid - 02 January</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget ">
+                    <h5 class="title ">Random Posts</h5>
+                    <div class="widget-underline "></div>
+                    <div clas="widget-body ">
+                        <div class="posts-list list-sidebar ">
+                            <div ng-repeat="post in randomArticles" class="clear-fix ">
+                                <a href="# "><img ng-src="{{post.media}}"></a>
+                                <div class="widget-posts-details "><a href="# ">{{post.title}}</a>
+                                    <p>Created: {{post.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</p>
+
                                 </div>
                             </div>
                         </div>
@@ -166,12 +161,7 @@
                         <li><a href="# ">Elements of A Launch Page</a>
                             <p>Paul Boag - 08 January</p>
                         </li>
-                        <li><a href="# ">Elements of A Launch Page</a>
-                            <p>Paul Boag - 08 January</p>
-                        </li>
-                        <li><a href="# ">Elements of A Launch Page</a>
-                            <p>Paul Boag - 08 January</p>
-                        </li>
+
                     </ul>
                 </div>
 

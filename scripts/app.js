@@ -15,45 +15,32 @@ scotchApp.config(function($routeProvider) {
             templateUrl: '/view_index/single.html',
             controller: 'mainController'
         })
+
 });
 
-scotchApp.config(function($routeProvider) {
-    $routeProvider
-
-    // route for the home page
-        .when('/category', {
-            templateUrl: '/view_admin/category.html',
-            controller: 'mainController'
-        })
-        .when('/post', {
-            templateUrl: '/view_admin/allpost.html',
-            controller: 'mainController'
-        })
-        .when('/writenew', {
-            templateUrl: '/view_admin/writenew.html',
-            controller: 'mainController'
-        })
-});
 
 // create the controller and inject Angular's $scope
 scotchApp.controller('mainController', function(
     $scope,
     $http,
     $routeParams,
-    $location
+    $location,
+    $rootScope
 ) {
     // create a message to display in our view
     var root = "https://green-web-blog.herokuapp.com";
+    var maxPopularArticlesNumber = 5;
+    var maxRandomArticlesNumber = 5;
+
+
     $scope.init = function() {
         $scope.apiGetArticles();
+        $scope.apiGetCategories();
     }
-
-
 
     $scope.apiGetCategories = function() {
         $http.get(root + '/api/categories')
             .success(function(response) {
-                console.log(response);
                 $scope.categories = response;
             })
             .error(function(data, status, headers, config) {
@@ -64,7 +51,6 @@ scotchApp.controller('mainController', function(
     $scope.apiGetArticles = function() {
         $http.get(root + '/api/articles')
             .success(function(response) {
-                console.log(response);
                 $scope.articles = response;
             })
             .error(function(data, status, headers, config) {
@@ -73,19 +59,19 @@ scotchApp.controller('mainController', function(
     };
 
 
-    $scope.apiGetArticle = function() {
-        var id = $routeParams.id;
+    // $scope.apiGetArticle = function() {
+    //     var id = $routeParams.id;
 
-        angular.forEach($scope.articles, function(value, key) {
-            if (value._id === id) {
-                $scope.article = value;
-                console.log("success");
-                return false;
+    //     angular.forEach($scope.articles, function(value, key) {
+    //         if (value._id === id) {
+    //             $scope.article = value;
+    //             console.log("success");
+    //             return false;
 
-            }
-        });
+    //         }
+    //     });
 
-    };
+    // };
 
     $scope.getCategoryNameOfArticle = function(id) {
         if (undefined != $scope.categories) {
@@ -110,9 +96,9 @@ scotchApp.controller('mainController', function(
     //     };
     // };
 
-    // $scope.getArticle = function() {
-    //     $scope.currentArticleId = $routeParams.id;
-    // };
+    $scope.getArticle = function() {
+        $scope.currentArticleId = $routeParams.id;
+    };
 
 
     $scope.submitCreateCategory = function() {
@@ -146,29 +132,52 @@ scotchApp.controller('mainController', function(
 
 
 
-    $scope.getArticlesInCategory = function() {
-        var id = $routeParams.id;
-        var articlesInCategoryId = [];
-        // alert(id);
-        angular.forEach($scope.articles, function(value, key) {
-            if (value.category._id === id) {
-                articlesInCategoryId.push(value);
-            }
-        });
-        $scope.articles = articlesInCategoryId;
-    };
+    // $scope.getArticlesInCategory = function(id, max) {
+    //     // var id = $routeParams.id;
+    //     var articlesInCategoryId = [];
+    //     // alert(id);
+    //     angular.forEach($scope.articles, function(value, key) {
+    //         if (value.category._id === id) {
+    //             articlesInCategoryId.push(value);
+    //         }
+    //     });
+    //     $scope.articles = articlesInCategoryId;
+    // };
 
 
 
 
     $scope.$watchCollection("articles", function(newArticles, oldArticles) {
-        angular.forEach(newArticles, function(value, key) {
-            if (value._id === $scope.currentArticleId) {
-                console.log("Find article of CurrentArticle");
-                $scope.article = value;
-                return false;
+
+        if ($scope.articles != undefined && $scope.articles.length > 0) {
+            //Update current Article object
+            if ($scope.currentArticleId != undefined) {
+                angular.forEach(newArticles, function(value, key) {
+                    if (value._id === $scope.currentArticleId) {
+                        $scope.article = value;
+                        return false;
+                    }
+                });
             }
-        });
+
+            //Update  Popular Articles
+            $scope.popularArticles = newArticles.slice(0, maxPopularArticlesNumber);
+
+            //Update Random Acticles
+            $scope.randomArticles = [];
+            var listArticles = newArticles.slice();
+            for (var i = 0; i < maxRandomArticlesNumber; i++) {
+                if (listArticles.length > 0) {
+                    var random = Math.floor(Math.random() * listArticles.length);
+                    $scope.randomArticles.push(listArticles[random]);
+                    listArticles.splice(random, 1);
+                };
+            };
+            console.log($scope.randomArticles);
+
+            $scope.numberOfArticleInCategories = [];
+
+        };
     });
 
 
