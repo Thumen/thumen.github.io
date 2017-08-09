@@ -57,7 +57,7 @@
                 <td>{{art.comments.length}}</td>
                 <td>{{art.createdDate}}</td>
                 <td>{{art.updatedDate}}</td>
-                <td><a href="#{{art._id}}"><span class="label label-warning">Chỉnh sửa</span></a> <a href="#{{art._id}}"><span class="label label-danger">Xóa</span></a></td>
+                <td><a href="#article/edit"><span class="label label-warning">Chỉnh sửa</span></a> <a href="#{{art._id}}" ng-click="removeArticle(art._id)"><span class="label label-danger">Xóa</span></a></td>
             </tr>
         </tbody>
     </table>

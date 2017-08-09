@@ -1,23 +1,7 @@
-var scotchApp = angular.module('scotchApp', ['ngRoute']);
+var scotchApp = angular.module('scotchApp', ['ngRoute', 'ngTagsInput', 'textAngular']);
 scotchApp.config(['$locationProvider', function($locationProvider) {
     $locationProvider.hashPrefix('');
 }]);
-// configure our routes
-scotchApp.config(function($routeProvider) {
-    $routeProvider
-
-    // route for the home page
-        .when('/', {
-            templateUrl: '/view_index/listpost.html',
-            controller: 'mainController'
-        })
-        .when('/single/:id', {
-            templateUrl: '/view_index/single.html',
-            controller: 'mainController'
-        })
-
-});
-
 
 // create the controller and inject Angular's $scope
 scotchApp.controller('mainController', function(
@@ -25,7 +9,8 @@ scotchApp.controller('mainController', function(
     $http,
     $routeParams,
     $location,
-    $rootScope
+    $rootScope,
+    $filter
 ) {
     // create a message to display in our view
     var root = "https://green-web-blog.herokuapp.com";
@@ -33,31 +18,52 @@ scotchApp.controller('mainController', function(
     var maxRandomArticlesNumber = 5;
 
 
+
     $scope.init = function() {
         $scope.apiGetArticles();
         $scope.apiGetCategories();
     }
 
-    $scope.apiGetCategories = function() {
-        $http.get(root + '/api/categories')
-            .success(function(response) {
-                $scope.categories = response;
-            })
-            .error(function(data, status, headers, config) {
-                console.log(response);
-            });
-    };
 
     $scope.apiGetArticles = function() {
-        $http.get(root + '/api/articles')
-            .success(function(response) {
-                $scope.articles = response;
-            })
-            .error(function(data, status, headers, config) {
-                console.log(response);
+        $http.get(root + "/api/articles")
+            .then(function(response) {
+                $scope.articles = response.data;
             });
     };
 
+
+    $scope.submitCreateArticle = function() {
+        console.log($scope.newArticle);
+        $scope.newArticle._author = "5981d730b38ced0004f0c5da";
+        $http.post(root + '/api/articles/', $scope.newArticle)
+            .then(function successCallbak(response) {
+                alert("Thành công");
+                // window.location.href = 'admin.html';
+            }, function errorCallback(response) {
+                // console.log(data, status, headers, config);
+            });
+    };
+
+    $scope.updatedArticle = function() {
+        console.log($scope.updatedArticle);
+        $scope.updatedArticle._author = "5981d730b38ced0004f0c5da";
+        $http.post(root + '/api/articles/', $scope.updatedArticle)
+            .success(function(response) {
+                alert("Thành công")
+            }).error(function(data, status, headers, config) {
+                console.log(data, status, headers, config);
+            });;
+    };
+
+
+    // $scope.removeArticle = function(id) {
+    //     $http.delete(root + '/api/articles/' + id).success(function(response) {
+    //         $location.url("/")
+    //     }).error(function(data, status, headers, config) {
+    //         console.log(data, status, headers, config);
+    //     });;
+    // }
 
     // $scope.apiGetArticle = function() {
     //     var id = $routeParams.id;
@@ -73,31 +79,11 @@ scotchApp.controller('mainController', function(
 
     // };
 
-    $scope.getCategoryNameOfArticle = function(id) {
-        if (undefined != $scope.categories) {
-            for (i = 0; i < $scope.categories.length; i++) {
-                var cat = $scope.categories[i];
-                if (cat._id == id) {
-                    return cat.name;
-                }
-            }
-        };
-
-    }
-
-
-    // $scope.getArticleOfCategory = function(id, num) {
-    //     var result = [];
-    //     for (i = 0; i < $scope.articles.length; i++) {
-    //         if (i === num) {
-    //             return result;
-    //         };
-    //         result.push($scope.articles[i]);
-    //     };
-    // };
-
-    $scope.getArticle = function() {
-        $scope.currentArticleId = $routeParams.id;
+    $scope.apiGetCategories = function() {
+        $http.get(root + "/api/categories")
+            .then(function(response) {
+                $scope.categories = response.data;
+            })
     };
 
 
@@ -119,17 +105,41 @@ scotchApp.controller('mainController', function(
         }
 
     }
-    $scope.submitCreateArticle = function() {
-        console.log($scope.newArticle);
-        $scope.newArticle._author = "5981d730b38ced0004f0c5da";
-        $http.post(root + '/api/articles/', $scope.newArticle)
-            .success(function(response) {
-                alert("Thành công")
-            }).error(function(data, status, headers, config) {
-                console.log(data, status, headers, config);
-            });;
-    };
 
+
+
+    $scope.getCategoryNameOfArticle = function(id) {
+        if (undefined != $scope.categories) {
+            for (i = 0; i < $scope.categories.length; i++) {
+                var cat = $scope.categories[i];
+                if (cat._id == id) {
+                    return cat.name;
+                }
+            }
+        };
+
+    }
+
+    var getArticlesById = function(id) {
+        var articles = [];
+        angular.forEach($scope.Articles, function(value, key) {
+            if (value._category === id) {
+                articles.push(value);
+            }
+
+        });
+        return articles;
+        console.log("Articles in Id :" + id + articles)
+    };
+    // $scope.getArticleOfCategory = function(id, num) {
+    //     var result = [];
+    //     for (i = 0; i < $scope.articles.length; i++) {
+    //         if (i === num) {
+    //             return result;
+    //         };
+    //         result.push($scope.articles[i]);
+    //     };
+    // };
 
 
     // $scope.getArticlesInCategory = function(id, max) {
@@ -146,6 +156,9 @@ scotchApp.controller('mainController', function(
 
 
 
+    $scope.getArticle = function() {
+        $scope.currentArticleId = $routeParams.id;
+    };
 
     $scope.$watchCollection("articles", function(newArticles, oldArticles) {
 
@@ -179,9 +192,6 @@ scotchApp.controller('mainController', function(
 
         };
     });
-
-
-
 
 
 
@@ -221,7 +231,6 @@ scotchApp.controller('mainController', function(
             .error(function(data, status, headers, config) {
                 console.log(data, status, headers, config);
             });
-
     };
 
 

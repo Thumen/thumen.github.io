@@ -6,22 +6,28 @@
     <title>Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.min.css">
+    <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css">
+    <link rel='stylesheet' href='/bower_components/textAngular/dist/textAngular.css'>
+
+    <!-- font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+
 
     <!--css-->
     <link rel="stylesheet" href="/css/admin.css">
     <link rel="stylesheet" href="/css/admin-category.css">
     <link rel="stylesheet" href="/css/admin-writenew.css">
 
-    <!-- font -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="library/font-awesome-4.7.0/css/font-awesome.min.css">
 
-    <!-- <link rel="stylesheet" href="library/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.css"> -->
+
+
 
 </head>
 
-<body ng-controller="mainController" ng-controller="MyCtrl" ng-init="apiGetCategories()">
+<body ng-controller="mainController" ng-init="apiGetCategories()">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
@@ -66,7 +72,7 @@
             </li>
 
             <li class="widget review">
-                <a href="#post">
+                <a href="#listArticles">
                     <i class="fa fa-thumb-tack"></i>
                     <span>Post</span>
                 </a>
@@ -181,7 +187,7 @@
                     <li>
                         <a href="newandinfo">Page</a></li>
                     <li>
-                        <a href="#">LogOut</a>
+                        <a href="">LogOut</a>
                     </li>
 
 
@@ -234,7 +240,9 @@
 
 
     <!-- view -->
-    <div ng-view></div>
+    <div>
+        <div ng-view></div>
+    </div>
     <!-- end view -->
 
     <!-- footer -->
@@ -268,24 +276,20 @@
         }
     </script>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
 
-<!-- <script src="/library/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput-angular.min.js"></script> -->
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/angular-route/angular-route.min.js"></script>
+<script src="/bower_components/ng-tags-input/ng-tags-input.min.js"></script>
 
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>
+<script src='/bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+<script src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+<script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
 
 <script src="/scripts/app.js"></script>
-<script src="/scripts/admin.js"></script>
+<script src="/scripts/route.js"></script>
 
 
 </html>

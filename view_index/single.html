@@ -15,93 +15,100 @@
                 <div class="blog-post ">
                     {{article.description}}
                 </div>
-
-                <div class="post-social ">
-                    <a href="# " class=" "><i class="fa fa-heart-o "> Likes</i></a>
-                    <a href="# " class=" "><i class="fa fa-share-alt "> Share</i></a>
-                    <a href="# " class=" "><i class="fa fa-comment-o "> 3 Comment(s)</i></a>
-                </div>
-
-                <div class="all-comments">
-                    <div class="row comments-out">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 image-com">
-                            <img src="images/tattoos/avt.png" class="img-comments">
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 detail-coms">
-                            <div>
-                                <h5 class="author text-left user-comments"><b>mèo meo méo</b></h5>
-                                <span class="date text-right">
-                                        20:15 24/5/2016
-                                    </span>
-                            </div>
-                            <p class="text-in-page">You should read it. This is so cool</p>
-                            <h5 class="text-in-page">Answer
-                                <a> <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a> <span class="count">1</span> <a><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a> <span class="count">1</span></h5>
-                            <span class="date text-right"><a href="">Reply</a></span>
-                        </div>
-
+                <div class="blog-detail">
+                    <div ng-bind-html="article.content" class="blog-post ">
                     </div>
-                    <div class="row comments-out">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 image-com">
-                            <img src="images/tattoos/avt.png" class="img-comments">
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 detail-coms">
-                            <div>
-                                <h5 class="author text-left user-comments"><b>Tom Thomas</b></h5>
-                                <span class="date text-right">
-                                        20:15 24/5/2016
-                                    </span>
+
+                    <div class="post-social ">
+                        <a href="# " class=" "><i class="fa fa-heart-o "> Likes</i></a>
+                        <a href="# " class=" "><i class="fa fa-share-alt "> Share</i></a>
+                        <a href="# " class=" "><i class="fa fa-comment-o "> 3 Comment(s)</i></a>
+                    </div>
+                    </br>
+                    <div class="widget-underline end-post"></div>
+
+
+
+                    <div class="all-comments">
+                        <div class="row comments-out">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 image-com">
+                                <img src="images/tattoos/avt.png" class="img-comments">
                             </div>
-                            <p class="text-in-page">You should read it. This is so cool</p>
-                            <h5 class="text-in-page">Answer
-                                <a> <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a> <span class="count">1</span> <a><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a> <span class="count">1</span></h5>
-                            <div class="row comments-out">
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 image-com">
-                                    <img src="images/tattoos/avt.png" class="img-comments">
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 detail-coms">
-                                    <div>
-                                        <h5 class="author text-left user-comments"><b>mèo meo méo</b></h5>
-                                        <span class="date text-right">
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 detail-coms">
+                                <div>
+                                    <h5 class="author text-left user-comments"><b>mèo meo méo</b></h5>
+                                    <span class="date text-right">
                                         20:15 24/5/2016
                                     </span>
+                                </div>
+                                <p class="text-in-page">You should read it. This is so cool</p>
+                                <h5 class="text-in-page">Answer
+                                    <a> <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a> <span class="count">1</span> <a><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a> <span class="count">1</span></h5>
+                                <span class="date text-right"><a href="">Reply</a></span>
+                            </div>
+
+                        </div>
+                        <div class="row comments-out">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 image-com">
+                                <img src="images/tattoos/avt.png" class="img-comments">
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 detail-coms">
+                                <div>
+                                    <h5 class="author text-left user-comments"><b>Tom Thomas</b></h5>
+                                    <span class="date text-right">
+                                        20:15 24/5/2016
+                                    </span>
+                                </div>
+                                <p class="text-in-page">You should read it. This is so cool</p>
+                                <h5 class="text-in-page">Answer
+                                    <a> <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a> <span class="count">1</span> <a><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a> <span class="count">1</span></h5>
+                                <div class="row comments-out">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 image-com">
+                                        <img src="images/tattoos/avt.png" class="img-comments">
                                     </div>
-                                    <p class="text-in-page">You should read it. This is so cool</p>
-                                    <h5 class="text-in-page">Answer
-                                        <a> <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a> <span class="count">1</span> <a><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a> <span class="count">1</span></h5>
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 detail-coms">
+                                        <div>
+                                            <h5 class="author text-left user-comments"><b>mèo meo méo</b></h5>
+                                            <span class="date text-right">
+                                        20:15 24/5/2016
+                                    </span>
+                                        </div>
+                                        <p class="text-in-page">You should read it. This is so cool</p>
+                                        <h5 class="text-in-page">Answer
+                                            <a> <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a> <span class="count">1</span> <a><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a> <span class="count">1</span></h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
-        </div>
 
 
 
 
 
-        <div class="widget-underline end-post"></div>
 
-        <div class="input">
-            <p>Add a Comment</p>
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="usr" placeholder="Name">
+            <div class="input">
+                <p>Add a Comment</p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="usr" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="usr" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="pwd" placeholder="Webside">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="3" placeholder="Comment"></textarea>
+                    </div>
+                </form>
+                <div class="readmore-block">
+                    <a href=" " class="btn btn-small btn-default btn-readmore ">Send comment</a>
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="usr" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="pwd" placeholder="Webside">
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" rows="3" placeholder="Comment"></textarea>
-                </div>
-            </form>
-            <div class="readmore-block">
-                <a href=" " class="btn btn-small btn-default btn-readmore ">Send comment</a>
             </div>
         </div>
-    </div>
