@@ -6,7 +6,7 @@
         <div class="widget-underline "></div>
         <div class="post-date ">
             Posted by
-            <a href="#"> {{article._author.name}}</a> | <a href="# "> Danh mục: {{getCategoryNameOfArticle(article._category)}}</a></br>
+            <a href="#"> {{article._author.name}}</a> | <a href="# "> Danh mục: {{getCategoryNameOfArticle(article._category._id)}}</a></br>
             <a href="">Creasted: {{article.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a> | <a href="">Update: {{article.updatedDate | date: 'dd-MM-yyyy HH:mm:ss'}}<a> 
         </div>
 

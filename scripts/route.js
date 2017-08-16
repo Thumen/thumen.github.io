@@ -12,6 +12,10 @@ scotchApp.config(function($routeProvider) {
             templateUrl: '/view_index/single.html',
             controller: 'mainController'
         })
+        .when('/detailcat/:id', {
+            templateUrl: '/view_index/detailcat.html',
+            controller: 'mainController'
+        })
         .when('/admin', {
             templateUrl: '/view_admin/allpost.html',
             controller: 'mainController'

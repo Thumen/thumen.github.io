@@ -1,12 +1,21 @@
 /* post */
 
 .post {
-    padding-bottom: 15px;
     color: #000;
+    padding-top: 30px;
 }
 
 .post-detail {
     color: black;
+}
+
+.end-post {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.title-underline {
+    margin: 15px 0px;
 }
 
 .post-date {
@@ -14,17 +23,14 @@
     color: #626262;
     font-size: 13px;
     text-transform: uppercase;
-    padding-top: 15px;
 }
 
 .post-social {
-    padding: 30px 0px;
+    padding: 15px 0px;
     text-align: left;
 }
 
-.blog-title {
-    padding-top: 15px;
-}
+.blog-title {}
 
 .blog-post p {
     color: #626262;
@@ -44,7 +50,7 @@
 .btn-default:hover {
     color: white;
     background-color: #000;
-    border-color: inherit;
+    border-color: #000;
     font-weight: bold;
 }
 
@@ -57,6 +63,33 @@
 
 .post-social i {
     color: #626262;
+}
+
+
+/* img */
+
+.thumbnail-main {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    float: left;
+}
+
+.thumbnail-main img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.thumbnail-main img.portrait {
+    width: 100%;
+    height: auto;
 }
 
 

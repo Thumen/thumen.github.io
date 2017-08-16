@@ -6,7 +6,7 @@
     <title>Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">">
     <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.min.css">
     <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css">
 
@@ -117,7 +117,7 @@
                     <h5 class="title ">Categories</h5>
                     <div class="widget-underline "></div>
                     <ul class="category-list list-sidebar ">
-                        <li ng-repeat="cat in categories"><a href="# ">{{cat.name}} / ({{category.length}})</a></li>
+                        <li ng-repeat="cat in categories"><a href="#detailcat/:id">{{cat.name}}</a></li>
                     </ul>
                 </div>
 
@@ -127,7 +127,9 @@
                     <div clas="widget-body ">
                         <div class="posts-list list-sidebar ">
                             <div ng-repeat="post in popularArticles" class="clear-fix ">
-                                <a href="# "><img ng-src="{{post.media}}"></a>
+                                <div class="thumbnail">
+                                    <a href="# "><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
+                                </div>
                                 <div class="widget-posts-details "><a href="# ">{{post.title}}</a>
                                     <p>Created: {{post.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</p>
 
@@ -143,7 +145,9 @@
                     <div clas="widget-body ">
                         <div class="posts-list list-sidebar ">
                             <div ng-repeat="post in randomArticles" class="clear-fix ">
-                                <a href="# "><img ng-src="{{post.media}}"></a>
+                                <div class="thumbnail">
+                                    <a href="# "><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
+                                </div>
                                 <div class="widget-posts-details "><a href="# ">{{post.title}}</a>
                                     <p>Created: {{post.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</p>
 
@@ -349,6 +353,7 @@
 
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/bower_components/angular/angular.min.js"></script>
 <script src="/bower_components/angular-route/angular-route.min.js"></script>
 <script src="/bower_components/ng-tags-input/ng-tags-input.min.js"></script>

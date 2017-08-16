@@ -14,10 +14,15 @@ scotchApp.controller('mainController', function(
 ) {
     // create a message to display in our view
     var root = "https://green-web-blog.herokuapp.com";
-    var maxPopularArticlesNumber = 5;
-    var maxRandomArticlesNumber = 5;
+    var maxPopularArticlesNumber = 4;
+    var maxRandomArticlesNumber = 4;
 
-
+    // var idCat1 = "5983510622fd58000478aaa8";
+    // var idCat2 = "5981d787b38ced0004f0c5db";
+    // var idCat3 = "5981d805b38ced0004f0c5dd";
+    // var idCat4 = "5981d805b38ced0004f0c5de";
+    // var idCat5 = "5982f39a79630900046aba90";
+    // var idCat6 = "5981d8aab38ced0004f0c5e0";
 
     $scope.init = function() {
         $scope.apiGetArticles();
@@ -120,6 +125,7 @@ scotchApp.controller('mainController', function(
 
     }
 
+
     var getArticlesById = function(id) {
         var articles = [];
         angular.forEach($scope.Articles, function(value, key) {
@@ -160,6 +166,9 @@ scotchApp.controller('mainController', function(
         $scope.currentArticleId = $routeParams.id;
     };
 
+
+
+
     $scope.$watchCollection("articles", function(newArticles, oldArticles) {
 
         if ($scope.articles != undefined && $scope.articles.length > 0) {
@@ -191,6 +200,7 @@ scotchApp.controller('mainController', function(
             $scope.numberOfArticleInCategories = [];
 
         };
+
     });
 
 
