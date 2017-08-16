@@ -50,16 +50,16 @@ scotchApp.controller('mainController', function(
             });
     };
 
-    $scope.updatedArticle = function() {
-        console.log($scope.updatedArticle);
-        $scope.updatedArticle._author = "5981d730b38ced0004f0c5da";
-        $http.post(root + '/api/articles/', $scope.updatedArticle)
-            .success(function(response) {
-                alert("Thành công")
-            }).error(function(data, status, headers, config) {
-                console.log(data, status, headers, config);
-            });;
-    };
+    // $scope.updatedArticle = function() {
+    //     console.log($scope.updatedArticle);
+    //     $scope.updatedArticle._author = "5981d730b38ced0004f0c5da";
+    //     $http.post(root + '/api/articles/', $scope.updatedArticle)
+    //         .success(function(response) {
+    //             alert("Thành công")
+    //         }).error(function(data, status, headers, config) {
+    //             console.log(data, status, headers, config);
+    //         });;
+    // };
 
 
     // $scope.removeArticle = function(id) {
