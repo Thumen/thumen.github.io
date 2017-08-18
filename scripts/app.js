@@ -199,7 +199,9 @@ scotchApp.controller('mainController', function(
 
             $scope.numberOfArticleInCategories = [];
 
+
         };
+
 
     });
 

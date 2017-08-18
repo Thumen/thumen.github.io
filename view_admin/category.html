@@ -14,7 +14,7 @@
                     </div>
                 </li>
             </ul>
-            <table ng-init="apiGetCategories()" class="table table-hover">
+            <table ng-init="apiGetCategories()" class="table table-hover table-bordered ">
                 <thead>
                     <tr>
                         <th>Tên danh mục</th>
@@ -27,7 +27,7 @@
                     <tr ng-repeat="cat in categories">
                         <td>{{cat.name}}</td>
                         <td>{{cat.description}}</td>
-                        <td>{{cat.create_date}}</td>
+                        <td>{{cat.create_date| date: 'dd-MM-yyyy HH:mm:ss'}}</td>
                         <td><a href="#{{art._id}}"><span class="label label-warning">Chỉnh sửa</span></a> <a href="#{{art._id}}"><span class="label label-danger">Xóa</span></a></td>
                     </tr>
 

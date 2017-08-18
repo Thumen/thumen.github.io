@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="scotchApp">
+<html lang="en" ng-app="myApp">
 
 <head>
     <meta charset="UTF-8">
     <title>Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.min.css">
     <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css">
     <link rel='stylesheet' href='/bower_components/textAngular/dist/textAngular.css'>
@@ -27,7 +28,7 @@
 
 </head>
 
-<body ng-controller="mainController" ng-init="apiGetCategories()">
+<body ng-controller="adminController" ng-init="apiGetCategories()">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
@@ -71,11 +72,16 @@
                 </a>
             </li>
 
-            <li class="widget review">
-                <a href="#listArticles">
-                    <i class="fa fa-thumb-tack"></i>
-                    <span>Post</span>
-                </a>
+            <li class="panel-group" id="accordion">
+                <div class="panel-heading">
+                    <span class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="title"> <i class="fa fa-thumb-tack"></i> post</a>
+                        </span>
+                    <ul id="collapse2" class="panel-collapse collapse collapse-post">
+                        <li><a href="#listArticles">All Post</a></li>
+                        <li><a href="#writenew">Add New</a></li>
+                    </ul>
+                </div>
             </li>
 
             <li class="widget review">
@@ -171,16 +177,6 @@
             <div class="nav-custom-menu pull-right">
                 <ul class="nav navbar-nav">
 
-                    <li class="dropdown messages-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="label label-success">4</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 4 messages</li>
-                        </ul>
-                    </li>
-
 
                     <li>
                         <a href="index.html">Home</a></li>
@@ -192,7 +188,7 @@
 
 
                     <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle admin" data-toggle="dropdown" aria-expanded="false">
+                        <a href="" class="dropdown-toggle admin" data-toggle="dropdown" aria-expanded="false">
                             <img src="images/tattoos/avt.png" class="user-image" alt="User Image" data-pin-nopin="true">
                             <span class="hidden-xs">Hello Mén !?</span>
                         </a>
@@ -240,7 +236,7 @@
 
 
     <!-- view -->
-    <div>
+    <div class="container">
         <div ng-view></div>
     </div>
     <!-- end view -->
@@ -277,7 +273,7 @@
     </script>
 </body>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 
 <script src="/bower_components/angular/angular.min.js"></script>
@@ -288,8 +284,8 @@
 <script src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
 <script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
 
-<script src="/scripts/app.js"></script>
-<script src="/scripts/route.js"></script>
+<script src="/scripts/admin.js"></script>
+
 
 
 </html>

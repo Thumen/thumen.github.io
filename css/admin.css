@@ -18,16 +18,25 @@
                 min-width: 250px;
             }
             
-            .navbar-nav>.user-menu>.dropdown-menu>li.user-header {
-                text-align: center;
-                font-size: 14px;
+            .navbar-nav .user-menu .dropdown-menu {
+                padding-top: 0;
             }
             
-            .navbar-nav>.user-menu>.dropdown-menu>li.user-header p {
+            .navbar-nav .user-menu .dropdown-menu li.user-header {
+                text-align: center;
+                font-size: 14px;
+                min-width: 250px;
+            }
+            
+            .navbar-nav .user-menu .dropdown-menu li.user-header p {
                 padding-bottom: 15px;
             }
             
-            .navbar-nav>li .admin img {
+            .navbar-nav .user-menu .dropdown-toggle {
+                padding: 10px;
+            }
+            
+            .navbar-nav li .admin img {
                 position: relative;
                 width: 35px;
                 border: 1px solid #252525;
@@ -113,6 +122,19 @@
             .panel-group .panel-collapse a {
                 text-transform: none;
                 font-size: 14px;
+            }
+            /* nav-post */
+            
+            .panel-group .panel-title .title {
+                margin-bottom: -20px;
+            }
+            
+            .panel-group .collapse-post {
+                margin-top: 15px;
+            }
+            
+            .panel-group .collapse-post li {
+                margin-bottom: -10px;
             }
             
             .img-circle {
@@ -241,4 +263,10 @@
                 color: #888888;
                 padding: 10px 0;
                 margin-bottom: 0px;
+            }
+            /* all post */
+            
+            th {
+                background-color: #5F9EA0;
+                padding: 8px;
             }
