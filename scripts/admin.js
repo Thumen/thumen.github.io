@@ -8,7 +8,10 @@ scotchApp.config(function($routeProvider) {
     $routeProvider
 
     // route for the home page
-
+        .when('/admin', {
+            templateUrl: '/view_admin/listArticles.html',
+            controller: 'adminController'
+        })
         .when('/category', {
             templateUrl: '/view_admin/category.html',
             controller: 'adminController'
@@ -49,11 +52,28 @@ scotchApp.controller('adminController', function(
     };
 
 
+    $scope.apiGetCategories = function() {
+        $http.get(root + "/api/categories")
+            .then(function(response) {
+                $scope.categories = response.data;
+            })
+    };
+
+
     $scope.getArticleID = function(id) {
         angular.forEach($scope.articles, function(value, key) {
             if (value._id === id) {
 
                 $scope.article = value;
+                return false;
+            }
+        });
+    };
+    $scope.getCategoryID = function(id) {
+        angular.forEach($scope.categories, function(value, key) {
+            if (value._id === id) {
+
+                $scope.category = value;
                 return false;
             }
         });
@@ -64,7 +84,19 @@ scotchApp.controller('adminController', function(
         $scope.article._author = "5981d730b38ced0004f0c5da";
         $http.patch(root + '/api/articles/' + $scope.article._id, $scope.article)
             .then(function successCallback(response) {
-                window.location.href = '/listArticles';
+                window.location.href = '/';
+                alert("Update Success");
+            }, function errorCallback(response) {
+                // console.log(data, status, headers, config);
+            });
+    }
+
+    $scope.updateCategory = function() {
+        $scope.category._author = "5981d730b38ced0004f0c5da";
+        $http.patch(root + '/api/categories/' + $scope.category._id, $scope.category)
+            .then(function successCallbak(response) {
+
+                window.location.href = '/';
                 alert("Update Success");
             }, function errorCallback(response) {
                 // console.log(data, status, headers, config);
@@ -75,7 +107,16 @@ scotchApp.controller('adminController', function(
         $http.delete(root + '/api/articles/' + $scope.article._id)
             .then(function successCallback(response) {
                 console.log('You have already deleted the articles')
-                window.location.href = 'listArticles.html';
+                window.location.href = '/';
+            }, function errorCallback(response) {
+                // console.log(data, status, headers, config);
+            });
+    }
+    $scope.deleteCategory = function() {
+        $http.delete(root + '/api/categories/' + $scope.category._id)
+            .then(function successCallback(response) {
+                console.log('You have already deleted the categories')
+                window.location.href = '/';
             }, function errorCallback(response) {
                 // console.log(data, status, headers, config);
             });
@@ -93,49 +134,6 @@ scotchApp.controller('adminController', function(
                 // console.log(data, status, headers, config);
             });
     };
-
-    // $scope.updatedArticle = function() {
-    //     console.log($scope.updatedArticle);
-    //     $scope.updatedArticle._author = "5981d730b38ced0004f0c5da";
-    //     $http.post(root + '/api/articles/', $scope.updatedArticle)
-    //         .success(function(response) {
-    //             alert("Thành công")
-    //         }).error(function(data, status, headers, config) {
-    //             console.log(data, status, headers, config);
-    //         });;
-    // };
-
-
-    // $scope.removeArticle = function(id) {
-    //     $http.delete(root + '/api/articles/' + id).success(function(response) {
-    //         $location.url("/")
-    //     }).error(function(data, status, headers, config) {
-    //         console.log(data, status, headers, config);
-    //     });;
-    // }
-
-    // $scope.apiGetArticle = function() {
-    //     var id = $routeParams.id;
-
-    //     angular.forEach($scope.articles, function(value, key) {
-    //         if (value._id === id) {
-    //             $scope.article = value;
-    //             console.log("success");
-    //             return false;
-
-    //         }
-    //     });
-
-    // };
-
-    $scope.apiGetCategories = function() {
-        $http.get(root + "/api/categories")
-            .then(function(response) {
-                $scope.categories = response.data;
-            })
-    };
-
-
     $scope.submitCreateCategory = function() {
 
         if ($scope.newCategory.name.length > 0 &&
@@ -156,9 +154,11 @@ scotchApp.controller('adminController', function(
     }
 
 
-
     $scope.getArticle = function() {
         $scope.currentArticleId = $routeParams.id;
+    };
+    $scope.getCategory = function() {
+        $scope.currentCategoryId = $routeParams.id;
     };
 
     $scope.getCategoryNameOfArticle = function(id) {
