@@ -28,7 +28,7 @@
                         <td>{{cat.name}}</td>
                         <td>{{cat.description}}</td>
                         <td>{{cat.create_date| date: 'dd-MM-yyyy HH:mm:ss'}}</td>
-                        <td><a ng-click="getCategoryID(cat._id)" data-toggle="modal" data-target='#edit-modal' href=""><span class="label label-warning">Chỉnh sửa</span></a> <a ng-click="getCategoryID(art._id)" data-toggle="modal" data-target='#delete-modal'
+                        <td><a ng-click="getCategoryID(cat._id)" data-toggle="modal" data-target='#edit-modal' href=""><span class="label label-warning">Chỉnh sửa</span></a> <a ng-click="getCategoryID(cat._id)" data-toggle="modal" data-target='#delete-modal'
                                 href=""><span class="label label-danger">Xóa</span></a></td>
                     </tr>
 
@@ -40,13 +40,13 @@
             <h3>Thêm chuyên đề:</h3>
             <form ng-submit="submitCreateCategory()">
                 <div class="form-group">
-                    <label for="comment">Tiêu đề:</label>
-                    <textarea ng-model="newCategory.name" class="form-control" rows="3" id="comment" placeholder="nhập tiêu đề cho chuyên mục..."></textarea>
+                    <label for="title">Tiêu đề:</label>
+                    <textarea ng-model="newCategory.name" class="form-control" rows="3" id="title" placeholder="nhập tiêu đề cho chuyên mục..."></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="comment">Mô tả:</label>
-                    <textarea ng-model="newCategory.description" class="form-control" rows="5" id="comment" placeholder="Thêm mô tả..."></textarea>
+                    <label for="description">Mô tả:</label>
+                    <textarea ng-model="newCategory.description" class="form-control" rows="5" id="description" placeholder="Thêm mô tả..."></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Thêm mới</button>
             </form>

@@ -12,8 +12,8 @@ scotchApp.config(function($routeProvider) {
             templateUrl: '/view_index/single.html',
             controller: 'mainController'
         })
-        .when('/detailcat/{{cat._id}}', {
-            templateUrl: '/view_index/detailcat.html',
+        .when('/listcat/:id', {
+            templateUrl: '/view_index/listcat.html',
             controller: 'mainController'
         })
 

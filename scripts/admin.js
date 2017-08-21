@@ -84,7 +84,7 @@ scotchApp.controller('adminController', function(
         $scope.article._author = "5981d730b38ced0004f0c5da";
         $http.patch(root + '/api/articles/' + $scope.article._id, $scope.article)
             .then(function successCallback(response) {
-                window.location.href = '/';
+                window.location.href = '/admin.html#/listArticles';
                 alert("Update Success");
             }, function errorCallback(response) {
                 // console.log(data, status, headers, config);
@@ -96,8 +96,7 @@ scotchApp.controller('adminController', function(
         $http.patch(root + '/api/categories/' + $scope.category._id, $scope.category)
             .then(function successCallbak(response) {
 
-                window.location.href = '/';
-                alert("Update Success");
+                window.location.href = '/admin.html#/category';
             }, function errorCallback(response) {
                 // console.log(data, status, headers, config);
             });
@@ -107,7 +106,7 @@ scotchApp.controller('adminController', function(
         $http.delete(root + '/api/articles/' + $scope.article._id)
             .then(function successCallback(response) {
                 console.log('You have already deleted the articles')
-                window.location.href = '/';
+                window.location.href = '/admin.html#/listArticles';
             }, function errorCallback(response) {
                 // console.log(data, status, headers, config);
             });
@@ -115,8 +114,9 @@ scotchApp.controller('adminController', function(
     $scope.deleteCategory = function() {
         $http.delete(root + '/api/categories/' + $scope.category._id)
             .then(function successCallback(response) {
+                alert("Thành công");
                 console.log('You have already deleted the categories')
-                window.location.href = '/';
+                window.location.href = '/admin.html#/category';
             }, function errorCallback(response) {
                 // console.log(data, status, headers, config);
             });
@@ -129,7 +129,7 @@ scotchApp.controller('adminController', function(
         $http.post(root + '/api/articles/', $scope.newArticle)
             .then(function successCallbak(response) {
                 alert("Thành công");
-                // window.location.href = 'admin.html';
+                window.location.href = '/admin.html#/listArticles';
             }, function errorCallback(response) {
                 // console.log(data, status, headers, config);
             });
@@ -139,13 +139,14 @@ scotchApp.controller('adminController', function(
         if ($scope.newCategory.name.length > 0 &&
             $scope.newCategory.description.length > 0) {
             $http.post(root + "/api/categories", $scope.newCategory)
-                .success(function(response) {
+                .then(function uccessCallbak(response) {
+                    alert("Thành công");
                     $scope.categories.push(response);
                     $scope.newCategory.name = "";
                     $scope.newCategory.description = "";
 
-                }).error(function(data, status, headers, config) {
-                    console.log(data, status, headers, config);
+                }, function errorCallback(response) {
+                    // console.log(data, status, headers, config);
                 });
         } else {
             alert("Input invalid");
@@ -157,6 +158,7 @@ scotchApp.controller('adminController', function(
     $scope.getArticle = function() {
         $scope.currentArticleId = $routeParams.id;
     };
+
     $scope.getCategory = function() {
         $scope.currentCategoryId = $routeParams.id;
     };

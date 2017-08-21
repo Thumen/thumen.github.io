@@ -20,6 +20,11 @@
      min-width: 320px;
  }
  
+ .logo {
+     padding: 10px;
+ }
+ /* page-title */
+ 
  .page-title h1 {
      font-weight: 700;
      line-height: 45px;
@@ -38,18 +43,10 @@
      font-size: 30px;
      color: white;
  }
- 
- ul li {
-     margin-top: 10px;
- }
+ /* navbar-header */
  
  .text-center {
      text-align: center;
- }
- 
- .navbar-toggle {
-     border-color: transparent;
-     color: #fff;
  }
  
  .navbar {
@@ -63,8 +60,17 @@
      color: white;
  }
  
+ .navbar-header ul li {
+     margin-top: 15px;
+ }
+ 
  .navbar-fixed-top {
      background-color: #626262;
+ }
+ 
+ .navbar-toggle {
+     border-color: transparent;
+     color: #fff;
  }
  
  .page-title {
@@ -103,7 +109,7 @@
  .main-container {
      padding-top: 30px;
  }
- /* side bar*/
+ /* SIDE BAR*/
  
  .sidebar {
      background-color: white;
@@ -151,10 +157,11 @@
      background-color: #626262;
  }
  /* end search */
+ /* widget */
  
  .title {
      line-height: 20px;
-     padding: 15px;
+     padding: 14px;
      padding-top: 0px;
      margin: 0px -15px;
      text-transform: uppercase;
@@ -162,6 +169,12 @@
      font-size: 20px;
      font-weight: 600;
      letter-spacing: 2px;
+ }
+ 
+ .widget {
+     padding: 15px;
+     margin-bottom: 15px;
+     border: 1px solid #e1e5e6;
  }
  
  .widget-title {
@@ -176,47 +189,13 @@
      background-color: #252525;
  }
  
- .list-sidebar {
-     list-style-type: none;
-     padding-left: 0px;
-     margin-left: 2px;
-     color: #000;
- }
- 
- .blog-detail {
-     padding-top: 15px;
-     padding-bottom: 30px;
- }
- 
- .blog-post {
-     padding-top: 15px;
- }
- 
- .widget {
-     padding: 15px;
-     margin-bottom: 15px;
-     border: 1px solid #a0a3a4;
- }
- 
  .widget p {
      color: #626262;
  }
  
- .category-list a {
-     font-size: 14px;
-     text-transform: capitalize;
-     line-height: 23px;
-     letter-spacing: 0.02em;
-     color: #626262;
- }
- 
- .category-list li a span:before {
-     content: "/";
- }
- 
  .widget-posts-details {
      line-height: 16px;
-     font-size: 14px;
+     font-size: 13px;
      color: #000;
  }
  
@@ -224,35 +203,39 @@
      text-transform: none;
  }
  
+ .list-sidebar {
+     list-style-type: none;
+     padding-left: 0px;
+     margin-left: 2px;
+     color: #000;
+ }
+ 
+ .category-list a,
+ .archive-list a {
+     text-transform: capitalize;
+ }
+ 
+ .category-list li a span:before {
+     content: "/";
+ }
+ 
  .comment-list a {
      text-transform: none;
+     color: #000;
  }
  
  .clear-fix {
-     padding: 10px 0px;
- }
- 
- .archive-list a {
+     padding: 15px 0px;
+     font-size: 12px;
+     line-height: 23px;
+     letter-spacing: 0.04em;
      color: #626262;
-     text-transform: none;
  }
  
  .archive-list li a span:before {
      content: "/";
  }
- 
- .social .social-list {
-     color: #252525;
- }
- 
- .social .social-list i {
-     padding-right: 65px;
-     padding-top: 25px;
- }
- 
- .social-list a i:hover {
-     color: #000;
- }
+ /* END SIBE BAR */
  /*FOOTER*/
  
  footer {
@@ -333,6 +316,21 @@
      padding-right: 15px;
      padding-left: 15px;
  }
+ /* icon footer */
+ 
+ .social .social-list {
+     color: #252525;
+ }
+ 
+ .social .social-list i {
+     padding-right: 65px;
+     padding-top: 25px;
+ }
+ 
+ .social-list a i:hover {
+     color: #000;
+ }
+ /* END FOOTER */
  /* img */
  
  .thumbnail {
@@ -359,3 +357,47 @@
      width: 100%;
      height: auto;
  }
+ /* LOGIN */
+ 
+ .form-control {
+     font-size: 11px;
+     border-radius: 0;
+ }
+ 
+ .control-label {
+     color: #626262;
+     letter-spacing: 1px;
+ }
+ 
+ .form-group p {
+     letter-spacing: 1px;
+     font-size: small;
+ }
+ 
+ .offset-button {
+     padding-bottom: 20px;
+ }
+ 
+ .btn-defaul {
+     border: 3px solid #000;
+     border-radius: 0;
+     color: #000;
+     background-color: white;
+     letter-spacing: 4px;
+     text-transform: uppercase;
+     font-size: small;
+ }
+ 
+ .btn-input {
+     letter-spacing: 1px;
+     font-size: 11px;
+     border: 3px solid #000;
+     border-radius: 0px;
+ }
+ 
+ .input-block .btn-defaul:hover {
+     background-color: #000;
+     color: white;
+     font-weight: 600;
+ }
+ /* END */

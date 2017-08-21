@@ -6,7 +6,7 @@
     <title>Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.min.css">
     <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css">
 
@@ -23,8 +23,8 @@
     <!-- css -->
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/listpost.css">
-    <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/single.css">
+
+
 
 
 
@@ -36,16 +36,16 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-3 col-sm-4 pull-left">
+                <div class="col-md-3 col-sm-4 pull-left logo">
 
                     <h3>Memory's Blog</h3>
                 </div>
-                <!--  end logo -->
+
 
                 <!-- navbar -->
                 <div class="col-md-9 col-sm-8">
                     <nav class="navbar navbar-nav navbar-fixed-header navbar-right">
-                        <div class="navbar-collapse collapse">
+                        <div class="navbar-collapse collapse navbar-header">
                             <ul class="nav navbar-nav">
                                 <li>
                                     <a href="#">home</a></li>
@@ -54,17 +54,17 @@
                                 <li>
                                     <a href="#">page</a></li>
                                 <li>
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
                                       category  <span class="caret"></span> 
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a ng-repeat="cat in categories" href="#">{{cat.name}}</a></li>
+                                        <li><a ng-repeat="cat in categories" href="#listcat/{{cat._id}}">{{cat.name}}</a></li>
 
                                     </ul>
                                 </li>
                                 <!--login -->
-                                <li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
-                                <li><a href="#" data-toggle="modal" data-target="#registerModal">Register</a></li>
+                                <li><a data-toggle="modal" data-target="#loginModal">Login</a></li>
+                                <li><a data-toggle="modal" data-target="#registerModal">Register</a></li>
                                 <li><a href="admin.html">Admin</a></li>
 
                             </ul>
@@ -97,7 +97,7 @@
     <div class="container main-container">
         <div class="row">
             <!-- side bar -->
-            <div class="col-xs-12 col-md-3 col-sm-3 col-lg-4 sidebar ">
+            <div class="col-xs-12 col-md-4 col-sm-4 col-lg-4 sidebar ">
 
                 <div class="widget">
                     <div class="custom-search-input">
@@ -116,8 +116,8 @@
                 <div class="widget ">
                     <h5 class="title ">Categories</h5>
                     <div class="widget-underline "></div>
-                    <ul class="category-list list-sidebar ">
-                        <li ng-repeat="cat in categories"><a href="#detailcat/{{cat._id}}">{{cat.name}}</a></li>
+                    <ul class="category-list list-sidebar clear-fix">
+                        <li ng-repeat="cat in categories"><a href="#listcat/{{cat._id}}">{{cat.name}}</a></li>
                     </ul>
                 </div>
 
@@ -128,9 +128,9 @@
                         <div class="posts-list list-sidebar ">
                             <div ng-repeat="post in popularArticles" class="clear-fix ">
                                 <div class="thumbnail">
-                                    <a href="# "><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
+                                    <a href=""><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
                                 </div>
-                                <div class="widget-posts-details "><a href="# ">{{post.title}}</a>
+                                <div class="widget-posts-details "><a href="">{{post.title}}</a>
                                     <p>Created: {{post.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</p>
 
                                 </div>
@@ -146,9 +146,9 @@
                         <div class="posts-list list-sidebar ">
                             <div ng-repeat="post in randomArticles" class="clear-fix ">
                                 <div class="thumbnail">
-                                    <a href="# "><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
+                                    <a href=""><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
                                 </div>
-                                <div class="widget-posts-details "><a href="# ">{{post.title}}</a>
+                                <div class="widget-posts-details "><a href="">{{post.title}}</a>
                                     <p>Created: {{post.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</p>
 
                                 </div>
@@ -160,8 +160,8 @@
                 <div class="widget ">
                     <h5 class="title ">Recent Comment</h5>
                     <div class="widget-underline "></div>
-                    <ul class="comment-list list-sidebar ">
-                        <li><a href="# ">Elements of A Launch Page</a>
+                    <ul class="comment-list list-sidebar clear-fix ">
+                        <li><a href="#">Elements of A Launch Page</a>
                             <p>Paul Boag - 08 January</p>
                         </li>
 
@@ -171,14 +171,16 @@
                 <div class="widget ">
                     <h5 class="title ">Text Widget</h5>
                     <div class="widget-underline "></div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    <div class="clear-fix ">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    </div>
                 </div>
 
                 <div class="widget ">
                     <h5 class="title ">Archive</h5>
                     <div class="widget-underline "></div>
-                    <ul class="archive-list list-sidebar ">
-                        <li><a href="# ">December 2017  <span> 23</span></a></li>
+                    <ul class="archive-list list-sidebar clear-fix">
+                        <li><a href=" # ">December 2017  <span> 23</span></a></li>
                         <li><a href="# ">January 2017  <span> 21</span></a></li>
                         <li><a href="# ">February 2017 <span> 48</span></a></li>
                         <li><a href="# ">March 2017  <span> 34</span></a></li>
@@ -225,17 +227,17 @@
                     </ul>
                 </div>
                 </hr>
-                <div class="social">
+                <div class="social ">
                     <div class="col-md-6 ">
                     </div>
-                    <div class="col-md-6 social-list">
-                        <a href=""> <i class="fa fa-facebook fa-2x"></i>
+                    <div class="col-md-6 social-list ">
+                        <a href=" "> <i class="fa fa-facebook fa-2x "></i>
                         </a>
-                        <a href=""><i class="fa fa-dribbble fa-2x"></i></a>
-                        <a href=""><i class="fa fa-linkedin fa-2x"></i></a>
-                        <a href=""><i class="fa fa-google-plus fa-2x"></i></a>
-                        <a href=""><i class="fa fa-youtube-square fa-2x"></i></a>
-                        <a href=""><i class="fa fa-pinterest-p fa-2x"></i></a>
+                        <a href=" "><i class="fa fa-dribbble fa-2x "></i></a>
+                        <a href=" "><i class="fa fa-linkedin fa-2x "></i></a>
+                        <a href=" "><i class="fa fa-google-plus fa-2x "></i></a>
+                        <a href=" "><i class="fa fa-youtube-square fa-2x "></i></a>
+                        <a href=" "><i class="fa fa-pinterest-p fa-2x "></i></a>
                     </div>
                 </div>
             </div>
@@ -261,46 +263,46 @@
 
 
     <!-- Modal-->
-    <div class="modal fade" id="registerModal" role="dialog">
-        <div class="modal-dialog">
+    <div class="modal fade " id="registerModal" role="dialog ">
+        <div class="modal-dialog ">
 
             <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Registration Form</h4>
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <button type="button " class="close " data-dismiss="modal ">&times;</button>
+                    <h4 class="modal-title ">Registration Form</h4>
                 </div>
-                <div class="modal-body">
-                    <form ng-submit="signup()">
-                        <div class="form-group">
-                            <label for="firstName" class="control-label">Full Name</label>
-                            <div class="">
-                                <input ng-model="newUser.name" type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email" class="control-label">Email</label>
-                            <div class="">
-                                <input ng-model="newUser.email" type="email" id="email" placeholder="Email" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password" class=" control-label">Password</label>
-                            <div class="">
-                                <input ng-model="newUser.password" type="password" id="password" placeholder="Password" class="form-control">
+                <div class="modal-body ">
+                    <form ng-submit="signup() ">
+                        <div class="form-group ">
+                            <label for="firstName " class="control-label ">Full Name</label>
+                            <div class=" ">
+                                <input ng-model="newUser.name " type="text " id="firstName " placeholder="Full Name " class="form-control " autofocus>
                             </div>
                         </div>
 
                         <div class="form-group ">
-                            <div class="">
+                            <label for="email " class="control-label ">Email</label>
+                            <div class=" ">
+                                <input ng-model="newUser.email " type="email " id="email " placeholder="Email " class="form-control ">
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <label for="password " class=" control-label ">Password</label>
+                            <div class=" ">
+                                <input ng-model="newUser.password " type="password " id="password " placeholder="Password " class="form-control ">
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <div class=" ">
                                 <p>*Please comolete all fields correctly.</p>
                             </div>
                         </div>
-                        <div class="form-group input-block">
-                            <div class="signup">
-                                <button type="submit" class="btn btn-defaul btn-block ">Đăng kí</button>
+                        <div class="form-group input-block ">
+                            <div class="signup ">
+                                <button type="submit " class="btn btn-defaul btn-block ">Đăng kí</button>
                             </div>
                         </div>
                     </form>
@@ -310,34 +312,34 @@
     </div>
 
 
-    <div class="modal fade" id="loginModal" role="dialog">
-        <div class="modal-dialog">
+    <div class="modal fade " id="loginModal " role="dialog ">
+        <div class="modal-dialog ">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Login Form</h4>
+            Modal content
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <button type="button " class="close " data-dismiss="modal ">&times;</button>
+                    <h4 class="modal-title ">Login Form</h4>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body ">
 
-                    <form ng-submit="login()">
-                        <div class="form-group">
-                            <label for="email" class="control-label">Email</label>
-                            <div class="">
-                                <input ng-model="user.email" type="email" id="email" placeholder="Email" class="form-control">
+                    <form ng-submit="login() ">
+                        <div class="form-group ">
+                            <label for="email " class="control-label ">Email</label>
+                            <div class=" ">
+                                <input ng-model="user.email " type="email " id="email " placeholder="Email " class="form-control ">
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="password" class=" control-label">Password</label>
-                            <div class="">
-                                <input ng-model="user.password" type="password" id="password" placeholder="Password" class="form-control">
+                        <div class="form-group ">
+                            <label for="password " class=" control-label ">Password</label>
+                            <div class=" ">
+                                <input ng-model="user.password " type="password " id="password " placeholder="Password " class="form-control ">
                             </div>
                         </div>
-                        <div class="form-group input-block">
-                            <div class="login">
-                                <button type="submit" class="btn btn-defaul btn-block ">Đăng nhập</button>
+                        <div class="form-group input-block ">
+                            <div class="login ">
+                                <button type="submit " class="btn btn-defaul btn-block ">Đăng nhập</button>
                             </div>
                         </div>
                     </form>
@@ -352,18 +354,19 @@
 
 
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="/bower_components/angular/angular.min.js"></script>
-<script src="/bower_components/angular-route/angular-route.min.js"></script>
-<script src="/bower_components/ng-tags-input/ng-tags-input.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js "></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js "></script>
+<script src="/bower_components/angular/angular.min.js "></script>
+<script src="/bower_components/angular-route/angular-route.min.js "></script>
+<script src="/bower_components/ng-tags-input/ng-tags-input.min.js "></script>
+<script src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
 
 <script src='/bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
 <script src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
 <script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
 
-<script src="/scripts/app.js"></script>
-<script src="/scripts/route.js"></script>
+<script src="/scripts/app.js "></script>
+<script src="/scripts/route.js "></script>
 
 
 

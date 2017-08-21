@@ -91,7 +91,7 @@
                 <h4 class="modal-title text-center"><b>Edit Article</b></h4>
             </div>
             <div class="panel-body">
-                <form ng-submit="submitCreateArticle()" ng-init="apiGetCategories()">
+                <form ng-submit="submitCreateArticle()">
                     <div class="form-group">
                         <label>Title</label>
                         <input type="text" class="form-control" ng-model="article.title" placeholder="Title">
@@ -120,13 +120,13 @@
                         <label>Tags</label>
                         <tags-input use-strings="true" ng-model="article.tags"></tags-input>
                     </div>
+                    <button ng-click="updateArticle()" type="button" class="btn btn-primary">Update</button>
                 </form>
             </div>
 
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button ng-click="updateArticle()" type="button" class="btn btn-primary">Update</button>
             </div>
         </div>
     </div>

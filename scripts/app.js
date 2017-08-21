@@ -1,4 +1,4 @@
-var scotchApp = angular.module('scotchApp', ['ngRoute', 'ngTagsInput', 'textAngular']);
+var scotchApp = angular.module('scotchApp', ['ngRoute', 'ngTagsInput', 'textAngular', 'ui.bootstrap']);
 scotchApp.config(['$locationProvider', function($locationProvider) {
     $locationProvider.hashPrefix('');
 }]);
@@ -16,17 +16,39 @@ scotchApp.controller('mainController', function(
     var root = "https://green-web-blog.herokuapp.com";
     var maxPopularArticlesNumber = 4;
     var maxRandomArticlesNumber = 4;
+    var myId = '5981d730b38ced0004f0c5da';
 
-    // var idCat1 = "5983510622fd58000478aaa8";
-    // var idCat2 = "5981d787b38ced0004f0c5db";
-    // var idCat3 = "5981d805b38ced0004f0c5dd";
-    // var idCat4 = "5981d805b38ced0004f0c5de";
-    // var idCat5 = "5982f39a79630900046aba90";
-    // var idCat6 = "5981d8aab38ced0004f0c5e0";
+
+    //Begin Sort Array
+    var compareValues = function(key, order = 'asc') {
+        return function(a, b) {
+            if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+                // property doesn't exist on either object
+                return 0;
+            }
+
+            const varA = (typeof a[key] === 'string') ?
+                a[key].toUpperCase() : a[key];
+            const varB = (typeof b[key] === 'string') ?
+                b[key].toUpperCase() : b[key];
+
+            let comparison = 0;
+            if (varA > varB) {
+                comparison = 1;
+            } else if (varA < varB) {
+                comparison = -1;
+            }
+            return (
+                (order == 'desc') ? (comparison * -1) : comparison
+            );
+        };
+    }
+
 
     $scope.init = function() {
         $scope.apiGetArticles();
         $scope.apiGetCategories();
+        $scope.getArticle();
     }
 
 
@@ -116,28 +138,30 @@ scotchApp.controller('mainController', function(
 
     }
 
+    $scope.getAllArticleinCategories = function() {
+            $scope.currentCategoryID = $routeParams.id;
+            $scope.articlesInCategory = getArticlesById($scope.currentCategoryID);
+            $scope.articlesInCategorySortedByDate = $scope.articlesInCategory.sort(compareValues('createdDate', 'desc'))
 
-    var getArticlesById = function(id) {
+        }
+        //Begin get articles by id
+    var getArticlesById = function(id, maximumArticle) {
+        if (maximumArticle === undefined) {
+            if ($scope.articles === undefined) {
+                maximumArticle = 0;
+            } else {
+                maximumArticle = $scope.articles.length;
+            }
+        }
         var articles = [];
-        angular.forEach($scope.Articles, function(value, key) {
-            if (value._category === id) {
+        angular.forEach($scope.articles, function(value, key) {
+            if (value._category._id === id && articles.length < maximumArticle) {
                 articles.push(value);
             }
-
         });
         return articles;
-        console.log("Articles in Id :" + id + articles)
-    };
-    // $scope.getArticleOfCategory = function(id, num) {
-    //     var result = [];
-    //     for (i = 0; i < $scope.articles.length; i++) {
-    //         if (i === num) {
-    //             return result;
-    //         };
-    //         result.push($scope.articles[i]);
-    //     };
-    // };
 
+    };
 
     // $scope.getArticlesInCategory = function(id, max) {
     //     // var id = $routeParams.id;
@@ -157,6 +181,18 @@ scotchApp.controller('mainController', function(
         $scope.currentArticleId = $routeParams.id;
     };
 
+    // Comment
+    $scope.addCommentforArticle = function() {
+        $scope.newComment._user = myId;
+        $http.put(root + '/api/article/comment/' + $scope.article._id, $scope.newComment)
+            .then(function successCallbak(response) {
+                $scope.article = response.data;
+                alert("Thành công");
+                console.log(response.data);
+            }, function errorCallback(response) {
+                console.log(data, status, headers, config);
+            });
+    }
 
 
 
@@ -171,6 +207,28 @@ scotchApp.controller('mainController', function(
                         return false;
                     }
                 });
+            }
+            //Dynamic
+            $scope.getAllArticleinCategories();
+
+            //Begin Pagination
+            $scope.viewby = 5;
+            $scope.totalItems = newArticles.length;
+            $scope.currentPage = 1;
+            $scope.itemsPerPage = $scope.viewby;
+            $scope.maxSize = 5;
+
+            $scope.setPage = function(pageNo) {
+                $scope.currentPage = pageNo;
+            };
+
+            $scope.pageChanged = function() {
+                console.log('Page changed to: ' + $scope.currentPage);
+            };
+
+            $scope.setItemsPerPage = function(num) {
+                $scope.itemsPerPage = num;
+                $scope.currentPage = 1;
             }
 
             //Update  Popular Articles
@@ -217,6 +275,7 @@ scotchApp.controller('mainController', function(
             });
 
     };
+
 
     $scope.signup = function() {
 
