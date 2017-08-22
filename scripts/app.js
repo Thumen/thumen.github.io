@@ -17,6 +17,7 @@ scotchApp.controller('mainController', function(
     var maxPopularArticlesNumber = 4;
     var maxRandomArticlesNumber = 4;
     var myId = '5981d730b38ced0004f0c5da';
+    $scope.keySearch = "";
 
 
     //Begin Sort Array
@@ -52,6 +53,17 @@ scotchApp.controller('mainController', function(
     }
 
 
+    //Search Aritcle
+    $scope.getArticleBySearchKey = function() {
+        $scope.keyWord = $routeParams._term;
+        $http.get(root + '/api/articles/search/' + $scope.keyWord)
+            .then(function successCallbak(response) {
+                $scope.articleGetByKey = response.data;
+            }, function errorCallback(response) {
+                console.log(data, status, headers, config);
+            });
+    }
+
     $scope.apiGetArticles = function() {
         $http.get(root + "/api/articles")
             .then(function(response) {
@@ -68,40 +80,20 @@ scotchApp.controller('mainController', function(
                 alert("Thành công");
                 // window.location.href = 'admin.html';
             }, function errorCallback(response) {
-                // console.log(data, status, headers, config);
+                console.log(data, status, headers, config);
             });
     };
 
 
 
 
-    // $scope.removeArticle = function(id) {
-    //     $http.delete(root + '/api/articles/' + id).success(function(response) {
-    //         $location.url("/")
-    //     }).error(function(data, status, headers, config) {
-    //         console.log(data, status, headers, config);
-    //     });;
-    // }
 
-    // $scope.apiGetArticle = function() {
-    //     var id = $routeParams.id;
-
-    //     angular.forEach($scope.articles, function(value, key) {
-    //         if (value._id === id) {
-    //             $scope.article = value;
-    //             console.log("success");
-    //             return false;
-
-    //         }
-    //     });
-
-    // };
 
     $scope.apiGetCategories = function() {
         $http.get(root + "/api/categories")
             .then(function(response) {
                 $scope.categories = response.data;
-            })
+            });
     };
 
 
@@ -110,12 +102,13 @@ scotchApp.controller('mainController', function(
         if ($scope.newCategory.name.length > 0 &&
             $scope.newCategory.description.length > 0) {
             $http.post(root + "/api/categories", $scope.newCategory)
-                .success(function(response) {
+                .then(function successCallbak(response) {
+                    alert("Thành công");
                     $scope.categories.push(response);
                     $scope.newCategory.name = "";
                     $scope.newCategory.description = "";
 
-                }).error(function(data, status, headers, config) {
+                }, function errorCallback(response) {
                     console.log(data, status, headers, config);
                 });
         } else {
@@ -123,6 +116,8 @@ scotchApp.controller('mainController', function(
         }
 
     }
+
+
 
 
 
@@ -162,18 +157,6 @@ scotchApp.controller('mainController', function(
         return articles;
 
     };
-
-    // $scope.getArticlesInCategory = function(id, max) {
-    //     // var id = $routeParams.id;
-    //     var articlesInCategoryId = [];
-    //     // alert(id);
-    //     angular.forEach($scope.articles, function(value, key) {
-    //         if (value.category._id === id) {
-    //             articlesInCategoryId.push(value);
-    //         }
-    //     });
-    //     $scope.articles = articlesInCategoryId;
-    // };
 
 
 
@@ -261,7 +244,7 @@ scotchApp.controller('mainController', function(
 
         //POST Login API below:
         $http.post(root + '/api/users/auth', $scope.user)
-            .success(function(response) {
+            .then(function successCallbak(response) {
                 var isSuccess = response.success;
                 if (isSuccess) {
                     console.log(response);
@@ -269,8 +252,7 @@ scotchApp.controller('mainController', function(
                     //Raise Error
                     alert(response.message);
                 }
-            })
-            .error(function(data, status, headers, config) {
+            }, function errorCallback(response) {
                 console.log(data, status, headers, config);
             });
 
@@ -281,7 +263,7 @@ scotchApp.controller('mainController', function(
 
         //POST signup API below:
         $http.post(root + '/api/users/auth', $scope.newUser)
-            .success(function(response) {
+            .then(function successCallbak(response) {
                 var isSuccess = response.success;
                 if (isSuccess) {
                     console.log(response);
@@ -289,8 +271,7 @@ scotchApp.controller('mainController', function(
                     //Raise Error
                     alert(response.message);
                 }
-            })
-            .error(function(data, status, headers, config) {
+            }, function errorCallback(response) {
                 console.log(data, status, headers, config);
             });
     };

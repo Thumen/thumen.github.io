@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.min.css">
     <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css">
+    <link rel='stylesheet' href='/bower_components/textAngular/dist/textAngular.css'>
 
 
 
@@ -52,7 +53,7 @@
                                 <li>
                                     <a href="#">new & info</a></li>
                                 <li>
-                                    <a href="#">page</a></li>
+                                    <a href="">page</a></li>
                                 <li>
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
                                       category  <span class="caret"></span> 
@@ -102,14 +103,15 @@
                 <div class="widget">
                     <div class="custom-search-input">
                         <div class="input-group col-md-12">
-                            <input type="text" class="form-control input-md" placeholder="Search..." />
+                            <input ng-model="keySearch" type="text" class="form-control input-md" placeholder="Search..." />
                             <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button">
-                            <i class="glyphicon glyphicon-search"></i>
+                        <button  class="btn btn-info btn-lg" type="search">
+                            <a href="#search/{{keySearch}}"> <i class="glyphicon glyphicon-search"></i></a>
                         </button>
                     </span>
                         </div>
                     </div>
+
                 </div>
 
 
@@ -199,7 +201,7 @@
 
     <footer>
         <div class="container-fluid ">
-            <div class="row ">
+            <div class="row footer-padding">
                 <div class="col-md-6 col-sm-4 footerleft ">
                     <div class="logofooter ">About us</div>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
@@ -263,16 +265,14 @@
 
 
     <!-- Modal-->
-    <div class="modal fade " id="registerModal" role="dialog ">
-        <div class="modal-dialog ">
-
-            <!-- Modal content-->
-            <div class="modal-content ">
-                <div class="modal-header ">
-                    <button type="button " class="close " data-dismiss="modal ">&times;</button>
-                    <h4 class="modal-title ">Registration Form</h4>
+    <div class="modal fade" id="registerModal">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-center"><b>Registration Form</b></h4>
                 </div>
-                <div class="modal-body ">
+                <div class="panel-body">
                     <form ng-submit="signup() ">
                         <div class="form-group ">
                             <label for="firstName " class="control-label ">Full Name</label>
@@ -289,9 +289,9 @@
                         </div>
 
                         <div class="form-group ">
-                            <label for="password " class=" control-label ">Password</label>
+                            <label for="password" class=" control-label ">Password</label>
                             <div class=" ">
-                                <input ng-model="newUser.password " type="password " id="password " placeholder="Password " class="form-control ">
+                                <input ng-model="newUser.password" class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" placeholder="password" name="newpassword" type="password" value="">
                             </div>
                         </div>
 
@@ -307,22 +307,23 @@
                         </div>
                     </form>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
 
 
-    <div class="modal fade " id="loginModal " role="dialog ">
-        <div class="modal-dialog ">
 
-            Modal content
-            <div class="modal-content ">
-                <div class="modal-header ">
-                    <button type="button " class="close " data-dismiss="modal ">&times;</button>
-                    <h4 class="modal-title ">Login Form</h4>
+    <div class="modal fade" id="loginModal">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-center"><b>Login Form</b></h4>
                 </div>
-                <div class="modal-body ">
-
+                <div class="panel-body">
                     <form ng-submit="login() ">
                         <div class="form-group ">
                             <label for="email " class="control-label ">Email</label>
@@ -332,9 +333,9 @@
                         </div>
 
                         <div class="form-group ">
-                            <label for="password " class=" control-label ">Password</label>
+                            <label for="password" class=" control-label ">Password</label>
                             <div class=" ">
-                                <input ng-model="user.password " type="password " id="password " placeholder="Password " class="form-control ">
+                                <input ng-model="user.password" class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" placeholder="password" name="password" type="password" value="">
                             </div>
                         </div>
                         <div class="form-group input-block ">
@@ -343,12 +344,14 @@
                             </div>
                         </div>
                     </form>
-
-
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
+
 </body>
 
 
@@ -358,9 +361,10 @@
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js "></script>
 <script src="/bower_components/angular/angular.min.js "></script>
 <script src="/bower_components/angular-route/angular-route.min.js "></script>
-<script src="/bower_components/ng-tags-input/ng-tags-input.min.js "></script>
 <script src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
 
+
+<script src="/bower_components/ng-tags-input/ng-tags-input.min.js "></script>
 <script src='/bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
 <script src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
 <script src='/bower_components/textAngular/dist/textAngular.min.js'></script>

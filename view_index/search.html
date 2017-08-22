@@ -1,0 +1,45 @@
+<div ng-init="getArticleBySearchKey()" class="col-xs-12 col-md-8 col-sm-8 col-lg-8 post">
+    <div ng-repeat="art in articleGetByKey.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) " class="post post-text">
+        <div class="row">
+            <p class="title">
+                {{getCategoryNameOfArticle(currentCategoryID)}}
+            </p>
+
+            <div class="img">
+                <div class="thumbnail-cat">
+                    <a href="#single/{{art._id}} ">
+                        <img ng-src="{{art.media}}" class="portrait-cat" alt="Image">
+                    </a>
+                </div>
+            </div>
+            <div class="">
+                <div class="blog-detail ">
+                    <div class="title">
+                        <a href="#single/{{art._id}}">{{art.title}}</a>
+                        <div class="widget-underline  title-underline"></div>
+                    </div>
+
+                    <div class="post-date ">
+                        Posted by
+                        <a href="#"> {{art._author.name}}</a> | <a href="# "> Danh mục: {{getCategoryNameOfArticle(art._category._id)}}</a></br>
+                        <a href="">Creasted: {{art.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a> | <a href="">Update: {{art.updatedDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-post">
+                <p>{{art.description}}</p>
+            </div>
+
+            <div class="post-social ">
+                <a href="# " class=" "><i class="fa fa-heart-o "> Likes</i></a>
+                <a href="# " class=" "><i class="fa fa-share-alt "> Share</i></a>
+                <a href="# " class=" "><i class="fa fa-comment-o "> {{art.comments.length}} Comment(s)</i></a>
+            </div>
+            <div class="readmore-block ">
+                <a href="#single/{{art._id}}" class="btn btn-small btn-default btn-readmore ">Continue Reading</a>
+            </div>
+            <div class="widget-underline end-post "></div>
+        </div>
+    </div>
+    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="pagination-sm" items-per-page="itemsPerPage" boundary-links="true" force-ellipses="true"></ul>
+</div>
