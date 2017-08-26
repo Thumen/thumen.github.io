@@ -1,4 +1,4 @@
-var scotchApp = angular.module('scotchApp', ['ngRoute', 'ngTagsInput', 'textAngular', 'ui.bootstrap']);
+var scotchApp = angular.module('scotchApp', ['ngRoute', 'ui.bootstrap']);
 scotchApp.config(['$locationProvider', function($locationProvider) {
     $locationProvider.hashPrefix('');
 }]);
@@ -8,9 +8,7 @@ scotchApp.controller('mainController', function(
     $scope,
     $http,
     $routeParams,
-    $location,
-    $rootScope,
-    $filter
+
 ) {
     // create a message to display in our view
     var root = "https://green-web-blog.herokuapp.com";
@@ -51,7 +49,6 @@ scotchApp.controller('mainController', function(
         $scope.apiGetCategories();
         $scope.getArticle();
     }
-
 
     //Search Aritcle
     $scope.getArticleBySearchKey = function() {
@@ -136,7 +133,7 @@ scotchApp.controller('mainController', function(
     $scope.getAllArticleinCategories = function() {
             $scope.currentCategoryID = $routeParams.id;
             $scope.articlesInCategory = getArticlesById($scope.currentCategoryID);
-            $scope.articlesInCategorySortedByDate = $scope.articlesInCategory.sort(compareValues('createdDate', 'desc'))
+            // $scope.articlesInCategorySortedByDate = $scope.articlesInCategory.sort(compareValues('createdDate', 'desc'))
 
         }
         //Begin get articles by id

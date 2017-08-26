@@ -9,8 +9,8 @@
                 <li>
                     <div class="search">
                         <label class="screen-reader-text" for="post-search-input"></label>
-                        <input class="" type="search" value="">
-                        <input class="" type="submit" class="button" value="Tìm các chuyên mục">
+                        <input ng-model="keySearch" class="" type="search" value="">
+                        <a href="#search/{{keySearch}}"><button class="" type="submit" class="button" value="Tìm các chuyên mục">Tìm các chuyên mục</button></a>
                     </div>
                 </li>
             </ul>
@@ -38,7 +38,8 @@
         </div>
         <div class="col-md-4">
             <h3>Thêm chuyên đề:</h3>
-            <form ng-submit="submitCreateCategory()">
+            <!-- <form ng-submit="submitCreateCategory()"> -->
+            <form>
                 <div class="form-group">
                     <label for="title">Tiêu đề:</label>
                     <textarea ng-model="newCategory.name" class="form-control" rows="3" id="title" placeholder="nhập tiêu đề cho chuyên mục..."></textarea>

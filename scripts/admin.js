@@ -24,6 +24,11 @@ scotchApp.config(function($routeProvider) {
             templateUrl: '/view_admin/listArticles.html',
             controller: 'adminController'
         })
+        .when('/search/:_term', {
+            templateUrl: '/view_admin/search-article.html',
+            controller: 'adminController'
+        })
+
 });
 
 // create the controller and inject Angular's $scope
@@ -34,6 +39,8 @@ scotchApp.controller('adminController', function(
 ) {
     // create a message to display in our view
     var root = "https://green-web-blog.herokuapp.com";
+    $scope.keySearch = "";
+
 
 
 
@@ -69,6 +76,7 @@ scotchApp.controller('adminController', function(
             }
         });
     };
+
     $scope.getCategoryID = function(id) {
         angular.forEach($scope.categories, function(value, key) {
             if (value._id === id) {
@@ -159,9 +167,9 @@ scotchApp.controller('adminController', function(
         $scope.currentArticleId = $routeParams.id;
     };
 
-    $scope.getCategory = function() {
-        $scope.currentCategoryId = $routeParams.id;
-    };
+    // $scope.getCategory = function() {
+    //     $scope.currentCategoryId = $routeParams.id;
+    // };
 
     $scope.getCategoryNameOfArticle = function(id) {
         if (undefined != $scope.categories) {
@@ -173,6 +181,17 @@ scotchApp.controller('adminController', function(
             }
         };
 
+    }
+
+    //Search Aritcle
+    $scope.getArticleBySearchKey = function() {
+        $scope.keyWord = $routeParams._term;
+        $http.get(root + '/api/articles/search/' + $scope.keyWord)
+            .then(function successCallbak(response) {
+                $scope.articleGetByKey = response.data;
+            }, function errorCallback(response) {
+                console.log(data, status, headers, config);
+            });
     }
 
 });

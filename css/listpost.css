@@ -20,26 +20,17 @@
  }
  
  .post-date {
-     letter-spacing: 1px;
+     letter-spacing: 2px;
      color: #626262;
-     font-size: 13px;
+     font-size: 11px;
      text-transform: uppercase;
- }
- 
- .post-social {
-     padding: 15px 0px;
-     text-align: left;
  }
  
  .blog-title {}
  
- .blog-detail {
-     padding-top: 15px;
-     padding-bottom: 30px;
- }
- 
  .blog-post p {
      color: #626262;
+     padding: 10px 0;
  }
  
  .btn-readmore {
@@ -60,6 +51,10 @@
      font-weight: bold;
  }
  
+ .post-social {
+     text-align: left;
+ }
+ 
  .post-social a {
      font-size: 11px;
      letter-spacing: 3px;
@@ -75,7 +70,7 @@
  .thumbnail-main {
      position: relative;
      width: 100%;
-     height: 200px;
+     height: 300px;
      overflow: hidden;
      float: left;
  }
@@ -145,6 +140,10 @@
  .thumbnail-cat img.portrait-cat {
      height: auto;
      min-width: 100%;
+ }
+ 
+ .blog-detail .title-cat a {
+     padding-top: 15px;
  }
  /* END */
  /* SINGLE POST */

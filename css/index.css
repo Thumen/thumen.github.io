@@ -117,11 +117,6 @@
  }
  /* search */
  
- .form-control {
-     text-transform: uppercase;
-     letter-spacing: 2px;
- }
- 
  .custom-search-input {
      padding: 3px;
      border: solid 1px #E4E4E4;
@@ -191,6 +186,8 @@
  
  .widget p {
      color: #626262;
+     font-size: 12px;
+     padding-top: 10px;
  }
  
  .widget-posts-details {

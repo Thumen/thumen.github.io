@@ -2,7 +2,7 @@
     <h3 class="title-lg">Bài viết <a href="#writenew"><button type="button" class="btn btn-primary">Viết bài mới</button></a></h3>
     <ul class="list-inline total">
         <li class="all">
-            <a href="#">Tất cả<span class="count"> ({{articles.length}})</span></a>
+            <a href="#">Tất cả<span class="count"> ({{articleGetByKey.length}})</span></a>
         </li>
     </ul>
 
@@ -17,7 +17,7 @@
             <select><option ng-repeat="cat in categories">{{cat.name}}</option></select>
         </li>
     </ul>
-    <table ng-init="apiGetArticles()" class="table table-bordered table-hover ">
+    <table ng-init="getArticleBySearchKey()" class="table table-bordered table-hover ">
         <thead>
             <tr>
                 <th>
@@ -34,14 +34,14 @@
             </tr>
         </thead>
         <tbody ng-init="apiGetCategories()">
-            <tr ng-repeat="art in articles">
+            <tr ng-repeat="art in articleGetByKey">
                 <td>
                     <div class="checkbox">
                         <label><input type="checkbox" value="">{{art.title}}</label>
                     </div>
                 </td>
                 <td>{{art._author.name}}</td>
-                <td>{{getCategoryNameOfArticle(art._category._id)}}</td>
+                <td>{{getCategoryNameOfArticle(art._category)}}</td>
                 <td>{{art.comments.length}}</td>
                 <td>{{art.tags}}</td>
                 <td>{{art.createdDate| date: 'dd-MM-yyyy HH:mm:ss'}}</td>
@@ -80,8 +80,7 @@
                 <h4 class="modal-title text-center"><b>Edit Article</b></h4>
             </div>
             <div class="panel-body">
-                <!-- <form ng-submit="submitCreateArticle()"> -->
-                <form>
+                <form ng-submit="submitCreateArticle()">
                     <div class="form-group">
                         <label>Title</label>
                         <input type="text" class="form-control" ng-model="article.title" placeholder="Title">

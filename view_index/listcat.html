@@ -1,6 +1,7 @@
 <div class="col-xs-12 col-md-8 col-sm-8 col-lg-8 post" ng-init="getAllArticleinCategories()">
-    <div ng-repeat="art in articlesInCategory.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) " class="post post-text">
-        <div class="row">
+    <div class="row">
+        <div ng-repeat="art in articlesInCategory.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) " class="post post-text">
+
             <p class="title">
                 {{getCategoryNameOfArticle(currentCategoryID)}}
             </p>
@@ -12,20 +13,20 @@
                     </a>
                 </div>
             </div>
-            <div class="">
-                <div class="blog-detail ">
-                    <div class="title">
-                        <a href="#single/{{art._id}}">{{art.title}}</a>
-                        <div class="widget-underline  title-underline"></div>
-                    </div>
 
-                    <div class="post-date ">
-                        Posted by
-                        <a href="#"> {{art._author.name}}</a> | <a href="# "> Danh mục: {{getCategoryNameOfArticle(art._category._id)}}</a></br>
-                        <a href="">Creasted: {{art.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a> | <a href="">Update: {{art.updatedDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
-                    </div>
+            <div class="blog-detail">
+                <div class="title title-cat">
+                    <a href="#single/{{art._id}}">{{art.title}}</a>
+                    <div class="widget-underline  title-underline"></div>
+                </div>
+
+                <div class="post-date ">
+                    Posted by
+                    <a href="#"> {{art._author.name}}</a> | <a href="# "> Danh mục: {{getCategoryNameOfArticle(art._category._id)}}</a></br>
+                    <a href="">Creasted: {{art.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a> | <a href="">Update: {{art.updatedDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
                 </div>
             </div>
+
             <div class="blog-post">
                 <p>{{art.description}}</p>
             </div>
@@ -41,5 +42,6 @@
             <div class="widget-underline end-post "></div>
         </div>
     </div>
+
     <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="pagination-sm" items-per-page="itemsPerPage" boundary-links="true" force-ellipses="true"></ul>
 </div>

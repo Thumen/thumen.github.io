@@ -9,28 +9,20 @@
     <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.min.css">
     <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css">
     <link rel='stylesheet' href='/bower_components/textAngular/dist/textAngular.css'>
-
     <!-- font -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-
-
     <!--css-->
     <link rel="stylesheet" href="/css/admin.css">
     <link rel="stylesheet" href="/css/admin-category.css">
     <link rel="stylesheet" href="/css/admin-writenew.css">
 
-
-
-
-
 </head>
 
-<body ng-controller="adminController" ng-init="apiGetCategories()">
+<body ng-controller="adminController">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
         <ul class="main-menu">
             <li class="user-panel">
                 <div class="pull-left image">
@@ -169,23 +161,17 @@
     </div>
 
     <nav class="navbar-static-top navbar-top">
-
         <div id="main">
-
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Setting</span>
+            <span class="logo" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;  Memory's Blog</span>
             <div class="nav-custom-menu pull-right">
                 <ul class="nav navbar-nav">
-
-
                     <li>
                         <a href="index.html">Home</a></li>
                     <li>
-                        <a href="newandinfo">Page</a></li>
+                        <a href="#admin">Page</a></li>
                     <li>
                         <a href="">LogOut</a>
                     </li>
-
-
                     <li class="dropdown user user-menu">
                         <a href="" class="dropdown-toggle admin" data-toggle="dropdown" aria-expanded="false">
                             <img src="images/tattoos/avt.png" class="user-image" alt="User Image" data-pin-nopin="true">
@@ -195,7 +181,6 @@
                             <!-- User image -->
                             <li class="user-header">
                                 <img src="images/tattoos/avt.png" class="img-circle" alt="User Image" data-pin-nopin="true">
-
                                 <p>
                                     Mén - Web Developer</br>
                                     <small>Member since Nov. 2017</small>
@@ -214,9 +199,7 @@
                                         <a href="#">Friends</a>
                                     </div>
                                 </div>
-
                             </li>
-
                             <li class="user-footer">
                                 <div class="pull-left">
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
@@ -227,12 +210,10 @@
                             </li>
                         </ul>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
-
 
     <!-- view -->
     <div class="container">
@@ -282,7 +263,5 @@
 <script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
 
 <script src="/scripts/admin.js"></script>
-
-
 
 </html>
