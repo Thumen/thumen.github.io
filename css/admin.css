@@ -14,7 +14,7 @@
      font-weight: 700;
      letter-spacing: 2px;
      font-size: 30px;
-     color: white;
+     color: #0e1a23;
  }
  /* navbar header */
  
@@ -23,7 +23,7 @@
  }
  
  .navbar-nav>li>a {
-     color: #75e0e6;
+     color: #0e1a23;
  }
  
  .navbar-static-top .dropdown .admin {

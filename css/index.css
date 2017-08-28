@@ -23,6 +23,14 @@
  .logo {
      padding: 10px;
  }
+ 
+ .logo>h3>a:hover,
+ .logo>h3>a:visited,
+ .logo>h3>a:active,
+ .logo>h3>a:link {
+     text-decoration: none;
+     color: white;
+ }
  /* page-title */
  
  .page-title h1 {
@@ -65,7 +73,8 @@
  }
  
  .navbar-fixed-top {
-     background-color: #626262;
+     background-color: #000;
+     /* opacity: 0.9; */
  }
  
  .navbar-toggle {
@@ -119,8 +128,12 @@
  
  .custom-search-input {
      padding: 3px;
-     border: solid 1px #E4E4E4;
+     border: solid 2px #E4E4E4;
      background-color: #fff;
+ }
+ 
+ .custom-search-input:hover {
+     border: solid 2px #B2AEAE;
  }
  
  .custom-search-input input {

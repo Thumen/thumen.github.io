@@ -69,22 +69,17 @@ scotchApp.controller('mainController', function(
     };
 
 
-    $scope.submitCreateArticle = function() {
-        console.log($scope.newArticle);
-        $scope.newArticle._author = "5981d730b38ced0004f0c5da";
-        $http.post(root + '/api/articles/', $scope.newArticle)
-            .then(function successCallbak(response) {
-                alert("Thành công");
-                // window.location.href = 'admin.html';
-            }, function errorCallback(response) {
-                console.log(data, status, headers, config);
-            });
-    };
-
-
-
-
-
+    // $scope.submitCreateArticle = function() {
+    //     console.log($scope.newArticle);
+    //     $scope.newArticle._author = "5981d730b38ced0004f0c5da";
+    //     $http.post(root + '/api/articles/', $scope.newArticle)
+    //         .then(function successCallbak(response) {
+    //             alert("Thành công");
+    //             // window.location.href = 'admin.html';
+    //         }, function errorCallback(response) {
+    //             console.log(data, status, headers, config);
+    //         });
+    // };
 
     $scope.apiGetCategories = function() {
         $http.get(root + "/api/categories")
@@ -92,31 +87,25 @@ scotchApp.controller('mainController', function(
                 $scope.categories = response.data;
             });
     };
+    // $scope.submitCreateCategory = function() {
 
+    //     if ($scope.newCategory.name.length > 0 &&
+    //         $scope.newCategory.description.length > 0) {
+    //         $http.post(root + "/api/categories", $scope.newCategory)
+    //             .then(function successCallbak(response) {
+    //                 alert("Thành công");
+    //                 $scope.categories.push(response);
+    //                 $scope.newCategory.name = "";
+    //                 $scope.newCategory.description = "";
 
-    $scope.submitCreateCategory = function() {
+    //             }, function errorCallback(response) {
+    //                 console.log(data, status, headers, config);
+    //             });
+    //     } else {
+    //         alert("Input invalid");
+    //     }
 
-        if ($scope.newCategory.name.length > 0 &&
-            $scope.newCategory.description.length > 0) {
-            $http.post(root + "/api/categories", $scope.newCategory)
-                .then(function successCallbak(response) {
-                    alert("Thành công");
-                    $scope.categories.push(response);
-                    $scope.newCategory.name = "";
-                    $scope.newCategory.description = "";
-
-                }, function errorCallback(response) {
-                    console.log(data, status, headers, config);
-                });
-        } else {
-            alert("Input invalid");
-        }
-
-    }
-
-
-
-
+    // }
 
     $scope.getCategoryNameOfArticle = function(id) {
         if (undefined != $scope.categories) {
@@ -155,8 +144,6 @@ scotchApp.controller('mainController', function(
 
     };
 
-
-
     $scope.getArticle = function() {
         $scope.currentArticleId = $routeParams.id;
     };
@@ -174,8 +161,6 @@ scotchApp.controller('mainController', function(
             });
     }
 
-
-
     $scope.$watchCollection("articles", function(newArticles, oldArticles) {
 
         if ($scope.articles != undefined && $scope.articles.length > 0) {
@@ -190,7 +175,6 @@ scotchApp.controller('mainController', function(
             }
             //Dynamic
             $scope.getAllArticleinCategories();
-
             //Begin Pagination
             $scope.viewby = 5;
             $scope.totalItems = newArticles.length;
@@ -213,7 +197,6 @@ scotchApp.controller('mainController', function(
 
             //Update  Popular Articles
             $scope.popularArticles = newArticles.slice(0, maxPopularArticlesNumber);
-
             //Update Random Acticles
             $scope.randomArticles = [];
             var listArticles = newArticles.slice();
@@ -227,18 +210,11 @@ scotchApp.controller('mainController', function(
             console.log($scope.randomArticles);
 
             $scope.numberOfArticleInCategories = [];
-
-
         };
-
-
     });
-
-
 
     $scope.login = function() {
         //console.log($scope.user);
-
         //POST Login API below:
         $http.post(root + '/api/users/auth', $scope.user)
             .then(function successCallbak(response) {
@@ -255,9 +231,7 @@ scotchApp.controller('mainController', function(
 
     };
 
-
     $scope.signup = function() {
-
         //POST signup API below:
         $http.post(root + '/api/users/auth', $scope.newUser)
             .then(function successCallbak(response) {
@@ -272,7 +246,5 @@ scotchApp.controller('mainController', function(
                 console.log(data, status, headers, config);
             });
     };
-
-
 
 });

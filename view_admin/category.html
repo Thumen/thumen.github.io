@@ -38,20 +38,19 @@
         </div>
         <div class="col-md-4">
             <h3>Thêm chuyên đề:</h3>
-            <!-- <form ng-submit="submitCreateCategory()"> -->
-            <form>
-                <div class="form-group">
-                    <label for="title">Tiêu đề:</label>
-                    <textarea ng-model="newCategory.name" class="form-control" rows="3" id="title" placeholder="nhập tiêu đề cho chuyên mục..."></textarea>
-                </div>
+            <form ng-submit="submitCreateCategory()">
+                <form>
+                    <div class="form-group">
+                        <label for="title">Tiêu đề:</label>
+                        <textarea ng-model="newCategory.name" class="form-control" rows="3" id="title" placeholder="nhập tiêu đề cho chuyên mục..."></textarea>
+                    </div>
 
-                <div class="form-group">
-                    <label for="description">Mô tả:</label>
-                    <textarea ng-model="newCategory.description" class="form-control" rows="5" id="description" placeholder="Thêm mô tả..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Thêm mới</button>
-            </form>
-
+                    <div class="form-group">
+                        <label for="description">Mô tả:</label>
+                        <textarea ng-model="newCategory.description" class="form-control" rows="5" id="description" placeholder="Thêm mô tả..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Thêm mới</button>
+                </form>
         </div>
     </div>
 </div>

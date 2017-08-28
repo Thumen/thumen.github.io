@@ -24,7 +24,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-4 pull-left logo">
-                    <h3>Memory's Blog</h3>
+                    <h3><a href="#">Memory's Blog</a></h3>
                 </div>
                 <!-- navbar -->
                 <div class="col-md-9 col-sm-8">
@@ -92,7 +92,7 @@
 
                 <div class="widget ">
                     <h5 class="title ">Categories</h5>
-                    <div class="widget-underline "></div>
+                    <div class="widget-underline"></div>
                     <ul class="category-list list-sidebar clear-fix">
                         <li ng-repeat="cat in categories"><a href="#listcat/{{cat._id}}">{{cat.name}}</a></li>
                     </ul>
@@ -203,13 +203,13 @@
                     <div class="col-md-6 ">
                     </div>
                     <div class="col-md-6 social-list ">
-                        <a href=" "> <i class="fa fa-facebook fa-2x "></i>
+                        <a href="https://www.facebook.com" target="_blank"> <i class=" fa fa-facebook fa-2x "></i>
                         </a>
-                        <a href=" "><i class="fa fa-dribbble fa-2x "></i></a>
-                        <a href=" "><i class="fa fa-linkedin fa-2x "></i></a>
-                        <a href=" "><i class="fa fa-google-plus fa-2x "></i></a>
-                        <a href=" "><i class="fa fa-youtube-square fa-2x "></i></a>
-                        <a href=" "><i class="fa fa-pinterest-p fa-2x "></i></a>
+                        <a href="https://www.dribbble.com" target="_blank "><i class="fa fa-dribbble fa-2x "></i></a>
+                        <a href="https://www.linkedin.com" target="_blank "><i class="fa fa-linkedin fa-2x "></i></a>
+                        <a href="https://www.plus.googlek.com" target="_blank "><i class="fa fa-google-plus fa-2x "></i></a>
+                        <a href="https://www.youtube.com/watch?v=BEEpyUKBbLE" target="_blank "><i class="fa fa-youtube-square fa-2x "></i></a>
+                        <a href="https://www.pinterest.com" target="_blank "><i class="fa fa-pinterest-p fa-2x "></i></a>
                     </div>
                 </div>
             </div>
@@ -231,14 +231,14 @@
     <!-- end footer -->
 
     <!-- Modal-->
-    <div class="modal fade" id="registerModal">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title text-center"><b>Registration Form</b></h4>
+    <div class="modal fade " id="registerModal ">
+        <div class="modal-dialog modal-md ">
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <button type="button " class="close " data-dismiss="modal " aria-hidden="true ">&times;</button>
+                    <h4 class="modal-title text-center "><b>Registration Form</b></h4>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body ">
                     <form ng-submit="signup() ">
                         <div class="form-group ">
                             <label for="firstName " class="control-label ">Full Name</label>
@@ -255,9 +255,9 @@
                         </div>
 
                         <div class="form-group ">
-                            <label for="password" class=" control-label ">Password</label>
+                            <label for="password " class=" control-label ">Password</label>
                             <div class=" ">
-                                <input ng-model="newUser.password" class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" placeholder="password" name="newpassword" type="password" value="">
+                                <input ng-model="newUser.password " class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched " placeholder="password " name="newpassword " type="password " value=" ">
                             </div>
                         </div>
 
@@ -273,8 +273,8 @@
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="modal-footer ">
+                    <button type="button " class="btn btn-default " data-dismiss="modal ">Close</button>
                 </div>
             </div>
         </div>
@@ -282,14 +282,14 @@
 
 
 
-    <div class="modal fade" id="loginModal">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title text-center"><b>Login Form</b></h4>
+    <div class="modal fade " id="loginModal ">
+        <div class="modal-dialog modal-md ">
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <button type="button " class="close " data-dismiss="modal " aria-hidden="true ">&times;</button>
+                    <h4 class="modal-title text-center "><b>Login Form</b></h4>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body ">
                     <form ng-submit="login() ">
                         <div class="form-group ">
                             <label for="email " class="control-label ">Email</label>
@@ -299,9 +299,9 @@
                         </div>
 
                         <div class="form-group ">
-                            <label for="password" class=" control-label ">Password</label>
+                            <label for="password " class=" control-label ">Password</label>
                             <div class=" ">
-                                <input ng-model="user.password" class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" placeholder="password" name="password" type="password" value="">
+                                <input ng-model="user.password " class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched " placeholder="password " name="password " type="password " value=" ">
                             </div>
                         </div>
                         <div class="form-group input-block ">
@@ -311,8 +311,8 @@
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="modal-footer ">
+                    <button type="button " class="btn btn-default " data-dismiss="modal ">Close</button>
                 </div>
             </div>
         </div>

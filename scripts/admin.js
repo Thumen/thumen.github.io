@@ -122,7 +122,6 @@ scotchApp.controller('adminController', function(
     $scope.deleteCategory = function() {
         $http.delete(root + '/api/categories/' + $scope.category._id)
             .then(function successCallback(response) {
-                alert("Thành công");
                 console.log('You have already deleted the categories')
                 window.location.href = '/admin.html#/category';
             }, function errorCallback(response) {
@@ -142,14 +141,15 @@ scotchApp.controller('adminController', function(
                 // console.log(data, status, headers, config);
             });
     };
+
     $scope.submitCreateCategory = function() {
 
         if ($scope.newCategory.name.length > 0 &&
             $scope.newCategory.description.length > 0) {
             $http.post(root + "/api/categories", $scope.newCategory)
                 .then(function uccessCallbak(response) {
-                    alert("Thành công");
-                    $scope.categories.push(response);
+                    // alert("Thành công");
+                    $scope.categories.push(response.data);
                     $scope.newCategory.name = "";
                     $scope.newCategory.description = "";
 
