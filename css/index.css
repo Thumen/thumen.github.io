@@ -373,45 +373,23 @@
  }
  /* LOGIN */
  
- .form-control {
+ .modal-content .form-control {
      font-size: 11px;
      border-radius: 0;
  }
  
- .control-label {
+ .modal-content .control-label {
      color: #626262;
      letter-spacing: 1px;
  }
  
- .form-group p {
+ .modal-content .form-group p {
      letter-spacing: 1px;
      font-size: small;
  }
  
- .offset-button {
-     padding-bottom: 20px;
- }
- 
- .btn-defaul {
-     border: 3px solid #000;
-     border-radius: 0;
-     color: #000;
-     background-color: white;
-     letter-spacing: 4px;
+ .modal-content .form-group .login {
+     width: 100%;
      text-transform: uppercase;
-     font-size: small;
- }
- 
- .btn-input {
-     letter-spacing: 1px;
-     font-size: 11px;
-     border: 3px solid #000;
-     border-radius: 0px;
- }
- 
- .input-block .btn-defaul:hover {
-     background-color: #000;
-     color: white;
-     font-weight: 600;
  }
  /* END */
