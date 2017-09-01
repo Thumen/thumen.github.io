@@ -3,7 +3,7 @@
  .post {
      color: #000;
      padding-top: 30px;
-     padding-left: 30px;
+     /* padding-left: 30px; */
  }
  
  .post-detail {
@@ -42,6 +42,7 @@
  
  .readmore-block {
      text-align: right;
+     margin: 15px 0;
  }
  
  .btn-default:hover {
