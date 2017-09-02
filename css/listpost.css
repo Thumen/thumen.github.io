@@ -1,9 +1,8 @@
  /* post */
  
  .post {
-     color: #000;
-     padding-top: 30px;
-     /* padding-left: 30px; */
+     /* color: #000; */
+     padding: 30px 10px;
  }
  
  .post-detail {

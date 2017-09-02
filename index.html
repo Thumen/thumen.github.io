@@ -43,10 +43,6 @@
                                 <li>
                                     <a href="#">home</a></li>
                                 <li>
-                                    <a href="#">new & info</a></li>
-                                <li>
-                                    <a href="">page</a></li>
-                                <li>
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
                                       category  <span class="caret"></span> 
                                     </a>
@@ -54,10 +50,19 @@
                                         <li><a ng-repeat="cat in categories" href="#listcat/{{cat._id}}">{{cat.name}}</a></li>
                                     </ul>
                                 </li>
-                                <!--login -->
-                                <li><a data-toggle="modal" data-target="#loginModal">Login</a></li>
-                                <li><a data-toggle="modal" data-target="#registerModal">Register</a></li>
                                 <li><a href="admin.html">Admin</a></li>
+                                <!--login -->
+                                <li><a data-toggle="modal" data-target="#registerModal">Register</a></li>
+                                <li><a ng-hide="isLogged()" data-toggle="modal" data-target="#loginModal">Login</a>
+                                    <a ng-show="isLogged()" class="dropdown-toggle" data-toggle="dropdown" href="">
+                                            {{user.name}} <span class="caret"></span> 
+                                        </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a ng-click="logOut()" href="">Log Out</a></li>
+                                    </ul>
+                                </li>
+
+
                             </ul>
                         </div>
                     </nav>
@@ -84,7 +89,7 @@
     <div class="container main-container">
         <div class="row">
             <!-- side bar -->
-            <div class="col-xs-12 col-md-4 col-sm-4 col-lg-4 sidebar ">
+            <div class="col-xs-12 col-md-3 col-sm-3 col-lg-3 sidebar ">
 
                 <div class="widget">
                     <div class="custom-search-input">
@@ -99,11 +104,11 @@
                     </div>
                 </div>
 
-                <div class="widget ">
+                <div class="widget">
                     <h5 class="title ">Categories</h5>
                     <div class="widget-underline"></div>
                     <ul class="category-list list-sidebar clear-fix">
-                        <li ng-repeat="cat in categories"><a href="#listcat/{{cat._id}}">{{cat.name}}</a></li>
+                        <li ng-repeat="cat in categories"><a href="#listcat/{{cat._id}}">{{cat.name}}  ({{getNumbersOfArticleInCategories(cat._id)}})</a></li>
                     </ul>
                 </div>
 
@@ -114,10 +119,9 @@
                         <div class="posts-list list-sidebar ">
                             <div ng-repeat="post in popularArticles" class="clear-fix ">
                                 <div class="thumbnail">
-                                    <a href=""><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
+                                    <a href="#single/{{post._id}}"><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
                                 </div>
                                 <div class="widget-posts-details "><a href="#single/{{post._id}}">{{post.title}}</a>
-                                    <p>Created: {{post.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</p>
                                 </div>
                             </div>
                         </div>
@@ -131,25 +135,32 @@
                         <div class="posts-list list-sidebar ">
                             <div ng-repeat="post in randomArticles" class="clear-fix ">
                                 <div class="thumbnail">
-                                    <a href=""><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
+                                    <a href="#single/{{post._id}}"><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
                                 </div>
                                 <div class="widget-posts-details ">
                                     <a href="#single/{{post._id}}">{{post.title}}</a>
-                                    <p>Created: {{post.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="widget ">
+                <div class="widget">
                     <h5 class="title ">Recent Comment</h5>
                     <div class="widget-underline "></div>
-                    <ul class="comment-list list-sidebar clear-fix ">
+                    <!-- <ul class="comment-list list-sidebar clear-fix ">
                         <li><a href="#">Elements of A Launch Page</a>
                             <p>Paul Boag - 08 January</p>
                         </li>
-                    </ul>
+                    </ul> -->
+                    <div ng-repeat="art in mostCommentsArticles" class="clear-fix ">
+                        <div class="thumbnail">
+                            <a href="#single/{{art._id}}"><img ng-src="{{art.media}}" class="portrait" alt="Image"></a>
+                        </div>
+                        <div class="widget-posts-details ">
+                            <a href="#single/{{art._id}}">{{art.title}}</a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="widget ">
@@ -173,6 +184,7 @@
                     </ul>
                 </div>
             </div>
+            <div class="col-md-1 col-sm-1 col-lg-1"></div>
 
             <div ng-view></div>
 
@@ -332,7 +344,9 @@
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js "></script>
 <script src="/bower_components/angular/angular.min.js "></script>
 <script src="/bower_components/angular-route/angular-route.min.js "></script>
+<script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 <script src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
+<script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
 
 <script src="/scripts/app.js "></script>
 <script src="/scripts/route.js "></script>

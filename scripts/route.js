@@ -20,6 +20,10 @@ scotchApp.config(function($routeProvider) {
             templateUrl: '/view_index/search.html',
             controller: 'mainController'
         })
+        .when('/search/:_term', {
+            templateUrl: '/view_index/search.html',
+            controller: 'mainController'
+        })
 
 
 });

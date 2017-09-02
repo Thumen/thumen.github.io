@@ -17,7 +17,7 @@
 
                     <div class="post-date" ng-init="getAllArticleinCategories()">
                         Posted by
-                        <a href="#"> {{art._author.name}}</a> | <a href=""> Danh mục: {{getCategoryNameOfArticle(art._category._id)}}</a></br>
+                        <a href="#author/{{art._author._id}}"> {{art._author.name}}</a> | <a href=""> Danh mục: {{getCategoryNameOfArticle(art._category._id)}}</a></br>
                         <a href="">Date: {{art.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
                     </div>
                 </div>

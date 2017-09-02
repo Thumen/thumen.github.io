@@ -26,6 +26,18 @@
      color: #0e1a23;
  }
  
+ .pull-right .navbar-toggle {
+     border-color: white;
+ }
+ 
+ .pull-right .navbar-ex1-collapse {
+     background-color: darkslategrey;
+ }
+ 
+ .navbar-toggle .icon-bar {
+     background-color: white;
+ }
+ 
  .navbar-static-top .dropdown .admin {
      min-width: 250px;
  }

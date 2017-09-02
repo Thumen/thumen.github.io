@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="http://icons.iconarchive.com/icons/mayosoft/azullustre/128/Admin-min-icon.png">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.min.css">
     <link rel="stylesheet" href="/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css">
@@ -163,54 +164,64 @@
     <nav class="navbar-static-top navbar-top">
         <div id="main">
             <span class="logo" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;  Memory's Blog</span>
-            <div class="nav-custom-menu pull-right">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="index.html">Home</a></li>
-                    <li>
-                        <a href="#admin">Page</a></li>
-                    <li>
-                        <a href="">LogOut</a>
-                    </li>
-                    <li class="dropdown user user-menu">
-                        <a href="" class="dropdown-toggle admin" data-toggle="dropdown" aria-expanded="false">
-                            <img src="images/tattoos/avt.png" class="user-image" alt="User Image" data-pin-nopin="true">
-                            <span class="hidden-xs">Hello Mén !?</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- User image -->
-                            <li class="user-header">
-                                <img src="images/tattoos/avt.png" class="img-circle" alt="User Image" data-pin-nopin="true">
-                                <p>
-                                    Mén - Web Developer</br>
-                                    <small>Member since Nov. 2017</small>
-                                </p>
-                            </li>
-                            <!-- Menu Body -->
-                            <li class="user-body">
-                                <div class="row">
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
+            <div class="nav-custom-menu pull-right role=" navigation "">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                       <span class="sr-only">Toggle navigation</span>
+                                       <span class="icon-bar"></span>
+                                       <span class="icon-bar"></span>
+                                       <span class="icon-bar"></span>
+                                   </button>
+                </div>
+                <div class="navbar-collapse collapse navbar-header navbar-ex1-collapse menu-place">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="index.html">Home</a></li>
+                        <li>
+                            <a href="#admin">Page</a></li>
+                        <li>
+                            <a href="">LogOut</a>
+                        </li>
+                        <li class="dropdown user user-menu">
+                            <a href="" class="dropdown-toggle admin" data-toggle="dropdown" aria-expanded="false">
+                                <img src="images/tattoos/avt.png" class="user-image" alt="User Image" data-pin-nopin="true">
+                                <span class="hidden-xs">Hello Mén !?</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="images/tattoos/avt.png" class="img-circle" alt="User Image" data-pin-nopin="true">
+                                    <p>
+                                        Mén - Web Developer</br>
+                                        <small>Member since Nov. 2017</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                                    <div class="row">
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Followers</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Sales</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Friends</a>
+                                        </div>
                                     </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
+                                </li>
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
-                                </div>
-                            </li>
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>

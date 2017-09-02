@@ -1,4 +1,4 @@
-var scotchApp = angular.module('scotchApp', ['ngRoute', 'ui.bootstrap']);
+var scotchApp = angular.module('scotchApp', ['ngRoute', 'ui.bootstrap', 'ngSanitize', 'ngCookies']);
 scotchApp.config(['$locationProvider', function($locationProvider) {
     $locationProvider.hashPrefix('');
 }]);
@@ -8,6 +8,8 @@ scotchApp.controller('mainController', function(
     $scope,
     $http,
     $routeParams,
+    $sanitize,
+    $cookieStore,
 
 ) {
     // create a message to display in our view
@@ -17,6 +19,19 @@ scotchApp.controller('mainController', function(
     var myId = '5981d730b38ced0004f0c5da';
     $scope.keySearch = "";
 
+    var compare = function(a, b) {
+        // Use toUpperCase() to ignore character casing
+        const genreA = a.comments.length;
+        const genreB = b.comments.length;
+
+        let comparison = 0;
+        if (genreA > genreB) {
+            comparison = -1;
+        } else if (genreA < genreB) {
+            comparison = 1;
+        }
+        return comparison;
+    }
 
     //Begin Sort Array
     var compareValues = function(key, order = 'asc') {
@@ -48,6 +63,8 @@ scotchApp.controller('mainController', function(
         $scope.apiGetArticles();
         $scope.apiGetCategories();
         $scope.getArticle();
+        $scope.user = $cookieStore.get('user');
+        $scope.token = $cookieStore.get('token');
     }
 
     //Search Aritcle
@@ -69,61 +86,38 @@ scotchApp.controller('mainController', function(
     };
 
 
-    // $scope.submitCreateArticle = function() {
-    //     console.log($scope.newArticle);
-    //     $scope.newArticle._author = "5981d730b38ced0004f0c5da";
-    //     $http.post(root + '/api/articles/', $scope.newArticle)
-    //         .then(function successCallbak(response) {
-    //             alert("Thành công");
-    //             // window.location.href = 'admin.html';
-    //         }, function errorCallback(response) {
-    //             console.log(data, status, headers, config);
-    //         });
-    // };
-
     $scope.apiGetCategories = function() {
         $http.get(root + "/api/categories")
             .then(function(response) {
                 $scope.categories = response.data;
             });
     };
-    // $scope.submitCreateCategory = function() {
-
-    //     if ($scope.newCategory.name.length > 0 &&
-    //         $scope.newCategory.description.length > 0) {
-    //         $http.post(root + "/api/categories", $scope.newCategory)
-    //             .then(function successCallbak(response) {
-    //                 alert("Thành công");
-    //                 $scope.categories.push(response);
-    //                 $scope.newCategory.name = "";
-    //                 $scope.newCategory.description = "";
-
-    //             }, function errorCallback(response) {
-    //                 console.log(data, status, headers, config);
-    //             });
-    //     } else {
-    //         alert("Input invalid");
-    //     }
-
-    // }
 
     $scope.getCategoryNameOfArticle = function(id) {
-        if (undefined != $scope.categories) {
-            for (i = 0; i < $scope.categories.length; i++) {
-                var cat = $scope.categories[i];
-                if (cat._id == id) {
-                    return cat.name;
+            if (undefined != $scope.categories) {
+                for (i = 0; i < $scope.categories.length; i++) {
+                    var cat = $scope.categories[i];
+                    if (cat._id == id) {
+                        return cat.name;
+                    }
                 }
-            }
-        };
+            };
 
-    }
-
+        }
+        // Number of Articles Category
+    $scope.getNumbersOfArticleInCategories = function(id) {
+            var arrayArticles = [];
+            angular.forEach($scope.articles, function(value, key) {
+                if (value._category._id === id) {
+                    arrayArticles.push(value);
+                }
+            });
+            return arrayArticles.length;
+        }
+        // get art in cat
     $scope.getAllArticleinCategories = function() {
             $scope.currentCategoryID = $routeParams.id;
             $scope.articlesInCategory = getArticlesById($scope.currentCategoryID);
-            // $scope.articlesInCategorySortedByDate = $scope.articlesInCategory.sort(compareValues('createdDate', 'desc'))
-
         }
         //Begin get articles by id
     var getArticlesById = function(id, maximumArticle) {
@@ -141,8 +135,32 @@ scotchApp.controller('mainController', function(
             }
         });
         return articles;
+    };
+    $scope.getAllArticleByAuthor = function() {
+        $scope.currentAuthorID = $routeParams.id;
+        $scope.articlesByAuthor = getArticlesByAuthorId($scope.currentAuthorID);
+    }
+
+    //Begin get articles by author id
+
+    var getArticlesByAuthorId = function(id, maximumArticle) {
+        if (maximumArticle === undefined) {
+            if ($scope.articles === undefined) {
+                maximumArticle = 0;
+            } else {
+                maximumArticle = $scope.articles.length;
+            }
+        }
+        var articles = [];
+        angular.forEach($scope.articles, function(value, key) {
+            if (value._author._id === id && articles.length < maximumArticle) {
+                articles.push(value);
+            }
+        });
+        return articles;
 
     };
+
 
     $scope.getArticle = function() {
         $scope.currentArticleId = $routeParams.id;
@@ -173,8 +191,13 @@ scotchApp.controller('mainController', function(
                     }
                 });
             }
+
+            //Update Most Comments Articles
+            $scope.newArrayArticle = newArticles.slice();
+            $scope.mostCommentsArticles = $scope.newArrayArticle.sort(compare).slice(0, 2);
             //Dynamic
             $scope.getAllArticleinCategories();
+            $scope.getAllArticleByAuthor();
             //Begin Pagination
             $scope.viewby = 5;
             $scope.totalItems = newArticles.length;
@@ -213,23 +236,23 @@ scotchApp.controller('mainController', function(
         };
     });
 
-    $scope.login = function() {
-        //console.log($scope.user);
-        //POST Login API below:
-        $http.post(root + '/api/users/auth', $scope.user)
-            .then(function successCallbak(response) {
-                var isSuccess = response.success;
-                if (isSuccess) {
-                    console.log(response);
-                } else {
-                    //Raise Error
-                    alert(response.message);
-                }
-            }, function errorCallback(response) {
-                console.log(data, status, headers, config);
-            });
+    // $scope.login = function() {
+    //     //console.log($scope.user);
+    //     //POST Login API below:
+    //     $http.post(root + '/api/users/auth', $scope.user)
+    //         .then(function successCallbak(response) {
+    //             var isSuccess = response.success;
+    //             if (isSuccess) {
+    //                 console.log(response);
+    //             } else {
+    //                 //Raise Error
+    //                 alert(response.message);
+    //             }
+    //         }, function errorCallback(response) {
+    //             console.log(data, status, headers, config);
+    //         });
 
-    };
+    // };
 
     $scope.signup = function() {
         //POST signup API below:
@@ -246,5 +269,47 @@ scotchApp.controller('mainController', function(
                 console.log(data, status, headers, config);
             });
     };
+    $scope.login = function() {
+        console.log($scope.user);
 
+        $http.post(root + '/api/users/auth', $scope.user)
+            .then(function successCallback(response) {
+                var isSuccess = response.data.success;
+                if (isSuccess === true) {
+                    $cookieStore.put('token', response.data.token);
+                    $cookieStore.put('user', response.data.user);
+                    $scope.user = $cookieStore.get('user');
+                    $scope.token = $cookieStore.get('token');
+                    //Redirect here
+                    window.location.href = '#'
+                    $scope.init();
+                } else {
+                    //Raise Error
+                    // alert(response.message);
+                }
+            }, function errorCallback(response) {
+                console.log(data, status, headers, config);
+            });
+    };
+
+    $scope.loadLogin = function() {
+        var token = $cookieStore.get('token');
+        if (token !== undefined) {
+            $location.url("/")
+        }
+    }
+
+    $scope.isLogged = function() {
+        if ($cookieStore.get('token') != undefined) {
+
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+    $scope.logOut = function() {
+        $cookieStore.remove('token');
+        $cookieStore.remove('user');
+    }
 });
