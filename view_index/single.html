@@ -1,25 +1,22 @@
 <div class="col-xs-12 col-md-8 col-sm-8 col-lg-8 post">
     <div ng-init="getArticle()" class="post">
-        <div class="title ">
-            <a href="#single/{{article._id}} ">{{article.title}}</a>
-        </div>
-        <div class="widget-underline "></div>
-        <div class="post-date ">
-            Posted by
-            <a href="#"> {{article._author.name}}</a> | <a href=""> Danh mục: {{getCategoryNameOfArticle(article._category._id)}}</a></br>
-            <a href="">Date: {{article.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
-        </div>
+        <div class="blog-detail">
+            <div class="title ">
+                <a href="#single/{{article._id}} ">{{article.title}}</a>
+            </div>
+            <div class="post-date date-single">
+                Posted by
+                <a href="#"> {{article._author.name}}</a> | <a href="">{{getCategoryNameOfArticle(article._category._id)}}</a> | <a href=""> {{article.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
+            </div>
 
+            <div class="blog-post blog-post-single">
+                {{article.description}}
+            </div>
+        </div>
         <div class="thumbnail-cat">
             <a href="#single/{{article._id}} ">
                 <img ng-src="{{article.media}}" class="portrait-cat" alt="Image" />
             </a>
-        </div>
-
-        <div class="blog-detail">
-            <div class="blog-post ">
-                {{article.description}}
-            </div>
         </div>
 
         <div class="full-description">

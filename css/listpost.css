@@ -1,7 +1,6 @@
- /* post */
+ /* LIST POST */
  
  .post {
-     /* color: #000; */
      padding: 30px 10px;
  }
  
@@ -15,7 +14,8 @@
  }
  
  .title-underline {
-     margin: 15px 0px;
+     margin: 30px 0px;
+     height: 2px;
  }
  
  .post-date {
@@ -23,24 +23,26 @@
      color: #626262;
      font-size: 11px;
      text-transform: uppercase;
+     padding: 60px 0 10px 0;
  }
- 
- .blog-title {}
  
  .blog-post p {
      color: #626262;
-     padding: 10px 0;
+     margin: 30px 0 10px 0;
  }
  
  .btn-readmore {
      letter-spacing: 1px;
-     font-size: 11px;
+     font-size: 10px;
      border: 3px solid #000;
      border-radius: 0px;
+     margin: 15px 0;
+     width: 150px;
+     font-weight: 600;
  }
  
  .readmore-block {
-     text-align: right;
+     text-align: left;
      margin: 15px 0;
  }
  
@@ -56,7 +58,7 @@
  }
  
  .post-social a {
-     font-size: 11px;
+     font-size: 10px;
      letter-spacing: 3px;
      color: #000;
      line-height: 23px;
@@ -65,20 +67,24 @@
  .post-social i {
      color: #626262;
  }
+ 
+ .title-listpost {
+     margin: -20px -15px;
+ }
  /* img */
  
  .thumbnail-main {
      position: relative;
      width: 100%;
-     height: 300px;
+     height: 350px;
      overflow: hidden;
-     float: left;
+     /* float: left; */
  }
  
  .thumbnail-main img {
      position: absolute;
      left: 50%;
-     top: 50%;
+     top: 40%;
      height: 100%;
      width: auto;
      -webkit-transform: translate(-50%, -50%);
@@ -121,9 +127,8 @@
  .thumbnail-cat {
      position: relative;
      min-width: 100%;
-     height: 300px;
+     height: 400px;
      overflow: hidden;
-     float: left;
  }
  
  .thumbnail-cat img {
@@ -148,23 +153,13 @@
  /* END */
  /* SINGLE POST */
  
- .post-date {
+ .date-single {
      padding-bottom: 10px;
-     margin-top: -15px;
+     margin-top: -60px;
  }
  
- .blog-post {
-     padding-top: 5px;
- }
- 
- .blog-detail .blog-content {
-     padding: -5px;
- }
- 
- .title {
-     font-size: 15px;
-     font-weight: 600;
-     letter-spacing: 2px;
+ .blog-post-single {
+     padding-bottom: 60px;
  }
  
  .blog-comment-form-main {
@@ -231,10 +226,6 @@
      height: auto;
      margin: 0;
  }
- 
- .image-com {}
- 
- .detail-coms {}
  
  .comments-out {
      padding: 30px 0 0 0;

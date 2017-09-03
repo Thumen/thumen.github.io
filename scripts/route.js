@@ -20,8 +20,8 @@ scotchApp.config(function($routeProvider) {
             templateUrl: '/view_index/search.html',
             controller: 'mainController'
         })
-        .when('/search/:_term', {
-            templateUrl: '/view_index/search.html',
+        .when('/author/:id', {
+            templateUrl: '/view_index/author.html',
             controller: 'mainController'
         })
 

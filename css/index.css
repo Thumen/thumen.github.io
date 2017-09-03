@@ -10,12 +10,22 @@
          text-transform: uppercase;
      }
      
+     a:hover {
+         text-decoration: none;
+         background-color: #CCCCCC;
+     }
+     
+     a:focus {
+         text-decoration: none;
+         color: #999fa5;
+     }
+     
      body {
          font-family: 'Open Sans', sans-serif;
          line-height: 1.8;
          color: #626262;
          background-color: white;
-         font-size: 14px;
+         font-size: 13px;
          text-align: justify;
          min-width: 320px;
      }
@@ -174,7 +184,7 @@
      }
      
      .custom-search-input .glyphicon-search {
-         font-size: 23px;
+         font-size: 20px;
      }
      
      .btn-info:hover {
@@ -186,20 +196,20 @@
      
      .title {
          line-height: 20px;
-         padding: 14px;
+         padding: 15px;
          padding-top: 0px;
          margin: 0px -15px;
          text-transform: uppercase;
          color: #000;
-         font-size: 20px;
+         font-size: 15px;
          font-weight: 600;
          letter-spacing: 2px;
      }
      
      .widget {
-         padding: 15px;
-         margin-bottom: 15px;
-         border: 1px solid #e1e5e6;
+         /* padding: 15px; */
+         margin-bottom: 65px;
+         /* border: 1px solid #e1e5e6; */
      }
      
      .widget-title {
@@ -217,12 +227,11 @@
      .widget p {
          color: #626262;
          font-size: 12px;
-         padding-top: 10px;
      }
      
      .widget-posts-details {
-         line-height: 13px;
-         font-size: 11px;
+         line-height: 16px;
+         font-size: 12px;
          color: #000;
      }
      
@@ -240,10 +249,7 @@
      .category-list a,
      .archive-list a {
          text-transform: capitalize;
-     }
-     
-     .category-list li a span:before {
-         content: "/";
+         color: #626262;
      }
      
      .comment-list a {
@@ -252,7 +258,7 @@
      }
      
      .clear-fix {
-         padding: 15px 0px;
+         padding: 15px 0 0;
          font-size: 12px;
          line-height: 23px;
          letter-spacing: 0.04em;
@@ -261,6 +267,10 @@
      
      .archive-list li a span:before {
          content: "/";
+     }
+     
+     .most-comment {
+         padding-bottom: 0;
      }
      /* END SIBE BAR */
      /*FOOTER*/
@@ -366,8 +376,8 @@
      
      .thumbnail {
          position: relative;
-         width: 85px;
-         height: 55px;
+         width: 45%;
+         height: 60px;
          overflow: hidden;
          margin-right: 20px;
          float: left;

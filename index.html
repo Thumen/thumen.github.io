@@ -107,22 +107,20 @@
                 <div class="widget">
                     <h5 class="title ">Categories</h5>
                     <div class="widget-underline"></div>
-                    <ul class="category-list list-sidebar clear-fix">
-                        <li ng-repeat="cat in categories"><a href="#listcat/{{cat._id}}">{{cat.name}}  ({{getNumbersOfArticleInCategories(cat._id)}})</a></li>
+                    <ul class="category-list list-sidebar clear-fix cat-archive ">
+                        <li ng-repeat="cat in categories"><a href="#listcat/{{cat._id}}">{{cat.name}}  /  {{getNumbersOfArticleInCategories(cat._id)}}</a></li>
                     </ul>
                 </div>
 
                 <div class="widget ">
                     <h5 class="title ">Popular Post</h5>
                     <div class="widget-underline "></div>
-                    <div clas="widget-body ">
-                        <div class="posts-list list-sidebar ">
-                            <div ng-repeat="post in popularArticles" class="clear-fix ">
-                                <div class="thumbnail">
-                                    <a href="#single/{{post._id}}"><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
-                                </div>
-                                <div class="widget-posts-details "><a href="#single/{{post._id}}">{{post.title}}</a>
-                                </div>
+                    <div class="posts-list list-sidebar ">
+                        <div ng-repeat="post in popularArticles" class="clear-fix ">
+                            <div class="thumbnail">
+                                <a href="#single/{{post._id}}"><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
+                            </div>
+                            <div class="widget-posts-details "><a href="#single/{{post._id}}"><strong>{{post.title}}</strong></a>
                             </div>
                         </div>
                     </div>
@@ -131,34 +129,27 @@
                 <div class="widget ">
                     <h5 class="title ">Random Posts</h5>
                     <div class="widget-underline "></div>
-                    <div clas="widget-body ">
-                        <div class="posts-list list-sidebar ">
-                            <div ng-repeat="post in randomArticles" class="clear-fix ">
-                                <div class="thumbnail">
-                                    <a href="#single/{{post._id}}"><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
-                                </div>
-                                <div class="widget-posts-details ">
-                                    <a href="#single/{{post._id}}">{{post.title}}</a>
-                                </div>
+                    <div class="posts-list list-sidebar ">
+                        <div ng-repeat="post in randomArticles" class="clear-fix ">
+                            <div class="thumbnail">
+                                <a href="#single/{{post._id}}"><img ng-src="{{post.media}}" class="portrait" alt="Image"></a>
+                            </div>
+                            <div class="widget-posts-details ">
+                                <a href="#single/{{post._id}}"><strong>{{post.title}}</strong></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="widget">
-                    <h5 class="title ">Recent Comment</h5>
+                    <h5 class="title ">Most Comment</h5>
                     <div class="widget-underline "></div>
-                    <!-- <ul class="comment-list list-sidebar clear-fix ">
-                        <li><a href="#">Elements of A Launch Page</a>
-                            <p>Paul Boag - 08 January</p>
-                        </li>
-                    </ul> -->
-                    <div ng-repeat="art in mostCommentsArticles" class="clear-fix ">
-                        <div class="thumbnail">
+                    <div ng-repeat="art in mostCommentsArticles" class="clear-fix most-comment">
+                        <!-- <div class="thumbnail">
                             <a href="#single/{{art._id}}"><img ng-src="{{art.media}}" class="portrait" alt="Image"></a>
-                        </div>
+                        </div> -->
                         <div class="widget-posts-details ">
-                            <a href="#single/{{art._id}}">{{art.title}}</a>
+                            <a href="#single/{{art._id}}"><strong>{{art.title}}</strong></a>
                         </div>
                     </div>
                 </div>
@@ -175,12 +166,9 @@
                 <div class="widget ">
                     <h5 class="title ">Archive</h5>
                     <div class="widget-underline "></div>
-                    <ul class="archive-list list-sidebar clear-fix">
+                    <ul class="archive-list list-sidebar clear-fix cat-archive">
                         <li><a href=" # ">December 2017  <span> 23</span></a></li>
                         <li><a href="# ">January 2017  <span> 21</span></a></li>
-                        <li><a href="# ">February 2017 <span> 48</span></a></li>
-                        <li><a href="# ">March 2017  <span> 34</span></a></li>
-                        <li><a href="# ">April 2017  <span> 22</span></a></li>
                     </ul>
                 </div>
             </div>

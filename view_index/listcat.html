@@ -5,7 +5,6 @@
             <p class="title">
                 {{getCategoryNameOfArticle(currentCategoryID)}}
             </p>
-
             <div class="img">
                 <div class="thumbnail-cat">
                     <a href="#single/{{art._id}} ">
@@ -15,22 +14,18 @@
             </div>
 
             <div class="blog-detail">
-                <div class="title title-cat">
-                    <a href="#single/{{art._id}}">{{art.title}}</a>
-                    <div class="widget-underline  title-underline"></div>
-                </div>
-
                 <div class="post-date ">
                     Posted by
-                    <a href="#"> {{art._author.name}}</a> | <a href="# "> Danh mục: {{getCategoryNameOfArticle(art._category._id)}}</a></br>
-                    <a href="">Date: {{art.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
+                    <a href="#"> {{art._author.name}}</a> | <a href="# ">{{getCategoryNameOfArticle(art._category._id)}}</a> | <a href=""> {{art.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
+                </div>
+                <div class="title title-cat">
+                    <a href="#single/{{art._id}}">{{art.title}}</a>
                 </div>
             </div>
-
             <div class="blog-post">
                 <p>{{art.description}}</p>
+                <div class="widget-underline  title-underline"></div>
             </div>
-
             <div class="post-social ">
                 <a href="# " class=" "><i class="fa fa-heart-o "> Likes</i></a>
                 <a href="# " class=" "><i class="fa fa-share-alt "> Share</i></a>
@@ -39,7 +34,6 @@
             <div class="readmore-block ">
                 <a href="#single/{{art._id}}" class="btn btn-small btn-default btn-readmore ">Continue Reading</a>
             </div>
-            <div class="widget-underline end-post "></div>
         </div>
     </div>
 
