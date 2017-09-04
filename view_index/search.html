@@ -1,10 +1,6 @@
 <div ng-init="getArticleBySearchKey()" class="col-xs-12 col-md-8 col-sm-8 col-lg-8 post">
     <div ng-repeat="art in articleGetByKey.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) " class="post post-text">
         <div class="row">
-            <p class="title">
-                {{getCategoryNameOfArticle(currentCategoryID)}}
-            </p>
-
             <div class="img">
                 <div class="thumbnail-cat">
                     <a href="#single/{{art._id}} ">
@@ -16,7 +12,7 @@
                 <div class="blog-detail ">
                     <div class="post-date ">
                         Posted by
-                        <a href="#"> {{art._author.name}}</a> | <a href="# ">{{getCategoryNameOfArticle(art._category)}}</a> | <a href="">{{art.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
+                        <a href="#author/{{art._author._id}}">{{art._author.name}}</a> | <a href="# ">{{getCategoryNameOfArticle(art._category)}}</a> | <a href="">{{art.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
                     </div>
                     <div class="title">
                         <a href="#single/{{art._id}}">{{art.title}}</a>

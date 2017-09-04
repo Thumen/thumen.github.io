@@ -6,7 +6,7 @@
             </div>
             <div class="post-date date-single">
                 Posted by
-                <a href="#"> {{article._author.name}}</a> | <a href="">{{getCategoryNameOfArticle(article._category._id)}}</a> | <a href=""> {{article.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
+                <a href="#author/{{article._author._id}}"> {{article._author.name}}</a> | <a href="">{{getCategoryNameOfArticle(article._category._id)}}</a> | <a href=""> {{article.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
             </div>
 
             <div class="blog-post blog-post-single">

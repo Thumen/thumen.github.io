@@ -16,7 +16,7 @@
             <div class="blog-detail">
                 <div class="post-date ">
                     Posted by
-                    <a href="#"> {{art._author.name}}</a> | <a href="# ">{{getCategoryNameOfArticle(art._category._id)}}</a> | <a href=""> {{art.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
+                    <a href="#author/{{art._author._id}}"> {{art._author.name}}</a> | <a href="# ">{{getCategoryNameOfArticle(art._category._id)}}</a> | <a href=""> {{art.createdDate | date: 'dd-MM-yyyy HH:mm:ss'}}</a>
                 </div>
                 <div class="title title-cat">
                     <a href="#single/{{art._id}}">{{art.title}}</a>
