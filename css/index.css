@@ -151,6 +151,11 @@
          background-color: white;
          margin-top: 60px;
      }
+     /* dropdown-user */
+     
+     .dropdown-menu>li>a {
+         padding: 10px;
+     }
      /* search */
      
      .custom-search-input {
@@ -241,8 +246,7 @@
      
      .list-sidebar {
          list-style-type: none;
-         padding-left: 0px;
-         margin-left: 2px;
+         padding-left: 15px;
          color: #000;
      }
      
@@ -376,10 +380,10 @@
      
      .thumbnail {
          position: relative;
-         width: 45%;
+         min-width: 25%;
          height: 60px;
          overflow: hidden;
-         margin-right: 20px;
+         /* margin-right: 20px; */
          float: left;
      }
      
@@ -395,7 +399,7 @@
      }
      
      .thumbnail img.portrait {
-         width: 100%;
+         min-width: 80%;
          height: auto;
      }
      /* LOGIN */

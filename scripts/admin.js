@@ -36,6 +36,7 @@ scotchApp.controller('adminController', function(
     $scope,
     $http,
     $routeParams,
+
 ) {
     // create a message to display in our view
     var root = "https://green-web-blog.herokuapp.com";
@@ -48,6 +49,8 @@ scotchApp.controller('adminController', function(
     $scope.init = function() {
         $scope.apiGetArticles();
         $scope.apiGetCategories();
+        $scope.user = $cookieStore.get('user');
+        $scope.token = $cookieStore.get('token');
     }
 
 
@@ -193,5 +196,4 @@ scotchApp.controller('adminController', function(
                 console.log(data, status, headers, config);
             });
     }
-
 });

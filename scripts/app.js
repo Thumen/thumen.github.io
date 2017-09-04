@@ -136,14 +136,36 @@ scotchApp.controller('mainController', function(
         });
         return articles;
     };
+    //Begin get articles by author id
     $scope.getAllArticleByAuthor = function() {
         $scope.currentAuthorID = $routeParams.id;
         $scope.articlesByAuthor = getArticlesByAuthorId($scope.currentAuthorID);
     }
 
-    //Begin get articles by author id
-
     var getArticlesByAuthorId = function(id, maximumArticle) {
+        if (maximumArticle === undefined) {
+            if ($scope.articles === undefined) {
+                maximumArticle = 0;
+            } else {
+                maximumArticle = $scope.articles.length;
+            }
+        }
+        var articles = [];
+        angular.forEach($scope.articles, function(value, key) {
+            if (value._author._id === id && articles.length < maximumArticle) {
+                articles.push(value);
+            }
+        });
+        return articles;
+
+    };
+    //Begin get my articles 
+    $scope.getMyArticles = function() {
+        $scope.currentMyID = myId;
+        $scope.articlesByMe = getArticlesByMe($scope.currentMyID);
+    }
+
+    var getArticlesByMe = function(id, maximumArticle) {
         if (maximumArticle === undefined) {
             if ($scope.articles === undefined) {
                 maximumArticle = 0;
@@ -198,6 +220,7 @@ scotchApp.controller('mainController', function(
             //Dynamic
             $scope.getAllArticleinCategories();
             $scope.getAllArticleByAuthor();
+            $scope.getMyArticles();
             //Begin Pagination
             $scope.viewby = 5;
             $scope.totalItems = newArticles.length;

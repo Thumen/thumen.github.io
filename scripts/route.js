@@ -24,6 +24,10 @@ scotchApp.config(function($routeProvider) {
             templateUrl: '/view_index/author.html',
             controller: 'mainController'
         })
+        .when('/mypost/', {
+            templateUrl: '/view_index/mypost.html',
+            controller: 'mainController'
+        })
 
 
 });
