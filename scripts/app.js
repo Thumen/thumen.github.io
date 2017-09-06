@@ -118,6 +118,8 @@ scotchApp.controller('mainController', function(
     $scope.getAllArticleinCategories = function() {
             $scope.currentCategoryID = $routeParams.id;
             $scope.articlesInCategory = getArticlesById($scope.currentCategoryID);
+            // $scope.totalItemsin = $scope.articlesInCategory.length;
+
         }
         //Begin get articles by id
     var getArticlesById = function(id, maximumArticle) {
@@ -190,7 +192,7 @@ scotchApp.controller('mainController', function(
 
     // Comment
     $scope.addCommentforArticle = function() {
-        $scope.newComment._user = myId;
+        $scope.newComment._user = $scope.user;
         $http.put(root + '/api/article/comment/' + $scope.article._id, $scope.newComment)
             .then(function successCallbak(response) {
                 $scope.article = response.data;
@@ -222,7 +224,7 @@ scotchApp.controller('mainController', function(
             $scope.getAllArticleByAuthor();
             $scope.getMyArticles();
             //Begin Pagination
-            $scope.viewby = 5;
+            $scope.viewby = 4;
             $scope.totalItems = newArticles.length;
             $scope.currentPage = 1;
             $scope.itemsPerPage = $scope.viewby;
@@ -274,23 +276,39 @@ scotchApp.controller('mainController', function(
     //         }, function errorCallback(response) {
     //             console.log(data, status, headers, config);
     //         });
-
     // };
-
+    // $scope.signup = function() {
+    //POST signup API below:
+    //     $http.post(root + '/api/users/auth', $scope.newUser)
+    //         .then(function successCallbak(response) {
+    //             var isSuccess = response.success;
+    //             if (isSuccess) {
+    //                 console.log(response);
+    //             } else {
+    //                 //Raise Error
+    //                 alert(response.message);
+    //             }
+    //         }, function errorCallback(response) {
+    //             console.log(data, status, headers, config);
+    //         });
+    // };
     $scope.signup = function() {
-        //POST signup API below:
-        $http.post(root + '/api/users/auth', $scope.newUser)
-            .then(function successCallbak(response) {
-                var isSuccess = response.success;
-                if (isSuccess) {
-                    console.log(response);
-                } else {
-                    //Raise Error
-                    alert(response.message);
-                }
-            }, function errorCallback(response) {
-                console.log(data, status, headers, config);
-            });
+        $http.post(root + '/api/users/signup/', $scope.newUser).then(function successCallbak(response) {
+            var isSuccess = response.data.success;
+            if (isSuccess === true) {
+                $cookieStore.put('token', response.data.token);
+                $cookieStore.put('user', response.data.user);
+                $scope.user = $cookieStore.get('user');
+                $scope.token = $cookieStore.get('token');
+                //Redirect here
+                window.location.href = '#'
+            } else {
+                //Raise Error
+                alert(response.message);
+            }
+        }, function errorCallback(response) {
+            console.log(data, status, headers, config);
+        });
     };
     $scope.login = function() {
         console.log($scope.user);
@@ -305,7 +323,6 @@ scotchApp.controller('mainController', function(
                     $scope.token = $cookieStore.get('token');
                     //Redirect here
                     window.location.href = '#'
-                    $scope.init();
                 } else {
                     //Raise Error
                     // alert(response.message);

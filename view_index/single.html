@@ -44,7 +44,7 @@
                 <div>
                     <h5 class="author text-left user-comments"><b>{{x._user.name}}</b></h5>
                     <span class="date text-right">
-                                        20:15 24/5/2017
+                                    {{x.createdDate| date:'HH:mm dd-MM-yyyy'}}
                                     </span>
                 </div>
                 <p class="">{{x.commentContent}}</p>
@@ -52,49 +52,12 @@
                                     <a>   <span class="fa fa-thumbs-up" aria-hidden="true"></span></a> <span class="count">1</span> <a><span class="fa fa-thumbs-down" aria-hidden="true"></span></a> <span class="count">1</span></h5>
             </div>
         </div>
-        <div class="row comments-out">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 image-com">
-                <div class="thumbnail thumbnail-cmts">
-                    <a href="# "><img src="images/tattoos/avatar.png" class="portrait" alt="Image"></a>
-                </div>
-
-            </div>
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 detail-coms">
-                <div>
-                    <h5 class="author text-left user-comments"><b>Tom Thomas</b></h5>
-                    <span class="date text-right">
-                                        20:15 24/5/201
-                                    </span>
-                </div>
-                <p class="">You should read it. This is so cool</p>
-                <h5 class=""><a href="">Reply<a>
-                                    <a> <span class="fa fa-thumbs-up" aria-hidden="true"></span></a> <span class="count">1</span> <a><span class="fa fa-thumbs-down" aria-hidden="true"></span></a> <span class="count">1</span></h5>
-                <div class="row comments-out">
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 image-com">
-                        <div class="thumbnail thumbnail-cmts">
-                            <a href="# "><img src="images/tattoos/avatar.png" class="portrait" alt="Image"></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 detail-coms">
-                        <div>
-                            <h5 class="author text-left user-comments"><b>mèo meo méo</b></h5>
-                            <span class="date text-right">
-                                        20:15 24/5/2017
-                                    </span>
-                        </div>
-                        <p class="">You should read it. This is so cool</p>
-                        <h5 class=""><a href="">Reply<a>
-                                            <a> <span class="fa fa-thumbs-up" aria-hidden="true"></span></a> <span class="count">1</span> <a><span class="fa fa-thumbs-down" aria-hidden="true"></span></a> <span class="count">1</span></h5>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 
 
 
-    <div class="input">
+    <div ng-show="isLogged()" class="input">
         <p>Add a Comment</p>
         <form ng-submit="addCommentforArticle()">
             <!-- <div class="form-group">

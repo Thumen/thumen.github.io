@@ -3,10 +3,13 @@
         <h3> Viết bài mới </h3>
     </div>
     <div class="panel-body">
-        <form ng-submit="submitCreateArticle()">
+        <form ng-submit="submitCreateArticle()" name="myForm" novalidate>
             <div class="form-group">
                 <label>Title</label>
-                <input type="text" class="form-control" ng-model="newArticle.title" placeholder="Title">
+                <input type="text" class="form-control" name="title" ng-model="newArticle.title" placeholder="Title">
+                <span style="color:red" ng-show="myForm.$submitted ||myForm.title.$invalid">
+                    <span ng-show="myForm.title.$error.required">Username is required.</span>
+                </span>
             </div>
             <div class="form-group">
                 <label>Author</label>
@@ -19,7 +22,10 @@
             </div>
             <div class="form-group">
                 <label>Short Description</label>
-                <textarea class="form-control" ng-model="newArticle.description" rows="2"></textarea>
+                <textarea class="form-control" name="description" ng-model="newArticle.description" rows="2"></textarea>
+                <span style="color:red" ng-show="myForm.description.$invalid && myForm.description.$invalid">
+                    <span ng-show="myForm.description.$error.required">Username is required.</span>
+                </span>
             </div>
             <div class="form-group">
                 <label>Full Description</label>
@@ -29,7 +35,10 @@
 
             <div class="form-group">
                 <label>Media</label>
-                <input type="text" class="form-control" ng-model="newArticle.media" placeholder="Image, Youtube Link...">
+                <input type="text" class="form-control" name="img" ng-model="newArticle.media" placeholder="Image, Youtube Link...">
+                <span style="color:red" ng-show="myForm.img.$invalid && myForm.img.$invalid">
+                    <span ng-show="myForm.img.$error.required">Username is required.</span>
+                </span>
             </div>
 
             <div class="form-group">
@@ -38,7 +47,8 @@
             </div>
 
 
-            <button class="btn btn-primary" type="submit">Đăng bài viết</button>
+            <button class="btn btn-primary" type="submit" ng-disabled="myForm.title.$invalid ||  
+             myForm.email.$invalid || myForm.description.$invalid|| myForm.img.$invalid">Đăng bài viết</button>
         </form>
     </div>
 </div>

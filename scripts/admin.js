@@ -103,7 +103,6 @@ scotchApp.controller('adminController', function(
     }
 
     $scope.updateCategory = function() {
-        $scope.category._author = "5981d730b38ced0004f0c5da";
         $http.patch(root + '/api/categories/' + $scope.category._id, $scope.category)
             .then(function successCallbak(response) {
 
@@ -155,7 +154,7 @@ scotchApp.controller('adminController', function(
                     $scope.categories.push(response.data);
                     $scope.newCategory.name = "";
                     $scope.newCategory.description = "";
-
+                    window.location.href = '/admin.html#/category';
                 }, function errorCallback(response) {
                     // console.log(data, status, headers, config);
                 });

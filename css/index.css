@@ -28,6 +28,7 @@
          font-size: 13px;
          text-align: justify;
          min-width: 320px;
+         padding-right: 0px!important;
      }
      
      .logo {
