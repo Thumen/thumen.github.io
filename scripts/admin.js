@@ -115,25 +115,23 @@ scotchApp.controller('adminController', function(
     $scope.deleteArticle = function() {
         $http.delete(root + '/api/articles/' + $scope.article._id)
             .then(function successCallback(response) {
-                console.log('You have already deleted the articles')
                 window.location.href = '/admin.html#/listArticles';
             }, function errorCallback(response) {
                 // console.log(data, status, headers, config);
             });
     }
-    $scope.deleteCategory = function() {
-        $http.delete(root + '/api/categories/' + $scope.category._id)
-            .then(function successCallback(response) {
-                console.log('You have already deleted the categories')
-                window.location.href = '/admin.html#/category';
-            }, function errorCallback(response) {
-                // console.log(data, status, headers, config);
-            });
-    }
+
+    // $scope.deleteCategory = function() {
+    //     $http.delete(root + '/api/categories/' + $scope.category._id)
+    //         .then(function successCallback(response) {
+    //             window.location.href = '/admin.html#/category';
+    //         }, function errorCallback(response) {
+    //             // console.log(data, status, headers, config);
+    //         });
+    // }
 
 
     $scope.submitCreateArticle = function() {
-        console.log($scope.newArticle);
         $scope.newArticle._author = "5981d730b38ced0004f0c5da";
         $http.post(root + '/api/articles/', $scope.newArticle)
             .then(function successCallbak(response) {

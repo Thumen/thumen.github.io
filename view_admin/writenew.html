@@ -3,14 +3,13 @@
         <h3> Viết bài mới </h3>
     </div>
     <div class="panel-body">
-        <form ng-submit="submitCreateArticle()" name="postForm" novalidate>
-            <div class="form-group" ng-class="{ 'has-error' : postForm.title.$submitted ||postForm.title.$invalid}">
+        <form ng-submit="submitCreateArticle()" name="form" role="form">
+            <div class="form-group">
                 <label>Title</label>
-                <input type="text" class="form-control" name="title" ng-minlength="4" ng-maxlength="240" ng-model="newArticle.title" placeholder="Title" novalidate>
-                <p ng-show="signupForm.title.$error.minlength" class="help-block">Title is too short.</p>
-                <p ng-show="signupForm.title.$error.maxlength" class="help-block">Title is too long.</p>
-                <!-- <span  ng-show="postForm.title.$error.required">Username is required.</span> -->
-                </span>
+                <input type="text" class="form-control" name="title" ng-model="newArticle.title" placeholder="Title" required novalidate>
+                <div ng-show="form.$submitted || form.title.$touched">
+                    <p class="validation-color" ng-show="form.title.$error.required">Your title is invalid.</p>
+                </div>
             </div>
             <div class="form-group">
                 <label>Author</label>
@@ -18,35 +17,40 @@
             </div>
             <div ng-init="apiGetCategories()" class="form-group">
                 <label>Category</label></br>
-                <select ng-model="newArticle._category" ng-required="true" class="form-control" ng-options="category as category.name for category in categories track by category._id" />
+                <select ng-model="newArticle._category" name="category" ng-required="true" class="form-control" ng-options="category as category.name for category in categories track by category._id" required/>
                 </select>
+                <div ng-show="form.$submitted || form.category.$touched">
+                    <p class="validation-color" ng-show="form.category.$pristine">Please choose the category</p>
+                </div>
             </div>
             <div class="form-group">
                 <label>Short Description</label>
-                <textarea class="form-control" name="description" ng-model="newArticle.description" rows="2"></textarea>
-                <span style="color:red" ng-show="postForm.description.$invalid && myForm.description.$invalid">
-                    <span ng-show="postForm.description.$error.required">Username is required.</span>
-                </span>
+                <textarea class="form-control" name="description" ng-model="newArticle.description" rows="2" required></textarea>
+                <div ng-show="form.$submitted || form.description.$touched">
+                    <p class="validation-color" ng-show="form.description.$error.required">Add the description.</p>
+                </div>
             </div>
             <div class="form-group">
                 <label>Full Description</label>
-                <text-angular ng-model="newArticle.content"></text-angular>
-
+                <text-angular ng-model="newArticle.content" name="content" required></text-angular>
+                <div ng-show="form.$submitted || form.content.$touched">
+                    <p class="validation-color" ng-show="form.content.$error.required">Add content.</p>
+                </div>
             </div>
 
             <div class="form-group">
                 <label>Media</label>
-                <input type="text" class="form-control" name="img" ng-model="newArticle.media" placeholder="Image, Youtube Link...">
-                <span class="validation-color" ng-show="postForm.img.$invalid && myForm.img.$invalid">
-                    <span ng-show="postForm.img.$error.required">Username is required.</span>
-                </span>
+                <input type="text" class="form-control" name="media" ng-model="newArticle.media" placeholder="Image, Youtube Link..." required>
+                <div ng-show="form.$submitted || form.media.$touched">
+                    <p class="validation-color" ng-show="form.media.$error.required">Add Media.</p>
+                </div>
             </div>
 
             <div class="form-group">
                 <label>Tags</label>
                 <tags-input use-strings="true" height='30px' ng-model="newArticle.tags"></tags-input>
             </div>
-            <button class="btn btn-primary" type="submit" ng-disabled="postForm.$invalid">Đăng bài viết</button>
+            <button class="btn btn-primary" type="submit" ng-disabled="form.$invalid">Đăng bài viết</button>
         </form>
     </div>
 </div>

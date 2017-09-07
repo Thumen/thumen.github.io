@@ -74,7 +74,7 @@ scotchApp.controller('mainController', function(
             .then(function successCallbak(response) {
                 $scope.articleGetByKey = response.data;
             }, function errorCallback(response) {
-                console.log(data, status, headers, config);
+                // console.log(data, status, headers, config);
             });
     }
 
@@ -196,10 +196,9 @@ scotchApp.controller('mainController', function(
         $http.put(root + '/api/article/comment/' + $scope.article._id, $scope.newComment)
             .then(function successCallbak(response) {
                 $scope.article = response.data;
-                alert("Thành công");
-                console.log(response.data);
+                // console.log(response.data);
             }, function errorCallback(response) {
-                console.log(data, status, headers, config);
+                // console.log(data, status, headers, config);
             });
     }
 
@@ -301,7 +300,7 @@ scotchApp.controller('mainController', function(
                 $scope.user = $cookieStore.get('user');
                 $scope.token = $cookieStore.get('token');
                 //Redirect here
-                window.location.href = '#'
+                window.location.href = '/#/'
             } else {
                 //Raise Error
                 alert(response.message);
@@ -322,7 +321,7 @@ scotchApp.controller('mainController', function(
                     $scope.user = $cookieStore.get('user');
                     $scope.token = $cookieStore.get('token');
                     //Redirect here
-                    window.location.href = '#'
+                    window.location.href = '/#/'
                 } else {
                     //Raise Error
                     // alert(response.message);

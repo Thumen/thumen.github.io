@@ -28,8 +28,8 @@
                         <td>{{cat.name}}</td>
                         <td>{{cat.description}}</td>
                         <td>{{cat.create_date| date: 'dd-MM-yyyy HH:mm:ss'}}</td>
-                        <td><a ng-click="getCategoryID(cat._id)" data-toggle="modal" data-target='#edit-modal' href=""><span class="label label-warning">Chỉnh sửa</span></a> <a ng-click="getCategoryID(cat._id)" data-toggle="modal" data-target='#delete-modal'
-                                href=""><span class="label label-danger">Xóa</span></a></td>
+                        <td><a ng-click="getCategoryID(cat._id)" data-toggle="modal" data-target='#edit-modal' href=""><span class="label label-warning">Chỉnh sửa</span></a>
+                            <!-- <a ng-click="getCategoryID(cat._id)" data-toggle="modal" data-target='#delete-modal' href=""><span class="label label-danger">Xóa</span></a></td> -->
                     </tr>
 
                 </tbody>
@@ -38,19 +38,22 @@
         </div>
         <div class="col-md-4">
             <h3>Thêm chuyên đề:</h3>
-            <form ng-submit="submitCreateCategory()">
-                <form>
-                    <div class="form-group">
-                        <label for="title">Tiêu đề:</label>
-                        <textarea ng-model="newCategory.name" class="form-control" rows="3" id="title" placeholder="nhập tiêu đề cho chuyên mục..."></textarea>
-                    </div>
+            <form ng-submit="submitCreateCategory()" name="categoryForm">
+                <div class="form-group" ng-class="{ 'has-error' : categoryForm.name.$submitted || categoryForm.name.$pristine || categoryForm.name.$invalid}">
+                    <label for="title">Tiêu đề:</label>
+                    <textarea ng-model="newCategory.name" name="name" ng-minlength="5" ng-maxlength="80" class="form-control" rows="3" id="title" placeholder="nhập tiêu đề cho chuyên mục..."></textarea>
+                    <p ng-show="categoryForm.name.$error.minlength" class="help-block">Title is too short.</p>
+                    <p ng-show="categoryForm.name.$error.maxlength" class="help-block">Title is too long.</p>
+                </div>
 
-                    <div class="form-group">
-                        <label for="description">Mô tả:</label>
-                        <textarea ng-model="newCategory.description" class="form-control" rows="5" id="description" placeholder="Thêm mô tả..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Thêm mới</button>
-                </form>
+                <div class="form-group">
+                    <label for="description">Mô tả:</label>
+                    <textarea ng-model="newCategory.description" name="description" class="form-control" rows="5" id="description" placeholder="Thêm mô tả..."></textarea>
+                    <p class="validation-color" ng-show="categoryForm.description.$submitted || categoryForm.description.$pristine || categoryForm.description.$invalid " class="help-block"> Description is invalid.</p>
+                </div>
+
+                <button type="submit" class="btn btn-primary" ng-disabled="categoryForm.$invalid">Thêm mới</button>
+            </form>
         </div>
     </div>
 </div>
@@ -85,7 +88,7 @@
     </div>
 </div>
 
-<div class="modal fade" id='delete-modal'>
+<!-- <div class="modal fade" id='delete-modal'>
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
@@ -100,4 +103,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
