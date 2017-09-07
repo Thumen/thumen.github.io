@@ -38,18 +38,21 @@
         </div>
         <div class="col-md-4">
             <h3>Thêm chuyên đề:</h3>
-            <form ng-submit="submitCreateCategory()" name="categoryForm">
-                <div class="form-group" ng-class="{ 'has-error' : categoryForm.name.$submitted || categoryForm.name.$pristine || categoryForm.name.$invalid}">
+            <form ng-submit="submitCreateCategory()" name="categoryForm" role="form">
+                <div class="form-group">
                     <label for="title">Tiêu đề:</label>
-                    <textarea ng-model="newCategory.name" name="name" ng-minlength="5" ng-maxlength="80" class="form-control" rows="3" id="title" placeholder="nhập tiêu đề cho chuyên mục..."></textarea>
-                    <p ng-show="categoryForm.name.$error.minlength" class="help-block">Title is too short.</p>
-                    <p ng-show="categoryForm.name.$error.maxlength" class="help-block">Title is too long.</p>
+                    <textarea ng-model="newCategory.name" name="title" class="form-control" rows="3" id="title" placeholder="nhập tiêu đề cho chuyên mục..." required></textarea>
+                    <div ng-show="categoryForm.$submitted || categoryForm.title.$touched">
+                        <p class="validation-color" ng-show="categoryForm.title.$error.required">Your title is invalid.</p>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="description">Mô tả:</label>
-                    <textarea ng-model="newCategory.description" name="description" class="form-control" rows="5" id="description" placeholder="Thêm mô tả..."></textarea>
-                    <p class="validation-color" ng-show="categoryForm.description.$submitted || categoryForm.description.$pristine || categoryForm.description.$invalid " class="help-block"> Description is invalid.</p>
+                    <textarea ng-model="newCategory.description" name="description" class="form-control" rows="5" id="description" placeholder="Thêm mô tả..." required></textarea>
+                    <div ng-show="categoryForm.$submitted || categoryForm.description.$touched">
+                        <p class="validation-color" ng-show="categoryForm.description.$error.required">Add the description.</p>
+                    </div>
                 </div>
 
                 <button type="submit" class="btn btn-primary" ng-disabled="categoryForm.$invalid">Thêm mới</button>
