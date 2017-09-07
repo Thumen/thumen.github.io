@@ -1,3 +1,10 @@
+     /* Validation */
+     
+     .form-group .validation-color {
+         color: #a94442;
+     }
+     /* end */
+     
      .modal-open {
          padding-right: 0px!important;
      }

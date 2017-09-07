@@ -4,6 +4,12 @@
      background-color: #F0F8FF;
      min-width: 320px;
  }
+ /* Validation */
+ 
+ .form-group .validation-color {
+     color: #a94442;
+ }
+ /* end */
  
  .container {
      width: 98%;

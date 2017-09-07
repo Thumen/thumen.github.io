@@ -3,12 +3,13 @@
         <h3> Viết bài mới </h3>
     </div>
     <div class="panel-body">
-        <form ng-submit="submitCreateArticle()" name="myForm" novalidate>
-            <div class="form-group">
+        <form ng-submit="submitCreateArticle()" name="postForm" novalidate>
+            <div class="form-group" ng-class="{ 'has-error' : postForm.title.$submitted ||postForm.title.$invalid}">
                 <label>Title</label>
-                <input type="text" class="form-control" name="title" ng-model="newArticle.title" placeholder="Title">
-                <span style="color:red" ng-show="myForm.$submitted ||myForm.title.$invalid">
-                    <span ng-show="myForm.title.$error.required">Username is required.</span>
+                <input type="text" class="form-control" name="title" ng-minlength="4" ng-maxlength="240" ng-model="newArticle.title" placeholder="Title" novalidate>
+                <p ng-show="signupForm.title.$error.minlength" class="help-block">Title is too short.</p>
+                <p ng-show="signupForm.title.$error.maxlength" class="help-block">Title is too long.</p>
+                <!-- <span  ng-show="postForm.title.$error.required">Username is required.</span> -->
                 </span>
             </div>
             <div class="form-group">
@@ -23,8 +24,8 @@
             <div class="form-group">
                 <label>Short Description</label>
                 <textarea class="form-control" name="description" ng-model="newArticle.description" rows="2"></textarea>
-                <span style="color:red" ng-show="myForm.description.$invalid && myForm.description.$invalid">
-                    <span ng-show="myForm.description.$error.required">Username is required.</span>
+                <span style="color:red" ng-show="postForm.description.$invalid && myForm.description.$invalid">
+                    <span ng-show="postForm.description.$error.required">Username is required.</span>
                 </span>
             </div>
             <div class="form-group">
@@ -36,8 +37,8 @@
             <div class="form-group">
                 <label>Media</label>
                 <input type="text" class="form-control" name="img" ng-model="newArticle.media" placeholder="Image, Youtube Link...">
-                <span style="color:red" ng-show="myForm.img.$invalid && myForm.img.$invalid">
-                    <span ng-show="myForm.img.$error.required">Username is required.</span>
+                <span class="validation-color" ng-show="postForm.img.$invalid && myForm.img.$invalid">
+                    <span ng-show="postForm.img.$error.required">Username is required.</span>
                 </span>
             </div>
 
@@ -45,10 +46,7 @@
                 <label>Tags</label>
                 <tags-input use-strings="true" height='30px' ng-model="newArticle.tags"></tags-input>
             </div>
-
-
-            <button class="btn btn-primary" type="submit" ng-disabled="myForm.title.$invalid ||  
-             myForm.email.$invalid || myForm.description.$invalid|| myForm.img.$invalid">Đăng bài viết</button>
+            <button class="btn btn-primary" type="submit" ng-disabled="postForm.$invalid">Đăng bài viết</button>
         </form>
     </div>
 </div>

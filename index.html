@@ -253,28 +253,30 @@
                     <h4 class="modal-title">Registration Form</h4>
                 </div>
                 <div class="modal-body">
-                    <form ng-submit="signup() ">
+                    <form ng-submit="signup() " name="signupForm">
                         <div class="form-group ">
                             <label for="firstName " class="control-label ">Full Name</label>
-                            <div class=" ">
-                                <input ng-model="newUser.name " name="Username" ng-minlength="3" ng-maxlength="10" type="text " id="firstName " placeholder="Full Name " class="form-control " autofocus required="">
-                                <p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
-                                <p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
+                            <div ng-class="{ 'has-error' : signupForm.username.$invalid && !signupForm.username.$pristine }">
+                                <input ng-model="newUser.name " name="username" ng-minlength="3" ng-maxlength="50" type="text " id="firstName " placeholder="Full Name " class="form-control " required="" novalidate>
+                                <p ng-show="signupForm.username.$error.minlength" class="help-block">Username is too short.</p>
+                                <p ng-show="signupForm.username.$error.maxlength" class="help-block">Username is too long.</p>
                             </div>
                         </div>
 
                         <div class="form-group ">
                             <label for="email " class="control-label ">Email</label>
                             <div class=" ">
-                                <input ng-model="newUser.email " id="email" type="email" name="email" class="form-control" placeholder="Email" required="">
-                                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+                                <input ng-model="newUser.email " id="email" type="email" name="email" class="form-control" placeholder="Email" required="" novalidate>
+                                <p class="validation-color" ng-show="signupForm.email.$invalid && !signupForm.email.$pristine" class="help-block">Enter a valid email.</p>
                             </div>
                         </div>
 
                         <div class="form-group ">
                             <label for="psw " class=" control-label ">Password</label>
-                            <div class=" ">
-                                <input ng-model="newUser.password " type="password" class="form-control" id="psw" placeholder="Enter password" name="psw" required="">
+                            <div class="{ 'has-error' : signupForm.password.$invalid && !signupForm.password.$pristine }">
+                                <input ng-model="newUser.password " type="password" name="password" ng-minlength="8" ng-maxlength="12" class="form-control" id="psw" placeholder="Enter password" name="psw" required="" novalidate>
+                                <p class="validation-color" ng-show="signupForm.password.$error.minlength" class="help-block"> Password is too short.</p>
+                                <p class="validation-color" ng-show="signupForm.password.$error.maxlength" class="help-block"> Password is too long.</p>
                             </div>
                         </div>
 
@@ -285,7 +287,7 @@
                         </div>
                         <div class="form-group">
                             <div class="signup ">
-                                <button type="submit " class="btn btn-default btn-readmore  login">Đăng kí</button>
+                                <button type="submit" ng-disabled="signupForm.$invalid" class="btn btn-default btn-readmore  login">Đăng kí</button>
                             </div>
                         </div>
                     </form>
@@ -310,15 +312,15 @@
                             <label for="email " class="control-label ">Email</label>
                             <div class=" ">
                                 <input ng-model="user.email " type="email" name="email" id="email " placeholder="Email " class="form-control " required="" novalidate>
-                                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+                                <p class="validation-color" ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
                             </div>
                         </div>
 
                         <div class="form-group ">
                             <label for="pwd " class=" control-label ">Password</label>
                             <div class=" ">
-                                <input ng-model="user.password " type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required="">
-                                <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You password is required.</p>
+                                <input ng-model="user.password " type="password" name="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required="" novalidate>
+                                <p class="validation-color" ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">You password is required.</p>
                             </div>
                         </div>
                         <div class="form-group">
