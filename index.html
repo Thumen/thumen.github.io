@@ -93,7 +93,6 @@
         <div class="row">
             <!-- side bar -->
             <div class="col-xs-12 col-md-3 col-sm-3 col-lg-3 sidebar ">
-
                 <div class="widget">
                     <div class="custom-search-input">
                         <div class="input-group col-md-12">
@@ -185,7 +184,9 @@
     <footer>
         <div class="container-fluid ">
             <div class="row footer-padding">
-                <div class="col-md-6 col-sm-4 footerleft ">
+                <div class="col-md-1 col-sm-1">
+                </div>
+                <div class="col-md-5 col-sm-3 footerleft ">
                     <div class="logofooter ">About us</div>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
                     <p><i class="fa fa-mobile fa-3x "></i> : 01234-456-789</p>
@@ -282,12 +283,12 @@
 
                         <div class="form-group ">
                             <div class=" ">
-                                <p>*Please comolete all fields correctly.</p>
+                                <p>*Please complete all fields correctly.</p>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="signup ">
-                                <button type="submit" ng-disabled="signupForm.$invalid" class="btn btn-default btn-readmore  login">Đăng kí</button>
+                                <button type="submit" ng-disabled="signupForm.$invalid" class="btn btn-default btn-readmore login">Đăng kí</button>
                             </div>
                         </div>
                     </form>
@@ -320,7 +321,7 @@
                             <label for="pwd " class=" control-label ">Password</label>
                             <div class=" ">
                                 <input ng-model="user.password " type="password" name="userpassword" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required="" novalidate>
-                                <p class="validation-color" ng-show="userForm.userpassword.$invalid && !userForm.userpassword.$pristine" class="help-block">You password is required.</p>
+                                <p class="validation-color" ng-show="userForm.userpassword.$invalid && !userForm.userpassword.$submitted" class="help-block">You password is required.</p>
                             </div>
                         </div>
                         <div class="form-group">
@@ -349,5 +350,6 @@
 
 <script src="/scripts/app.js "></script>
 <script src="/scripts/route.js "></script>
+
 
 </html>

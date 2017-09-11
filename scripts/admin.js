@@ -96,7 +96,7 @@ scotchApp.controller('adminController', function(
         $http.patch(root + '/api/articles/' + $scope.article._id, $scope.article)
             .then(function successCallback(response) {
                 window.location.href = '/admin.html#/listArticles';
-                alert("Update Success");
+                // alert("Update Success");
             }, function errorCallback(response) {
                 // console.log(data, status, headers, config);
             });

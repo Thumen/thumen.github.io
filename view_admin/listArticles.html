@@ -63,8 +63,7 @@
             </div>
             <div class="modal-footer">
                 <form ng-submit="deleteArticle()">
-                    <button type="submit" class="btn btn-danger">Yes</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-danger " data-dismiss="modal"> Yes</button>
                 </form>
             </div>
         </div>
@@ -110,13 +109,10 @@
                         <label>Tags</label>
                         <tags-input use-strings="true" ng-model="article.tags"></tags-input>
                     </div>
-                    <button ng-click="updateArticle()" type="button" class="btn btn-primary">Update</button>
+                    <div class="modal-footer">
+                        <button ng-click="updateArticle()" type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+                    </div>
                 </form>
-            </div>
-
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
